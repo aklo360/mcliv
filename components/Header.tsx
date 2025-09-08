@@ -14,11 +14,11 @@ export default function Header({ showLogo = true, transparent = false }: { showL
           <span aria-hidden className="h-6" />
         )}
         <nav className="flex items-center gap-6 text-sm">
-          <Link href="/#about" className="hover:underline">About</Link>
-          <Link href="/#contact" className="hover:underline">Contact</Link>
-          <Link href="/#releases" className="hover:underline">Releases</Link>
-          <Link href="/#activations" className="hover:underline">Activations</Link>
-          <Link href="/#multimedia" className="hover:underline">Multimedia</Link>
+          <Link href="/#about" className="hover:line-through">About</Link>
+          <Link href="/#contact" className="hover:line-through">Contact</Link>
+          <Link href="/#releases" className="hover:line-through">Releases</Link>
+          <Link href="/#activations" className="hover:line-through">Activations</Link>
+          <Link href="/#multimedia" className="hover:line-through">Multimedia</Link>
         </nav>
       </div>
     </header>

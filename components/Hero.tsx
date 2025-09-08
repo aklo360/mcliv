@@ -8,12 +8,12 @@ export default function Hero() {
       </div>
       <div className="relative z-10 grid h-full grid-cols-1 md:grid-cols-2 pointer-events-none">
         {/* Left column: logo + body text */}
-        <div className="flex flex-col justify-between ml-12 p-6 md:p-12 bg-transparent">
+        <div className="flex flex-col justify-between ml-24 p-6 md:p-12 bg-transparent">
           <span />
           <div>
             <img src="/icons/logo.svg" alt="MCLIV" className="h-16 md:h-20 w-auto" />
             <p className="mt-6 text-xl text-neutral-700 max-w-xl pl-2">
-              NYC-based Functional Art and Design Studio
+              NYC-based Functional Art & Multidisciplinary Design Studio
             </p>
           </div>
           <span />
