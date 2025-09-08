@@ -31,10 +31,9 @@ export default function Page() {
         <Carousel
           startIndex={0}
           items={[
-            <ReleaseCard key="r0" title="Edition Chair 01" image="/images/releases/hat1.png" status="Available" />,
-            <ReleaseCard key="r1" title="Stone Vessel 02" image="/images/releases/hat1.png" status="Upcoming" />,
-            <ReleaseCard key="r2" title="Signal Tee 1154" image="/images/releases/hat1.png" status="Sold Out" />,
-            <ReleaseCard key="r3" title="Monochrome Print" image="/images/releases/hat1.png" status="Available" />,
+            <ReleaseCard key="r0" title="Studio Cap" image="/images/releases/hat1.png" status="Available" editionNumber={1} />,
+            <ReleaseCard key="r1" title="Edition Chair" image="/images/releases/chair1.png" status="Upcoming" editionNumber={2} />,
+            <ReleaseCard key="r2" title="Signal Tee" image="/images/releases/shirt1.png" status="Sold Out" editionNumber={3} />,
           ]}
         />
       </section>
@@ -45,12 +44,11 @@ export default function Page() {
           Culinary, installation, and experiential productions that are transcendent & meaningful.
         </p>
         <Carousel
-          startIndex={0}
+          startIndex={1}
           items={[
             <ActivationCard key="a0" title="Culinary Installation" image="/images/activations/event1.png" blurb="Meditative tasting sequence with sound and light." />,
-            <ActivationCard key="a1" title="Site-Specific Piece" image="/images/activations/event1.png" blurb="Frequency pattern woven into architectural surface." />,
-            <ActivationCard key="a2" title="Brand Collaboration" image="/images/activations/event1.png" blurb="Limited-run activation with mindful craft." />,
-            <ActivationCard key="a3" title="Gallery Pop-Up" image="/images/activations/event1.png" blurb="Calm, architectural micro-motion in space." />,
+            <ActivationCard key="a1" title="Site-Specific Piece" image="/images/activations/event2.jpg" blurb="Frequency pattern woven into architectural surface." />,
+            <ActivationCard key="a2" title="Brand Collaboration" image="/images/activations/event3.jpg" blurb="Limited-run activation with mindful craft." />,
           ]}
         />
       </section>
@@ -63,10 +61,10 @@ export default function Page() {
         <Carousel
           startIndex={1}
           items={[
-            <MultimediaCard key="m0" category="Web" image="/images/multimedia/design1.png" />,
-            <MultimediaCard key="m1" category="Photo" image="/images/multimedia/design1.png" />,
-            <MultimediaCard key="m2" category="Video" image="/images/multimedia/design1.png" />,
-            <MultimediaCard key="m3" category="Web" image="/images/multimedia/design1.png" />,
+            <MultimediaCard key="m0" category="Web" image="/images/multimedia/campaign1.png" />,
+            <MultimediaCard key="m1" category="Photo" image="/images/multimedia/campaign1.png" />,
+            <MultimediaCard key="m2" category="Video" image="/images/multimedia/campaign1.png" />,
+            <MultimediaCard key="m3" category="Web" image="/images/multimedia/campaign1.png" />,
           ]}
         />
       </section>

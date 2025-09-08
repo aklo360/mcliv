@@ -15,6 +15,10 @@
   }
   html, body { background: #fff; color: #000; overflow-x: hidden; }
   body { font: 400 var(--body-size)/var(--body-lh) Inter, system-ui, sans-serif; }
+  /* Link styling: strike-through on hover to match brand language */
+  a { text-decoration: none; }
+  a:hover { text-decoration-line: line-through; }
+  a:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
 }
 
 @layer components {
@@ -25,7 +29,14 @@
   .grid-container { container-type: inline-size; }
 }
 
-@layer utilities { .breath-zone { padding-block: 120px; } }
+@layer utilities {
+  .breath-zone { padding-block: 120px; }
+  .spin { animation: spin 10s linear infinite; }
+}
 
 .fade-in { opacity: 1; transition: opacity 0.18s ease-out; }
 @starting-style { .fade-in { opacity: 0; } }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) { .spin { animation: none !important; } }
