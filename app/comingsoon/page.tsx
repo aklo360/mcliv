@@ -24,7 +24,7 @@ export default function ComingSoonPage() {
           <img src="/icons/icon.svg" alt="" aria-hidden className="spin mx-auto h-12 w-12 mb-5" />
           <h1 className="h2 mb-2">Coming Soon</h1>
           <p className="text-sm text-neutral-700 mb-6">
-            Our first release is coming shortly, please join our mailing list to stay up to date with our studio's releases and activations.
+            Our first release is coming shortly, join our mailing list to be the first to know about our studio's limited releases and activations.
           </p>
           <form action="#" className="flex items-center justify-center gap-2">
             <label htmlFor="email" className="sr-only">Email address</label>
