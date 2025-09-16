@@ -20,6 +20,23 @@ Example routes:
 - `npm test`: Run unit/component tests (Vitest + Testing Library).
 - `npx shadcn@latest add <component>`: Generate UI components used by the design system.
 
+## Cloudflare Workers (OpenNext) Deployment
+- Worker name: `mclivstudio` (see `wrangler.jsonc`)
+- Config files:
+  - `open-next.config.ts` — minimal OpenNext Cloudflare config
+  - `wrangler.jsonc` — points to `.open-next/worker.js`, flags `nodejs_compat`, assets binding
+  - `.gitignore` includes `.open-next/`
+- Env vars (Cloudflare → Workers → Settings → Variables):
+  - Text: `SHOPIFY_STORE_DOMAIN`, `SHOPIFY_API_VERSION` (optional; defaults to `2025-07`)
+  - Secret: `SHOPIFY_ADMIN_TOKEN`
+- Scripts:
+  - `npm run opennext:build` — build OpenNext output to `.open-next/`
+  - `npm run deploy` — deploy via Wrangler using `wrangler.jsonc`
+  - `npm run preview` — local Workers dev (requires prior build)
+- Notes:
+  - No Edge runtime exports; Node-compat is enabled via `nodejs_compat`.
+  - API route `/api/newsletter` uses manual redirect-follow for Shopify and avoids PII reads.
+
 ## Coding Style & Naming Conventions
 - TypeScript required; strict types preferred.
 - Components: PascalCase (`Header.tsx`), hooks: `useThing.ts`.
