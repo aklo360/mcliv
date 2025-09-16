@@ -70,7 +70,7 @@ export default function NewsletterForm() {
           required
           placeholder="you@email.com"
           aria-invalid={isError || undefined}
-          className="w-full max-w-xs border border-black/15 rounded-md px-3 py-2 text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black/20 disabled:opacity-60"
+          className="w-full max-w-sm md:max-w-md border border-black/15 rounded-md px-3 py-2 text-sm placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-black/20 disabled:opacity-60"
           disabled={loading}
         />
         <button
