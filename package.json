@@ -8,10 +8,11 @@
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx,.js",
     "typecheck": "tsc --noEmit",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "npx wrangler dev --config wrangler.jsonc",
+    "deploy": "npx wrangler deploy --config wrangler.jsonc",
     "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "opennext:build": "npx opennextjs-cloudflare build"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
