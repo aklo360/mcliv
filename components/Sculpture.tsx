@@ -181,7 +181,7 @@ export default function Sculpture() {
       // Wave field + interactive disruption
       const t = performance.now() * 0.001;
 
-      const pos = planeGeo.getAttribute("position") as THREE.BufferAttribute;
+      const pos = planeGeo.getAttribute("position") as any;
       const damping = 0.92; // elegant ease-out
       const spring = 0.07;  // slightly stronger return to base
       for (let j = 0; j < rows; j++) {
@@ -252,7 +252,7 @@ export default function Sculpture() {
       planeGeo.dispose();
       pointsMat.dispose();
       hitPlane.geometry.dispose();
-      (hitPlane.material as THREE.Material).dispose();
+      (hitPlane.material as any).dispose();
       renderer.dispose();
       if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
     };
