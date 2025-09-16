@@ -15,8 +15,6 @@ export default function Footer() {
             </svg>
             hello@mcliv.studio
           </a>
-          <span aria-hidden="true" className="text-neutral-400">·</span>
-          <a href="https://docs.google.com/presentation/d/16HrcGkgCA5fulRyaRYjnVaqGJOw6euo9b6vj-aLTArY/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="hover:line-through">Pitch Deck</a>
         </div>
       </div>
     </footer>
