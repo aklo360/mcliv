@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "mcliv-studio",                 // MUST match the Worker name in CF dashboard
+  "name": "mclivstudio",                 // MUST match the Worker name in CF dashboard
   "main": ".open-next/worker.js",         // OpenNext output entry
   "compatibility_date": "2025-09-16",
   "compatibility_flags": [
@@ -14,7 +14,7 @@
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "mcliv-studio"          // same as "name"
+      "service": "mclivstudio"          // same as "name"
     }
   ]
 }
