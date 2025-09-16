@@ -15,7 +15,9 @@ export default function ComingSoonHome() {
           <div className="max-w-7xl mx-auto text-center">
             <img src="/icons/logo.svg" alt="MCLIV" className="mx-auto h-16 w-auto" />
             <p className="mt-3 text-base text-neutral-700">
-              NYC-based Functional Art &amp; Multidisciplinary Design Studio
+              NYC-based Functional Art &amp;
+              <br className="sm:hidden" />
+              {" "}Multidisciplinary Design Studio
             </p>
           </div>
         </header>

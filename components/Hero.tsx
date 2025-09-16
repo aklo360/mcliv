@@ -13,7 +13,9 @@ export default function Hero() {
           <div>
             <img src="/icons/logo.svg" alt="MCLIV" className="h-16 md:h-20 w-auto" />
             <p className="mt-6 text-xl text-neutral-700 max-w-xl pl-2">
-              NYC-based Functional Art & Multidisciplinary Design Studio
+              NYC-based Functional Art &
+              <br className="sm:hidden" />
+              {" "}Multidisciplinary Design Studio
             </p>
           </div>
           <span />
