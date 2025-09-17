@@ -74,10 +74,10 @@ export default function MainPage() {
         <h2 className="h2">Contact</h2>
         <p className="text-neutral-700 mt-4 mb-8">For collaborations, commissions, and press inquiries.</p>
         <a
-          href="mailto:hello@mcliv.studio"
+          href="mailto:info@mcliv.studio"
           className="inline-flex items-center gap-2 border border-black/15 rounded-md px-6 py-3 text-sm hover:bg-black hover:text-white transition"
         >
-          Email hello@mcliv.studio
+          Email info@mcliv.studio
         </a>
       </section>
       <Footer />
