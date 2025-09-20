@@ -28,7 +28,7 @@ export default function ComingSoonHome() {
             <img src="/icons/icon.svg" alt="" aria-hidden className="spin mx-auto h-12 w-12 mb-5" />
             <h1 className="h2 mb-2">Coming Soon</h1>
             <p className="text-sm text-neutral-700 mb-6 mx-auto max-w-[90vw] sm:max-w-none">
-              Our first drop is coming shortly, join our mailing list to be the first to know about our studio's limited releases and activations.
+              Our first drop is coming soon, join our mailing list to be first to know about our studio's limited releases and activations.
             </p>
             <NewsletterForm />
           </section>
