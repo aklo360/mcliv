@@ -11,13 +11,11 @@ export default function ComingSoonHome() {
     <main className="min-h-screen bg-white text-black flex flex-col">
       <div className="flex-1 flex flex-col">
         {/* Upper-left header with logo + subtitle */}
-        <header className="px-6 py-6">
+        <header className="px-4 py-6 sm:px-6">
           <div className="max-w-7xl mx-auto text-center">
-            <img src="/icons/logo.svg" alt="MCLIV" className="mx-auto h-16 w-auto" />
-            <p className="mt-3 text-base text-neutral-700">
-              NYC-based Functional Art &amp;
-              <br className="sm:hidden" />
-              {" "}Multidisciplinary Design Studio
+            <img src="/icons/logo.svg" alt="MCLIV" className="mx-auto h-8 sm:h-16 w-auto" />
+            <p className="mt-3 text-[12px] sm:text-base text-neutral-700 whitespace-nowrap tracking-tight">
+              NYC‑based Functional Art &amp; Multidisciplinary Design Studio
             </p>
           </div>
         </header>

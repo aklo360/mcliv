@@ -7,7 +7,7 @@ export default function Header({ showLogo = true, transparent = false }: { showL
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
         {showLogo ? (
           <Link href="/" className="flex items-center gap-3">
-            <img src="/icons/logo.svg" alt="MCLIV" className="h-6 w-auto" />
+            <img src="/icons/logo.svg" alt="MCLIV" className="h-3 sm:h-4 md:h-6 w-auto" />
             <span className="sr-only">MCLIV Studio</span>
           </Link>
         ) : (
