@@ -11,11 +11,9 @@ export default function Hero() {
         <div className="flex flex-col justify-between ml-24 p-6 md:p-12 bg-transparent">
           <span />
           <div>
-            <img src="/icons/logo.svg" alt="MCLIV" className="h-16 md:h-20 w-auto" />
-            <p className="mt-6 text-xl text-neutral-700 max-w-xl pl-2">
-              NYC-based Functional Art &
-              <br className="sm:hidden" />
-              {" "}Multidisciplinary Design Studio
+            <img src="/icons/logo.svg" alt="MCLIV" className="h-8 sm:h-16 md:h-20 w-auto" />
+            <p className="mt-6 text-sm sm:text-lg md:text-xl text-neutral-700 max-w-xl pl-2 whitespace-nowrap tracking-tight">
+              NYC‑based Functional Art & Multidisciplinary Design Studio
             </p>
           </div>
           <span />
