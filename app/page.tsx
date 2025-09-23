@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Coming Soon · MCLIV Studio",
-  description: "NYC-based Functional Art & Multidisciplinary Design Studio",
+  description: "A Creative Studio",
 };
 
 import Footer from "@/components/Footer";
