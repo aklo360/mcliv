@@ -14,7 +14,7 @@ export default function ComingSoonHome() {
         <header className="px-4 py-6 sm:px-6">
           <div className="max-w-7xl mx-auto text-center">
             <img src="/icons/logo.svg" alt="MCLIV" className="mx-auto h-8 sm:h-16 w-auto" />
-            <p className="mt-3 text-[12px] sm:text-base text-neutral-700 whitespace-nowrap tracking-tight">
+            <p className="mt-3 text-[14px] sm:text-base text-neutral-700 whitespace-nowrap tracking-tight">
                 A Creative Studio
             </p>
           </div>
