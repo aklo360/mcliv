@@ -10,9 +10,9 @@ export default function ComingSoonHome() {
   return (
     <main className="grid grid-rows-[auto_1fr_auto] h-[100dvh] overflow-hidden bg-white text-black">
       {/* Header */}
-      <header className="px-4 py-6 sm:px-6">
+      <header className="px-4 py-8 sm:px-6 sm:py-10">
         <div className="max-w-7xl mx-auto text-center">
-          <img src="/icons/logov2.svg" alt="MCLIV" className="mx-auto h-8 sm:h-16 w-auto" />
+          <img src="/icons/logov2.svg" alt="MCLIV" className="mx-auto h-12 sm:h-16 w-auto" />
         </div>
       </header>
 
