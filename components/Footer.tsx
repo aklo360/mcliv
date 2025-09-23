@@ -4,10 +4,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
       <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col items-center text-center gap-3 md:flex-row md:items-center md:justify-between md:text-left text-sm text-neutral-500">
         <div>
           <address className="meta not-italic">
-            © MCLIV Studio
-            <span className="hidden md:inline">, </span>
-            <br className="block md:hidden" />
-            3 World Trade Center, 69th Fl, 175 Greenwich St, New York, NY 10007
+            © MCLIV Studio, 3 World Trade Center, 69th Fl, 175 Greenwich St, New York, NY 10007
           </address>
         </div>
         <div className="flex items-center gap-4 justify-center md:justify-end">
