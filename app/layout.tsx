@@ -7,13 +7,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "MCLIV Studio", template: "%s | MCLIV" },
-  description: "Minimal, architectural UI with Wind/Water calmness.",
+  description: "A Creative Studio.",
   openGraph: {
     title: "MCLIV Studio",
-    description: "Design-forward, hyper contemporary Next.js experience.",
+    description: "A Creative Studio.",
     url: "/",
     siteName: "MCLIV Studio",
-    images: ["/images/og/cover.jpg"],
+    images: [""],
   },
   icons: {
     icon: "/icons/icon.svg",
