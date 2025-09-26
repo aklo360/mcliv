@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/Hero";
 import ReleaseCard from "@/components/ReleaseCard";
 import ActivationCard from "@/components/ActivationCard";
@@ -80,8 +81,8 @@ export default function MainPage() {
           Email info@mcliv.studio
         </a>
       </section>
+      <SocialLinks />
       <Footer />
     </main>
   );
 }
-
