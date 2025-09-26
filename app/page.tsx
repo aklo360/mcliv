@@ -4,6 +4,7 @@ export const metadata = {
 };
 
 import Footer from "@/components/Footer";
+import SocialLinks from "@/components/SocialLinks";
 import NewsletterForm from "@/components/NewsletterForm";
 
 export default function ComingSoonHome() {
@@ -28,6 +29,8 @@ export default function ComingSoonHome() {
         </section>
       </div>
 
+      {/* Social links above the footer divider */}
+      <SocialLinks />
       {/* Footer pinned within viewport */}
       <Footer compact />
     </main>
