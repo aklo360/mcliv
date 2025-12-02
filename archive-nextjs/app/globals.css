@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --grid-columns: 12;
+    --grid-gutters: 72px;
+    --grid-margins: 96px;
+    --baseline: 6px;
+    --u1: 6px; --u2: 12px; --u4: 24px; --u6: 36px; --u12: 72px; --u16: 96px;
+    --h1-size: 84px; --h1-lh: 96px;
+    --h2-size: 56px; --h2-lh: 60px;
+    --h3-size: 28px; --h3-lh: 36px;
+    --body-size: 16px; --body-lh: 24px;
+    --meta-size: 13px; --meta-lh: 20px;
+  }
+  html, body { background: #fff; color: #000; overflow-x: hidden; }
+  body {
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-size: var(--body-size);
+    line-height: var(--body-lh);
+    font-weight: 400;
+  }
+  /* Link styling: strike-through on hover to match brand language */
+  a { text-decoration: none; }
+  a:hover { text-decoration-line: line-through; }
+  a:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+}
+
+@layer components {
+  .h1 {
+    font-family: var(--font-gfsdidot), serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--h1-size);
+    line-height: var(--h1-lh);
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--u12);
+  }
+  .h2 {
+    font-family: var(--font-gfsdidot), serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--h2-size);
+    line-height: var(--h2-lh);
+    letter-spacing: -0.005em;
+    margin: 0 0 var(--u6);
+  }
+  .meta { color: #6E6E6E; font-size: var(--meta-size); line-height: var(--meta-lh); }
+  .freq { background-image: radial-gradient(#0A0A0A 1px, transparent 1px); background-size: 72px 72px; opacity: 0.08; }
+  .grid-container { container-type: inline-size; }
+}
+
+@layer utilities {
+  .breath-zone { padding-block: 120px; }
+  .spin { animation: spin 10s linear infinite; }
+}
+
+.fade-in { opacity: 1; transition: opacity 0.18s ease-out; }
+@starting-style { .fade-in { opacity: 0; } }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) { .spin { animation: none !important; } }

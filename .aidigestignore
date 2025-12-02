@@ -1,0 +1,16 @@
+node_modules
+.next
+.env.local
+.DS_Store
+dist
+coverage
+*.log
+.env
+.open-next
+.react-router
+build
+.shopify
+
+
+archive-nextjs
+hydrogen-quickstart
