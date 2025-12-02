@@ -1,0 +1,38 @@
+{
+  "name": "mcliv-studio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx,.js",
+    "typecheck": "tsc --noEmit",
+    "preview": "npx wrangler dev --config wrangler.jsonc",
+    "deploy": "npx wrangler deploy --config wrangler.jsonc",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "opennext:build": "npx opennextjs-cloudflare build"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "simple-icons": "^13.21.0",
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "@opennextjs/cloudflare": "^1.8.2",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^15.0.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.5.4",
+    "wrangler": "^4.37.0"
+  }
+}
