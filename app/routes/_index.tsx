@@ -1,10 +1,10 @@
-import { useLoaderData } from 'react-router';
+import {useEffect, useRef, useState} from 'react';
+import {useLoaderData} from 'react-router';
+import {FiVolume2, FiVolumeX} from 'react-icons/fi';
 import type { Route } from './+types/_index';
 import { Money } from '@shopify/hydrogen';
-import { AddToCartButton } from '~/components/AddToCartButton';
 import { ProductCarousel } from '~/components/ProductCarousel';
 import { ContinueToCheckoutButton } from '~/components/ContinueToCheckoutButton';
-import { useAside } from '~/components/Aside';
 
 const DEFAULT_HANDLE = 'capsule-collection-001';
 
@@ -40,7 +40,11 @@ export async function loader({ context }: Route.LoaderArgs) {
 
 export default function SingleProductPage() {
   const { product, handle, storeDomain } = useLoaderData<typeof loader>();
-  const { open } = useAside();
+  const [gateDismissed, setGateDismissed] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null);
   const variant = product?.variants?.nodes?.[0];
   const images = product?.images?.nodes ?? [];
   const fallbackUrl = storeDomain
@@ -67,63 +71,124 @@ export default function SingleProductPage() {
     );
   }
 
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduceMotion(mq.matches);
+    const handler = (event: MediaQueryListEvent) => setReduceMotion(event.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  const handleEnter = () => {
+    setGateDismissed(true);
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+    if (contentRef.current) {
+      contentRef.current.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth'});
+    }
+  };
+
+  const handleToggleMute = () => {
+    const next = !isMuted;
+    setIsMuted(next);
+    if (videoRef.current) {
+      videoRef.current.muted = next;
+      if (!next) {
+        videoRef.current.volume = 0.5;
+        videoRef.current.play().catch(() => setIsMuted(true));
+      }
+    }
+  };
+
   return (
-    <main className="product-page">
-      <section className="product-content">
-        <div className="product-media">
-          <ProductCarousel images={images} title={product.title} />
-        </div>
-
-        <div className="product-copy">
-          <p className="eyebrow">Limited Release</p>
-          <h1>{product.title}</h1>
-          <div
-            className="description"
-            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-          />
-
-          {variant ? (
-            <div className="purchase">
-              <div className="price">
-                <Money data={variant.price} />
-              </div>
-              {variant.availableForSale ? (
-                <div className="purchase-row">
-                  <AddToCartButton
-                    onClick={() => open('cart')}
-                    lines={[
-                      {
-                        merchandiseId: variant.id,
-                        quantity: 1,
-                      },
-                    ]}
-                  >
-                    Add to cart
-                  </AddToCartButton>
-                  <ContinueToCheckoutButton variantId={variant.id} />
-                </div>
-              ) : (
-                <AddToCartButton
-                  lines={[
-                    {
-                      merchandiseId: variant.id,
-                      quantity: 1,
-                    },
-                  ]}
-                  disabled
-                >
-                  Sold out
-                </AddToCartButton>
-              )}
+    <>
+      {!gateDismissed && (
+        <section className={`hero-gate ${reduceMotion ? 'hero-gate--static' : ''}`}>
+          <video
+            ref={videoRef}
+            className="hero-video"
+            autoPlay
+            muted={isMuted}
+            loop
+            playsInline
+            aria-hidden="true"
+          >
+            <source src="/mcliv-bg.webm" type="video/webm" />
+          </video>
+          <div className="hero-overlay">
+            <div className="hero-center">
+              <video
+                className="hero-logo-video"
+                autoPlay
+                muted
+                playsInline
+                loop
+                aria-label="MCLIV Studio"
+              >
+                <source
+                  src="/mclivstudio-hevc.mp4"
+                  type='video/mp4; codecs="hvc1"'
+                />
+                <source src="/mclivstudio.webm" type="video/webm" />
+              </video>
             </div>
-          ) : (
-            <a className="primary" href={fallbackUrl}>
-              View on Shopify
-            </a>
-          )}
-        </div>
-      </section>
-    </main>
+            <div className="hero-actions">
+              <button className="hero-enter" onClick={handleEnter}>
+                ENTER
+              </button>
+            </div>
+            <button
+              className="hero-audio"
+              type="button"
+              onClick={handleToggleMute}
+              aria-pressed={!isMuted}
+              aria-label={isMuted ? 'Unmute background video' : 'Mute background video'}
+            >
+              {isMuted ? <FiVolume2 size={16} aria-hidden /> : <FiVolumeX size={16} aria-hidden />}
+              <span className="sr-only">{isMuted ? 'Unmute' : 'Mute'}</span>
+            </button>
+          </div>
+        </section>
+      )}
+      <main className="product-page" ref={contentRef}>
+        <section className="product-content">
+          <div className="product-media">
+            <ProductCarousel images={images} title={product.title} />
+          </div>
+
+          <div className="product-copy">
+            <p className="eyebrow">Limited Release</p>
+            <h1>{product.title}</h1>
+            <div
+              className="description"
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
+
+            {variant ? (
+              <div className="purchase">
+                <div className="price">
+                  <Money data={variant.price} />
+                </div>
+                {variant.availableForSale ? (
+                  <div className="purchase-row">
+                    <ContinueToCheckoutButton variantId={variant.id} />
+                  </div>
+                ) : (
+                  <button className="primary" disabled>
+                    Sold out
+                  </button>
+                )}
+              </div>
+            ) : (
+              <a className="primary" href={fallbackUrl}>
+                View on Shopify
+              </a>
+            )}
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
 
