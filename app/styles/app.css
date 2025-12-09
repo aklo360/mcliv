@@ -204,15 +204,16 @@ body {
 @media (max-width: 640px) {
   .hero-center {
     top: 50%;
-    transform: translate(-50%, -52%);
+    transform: translate(-50%, -58%);
   }
 
   .hero-logo-video {
-    width: min(80vw, 420px);
+    width: min(60vw, 260px);
+    transform: scale(0.8);
   }
 
   .hero-actions {
-    top: calc(50% + 10vh);
+    top: calc(50% + 4vh);
   }
 }
 
