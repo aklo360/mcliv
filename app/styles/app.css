@@ -74,16 +74,17 @@ body {
   box-sizing: border-box;
   color: #fff;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
 }
 
@@ -104,10 +105,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  position: absolute;
-  left: 50%;
-  top: calc(50% + 15vh);
-  transform: translateX(-50%);
+  margin-top: 1rem;
 }
 
 .hero-enter {
@@ -202,18 +200,9 @@ body {
 }
 
 @media (max-width: 640px) {
-  .hero-center {
-    top: 50%;
-    transform: translate(-50%, -58%);
-  }
-
   .hero-logo-video {
-    width: min(60vw, 260px);
-    transform: scale(0.8);
-  }
-
-  .hero-actions {
-    top: calc(50% + 4vh);
+    width: min(55vw, 240px);
+    transform: scale(0.75);
   }
 }
 
