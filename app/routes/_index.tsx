@@ -76,6 +76,9 @@ export default function SingleProductPage() {
     setReduceMotion(mq.matches);
     const handler = (event: MediaQueryListEvent) => setReduceMotion(event.matches);
     mq.addEventListener('change', handler);
+    if (videoRef.current) {
+      videoRef.current.volume = 0.25;
+    }
     return () => mq.removeEventListener('change', handler);
   }, []);
 
@@ -95,7 +98,7 @@ export default function SingleProductPage() {
     if (videoRef.current) {
       videoRef.current.muted = next;
       if (!next) {
-        videoRef.current.volume = 0.5;
+        videoRef.current.volume = 0.25;
         videoRef.current.play().catch(() => setIsMuted(true));
       }
     }
