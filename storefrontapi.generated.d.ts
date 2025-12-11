@@ -330,6 +330,38 @@ export type ProductByHandleQuery = {
   >;
 };
 
+export type ProductByHandleArchiveQueryVariables = StorefrontAPI.Exact<{
+  handle: StorefrontAPI.Scalars['String']['input'];
+  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
+  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
+}>;
+
+export type ProductByHandleArchiveQuery = {
+  product?: StorefrontAPI.Maybe<
+    Pick<
+      StorefrontAPI.Product,
+      'id' | 'title' | 'descriptionHtml' | 'handle'
+    > & {
+      images: {
+        nodes: Array<
+          Pick<
+            StorefrontAPI.Image,
+            'id' | 'url' | 'altText' | 'width' | 'height'
+          >
+        >;
+      };
+      variants: {
+        nodes: Array<
+          Pick<
+            StorefrontAPI.ProductVariant,
+            'id' | 'availableForSale' | 'title'
+          > & {price: Pick<StorefrontAPI.MoneyV2, 'amount' | 'currencyCode'>}
+        >;
+      };
+    }
+  >;
+};
+
 export type ArticleQueryVariables = StorefrontAPI.Exact<{
   articleHandle: StorefrontAPI.Scalars['String']['input'];
   blogHandle: StorefrontAPI.Scalars['String']['input'];
@@ -1169,6 +1201,10 @@ interface GeneratedQueryTypes {
   '#graphql\n  query ProductByHandle($handle: String!, $country: CountryCode, $language: LanguageCode)\n    @inContext(country: $country, language: $language) {\n    product(handle: $handle) {\n      id\n      title\n      descriptionHtml\n      handle\n      featuredImage {\n        id\n        url\n        altText\n        width\n        height\n      }\n      images(first: 10) {\n        nodes {\n          id\n          url\n          altText\n          width\n          height\n        }\n      }\n      variants(first: 5) {\n        nodes {\n          id\n          availableForSale\n          title\n          price {\n            amount\n            currencyCode\n          }\n        }\n      }\n    }\n  }\n': {
     return: ProductByHandleQuery;
     variables: ProductByHandleQueryVariables;
+  };
+  '#graphql\n  query ProductByHandleArchive($handle: String!, $country: CountryCode, $language: LanguageCode)\n    @inContext(country: $country, language: $language) {\n    product(handle: $handle) {\n      id\n      title\n      descriptionHtml\n      handle\n      images(first: 10) {\n        nodes {\n          id\n          url\n          altText\n          width\n          height\n        }\n      }\n      variants(first: 5) {\n        nodes {\n          id\n          availableForSale\n          title\n          price {\n            amount\n            currencyCode\n          }\n        }\n      }\n    }\n  }\n': {
+    return: ProductByHandleArchiveQuery;
+    variables: ProductByHandleArchiveQueryVariables;
   };
   '#graphql\n  query Article(\n    $articleHandle: String!\n    $blogHandle: String!\n    $country: CountryCode\n    $language: LanguageCode\n  ) @inContext(language: $language, country: $country) {\n    blog(handle: $blogHandle) {\n      handle\n      articleByHandle(handle: $articleHandle) {\n        handle\n        title\n        contentHtml\n        publishedAt\n        author: authorV2 {\n          name\n        }\n        image {\n          id\n          altText\n          url\n          width\n          height\n        }\n        seo {\n          description\n          title\n        }\n      }\n    }\n  }\n': {
     return: ArticleQuery;
