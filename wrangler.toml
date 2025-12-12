@@ -2,6 +2,7 @@ name = "mclivstudio"
 main = "./dist/server/index.js"
 compatibility_date = "2024-10-15"
 compatibility_flags = ["nodejs_compat"]
+custom_domains = ["mcliv.studio"]
 
 [assets]
 directory = "./dist/client"
