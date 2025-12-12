@@ -29,7 +29,7 @@ export default function ArchivePage() {
   const {product, handle} = useLoaderData<typeof loader>();
   const primaryVariant = product?.variants?.nodes?.[0];
   const primaryImage = product?.images?.nodes?.[0];
-  const fallbackProductUrl = `https://studiomcliv.myshopify.com/products/${handle}`;
+  const fallbackProductUrl = `https://mcliv.studio/products/${handle}`;
 
   return (
     <main className="archive-page">

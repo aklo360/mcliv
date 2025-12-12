@@ -166,8 +166,8 @@ export default function SingleProductPage() {
     },
   ];
   const fallbackUrl = storeDomain
-    ? `https://${storeDomain}/products/${handle}`
-    : `https://studiomcliv.myshopify.com/products/${handle}`;
+    ? `https://mcliv.studio/products/${handle}`
+    : `https://mcliv.studio/products/${handle}`;
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
