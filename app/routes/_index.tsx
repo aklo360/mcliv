@@ -65,6 +65,7 @@ export default function SingleProductPage() {
     {
       title: 'Chaises Musicales: Art Salon & Dinner',
       meta: 'Art Basel Paris 2025 · Curated by Vanessa Fuchs · Chef/Artist: John Black',
+      subtitle: 'DREAM Architects · Paris',
       copy: 'Presented during Art Basel Paris 2025 by NYC Culture Club, MCLIV founder John Black helmed the kitchen and exhibited new work in a multisensory experience of food, art, and sound.',
       press: [
         {
@@ -81,6 +82,7 @@ export default function SingleProductPage() {
     {
       title: "APOC's US Debut · NOTHING Ear(3)",
       meta: 'New York Fashion Week · Fall 2025',
+      subtitle: 'Earshot · New York City',
       copy: 'Sculptural display system for the NOTHING Ear(3) launch at APOC’s first US pop-up during fall NYFW 2025.',
       press: [
         {
@@ -92,12 +94,13 @@ export default function SingleProductPage() {
           url: 'https://www.dazeddigital.com/fashion/article/68721/1/apoc-londons-coolest-online-concept-store-has-come-to-new-york-nothing-adorno',
         },
       ],
-      image: '/images/activations/apoc1.jpg',
+      image: '/images/activations/apoc1.jpeg',
     },
     {
       title: 'The Art of Giving',
       meta: 'Singapore · April 2025 · Peranakan Museum x Employees Only',
-      copy: 'A dialogue and private event in collaboration with Employees Only, with hors d’oeuvres by John Black, transforming the Peranakan Museum into an intimate tasting and conversation on giving & philanthropy.',
+      subtitle: 'Peranakan Museum · Singapore',
+      copy: 'A dialogue and private event in collaboration with Employees Only, with hors d’oeuvres by John Black, transforming the Peranakan Museum, Singapore into an intimate tasting and conversation on giving & philanthropy.',
       pressTitle: 'Watch',
       press: [
         {
@@ -110,6 +113,7 @@ export default function SingleProductPage() {
     {
       title: 'MCLIV In-Studio Dinner',
       meta: 'New York · January 2025 · WTC3 Residency',
+      subtitle: 'MCLIV Studio · New York City',
       copy: 'We transformed the MCLIV work studio in WTC3 into a private fine-dining experience, pairing the viewing of in-progress works with a bespoke tasting menu.',
       pressTitle: 'Watch',
       press: [
@@ -121,9 +125,10 @@ export default function SingleProductPage() {
       image: '/images/activations/instudio1.jpeg',
     },
     {
-      title: 'Alternating Currents: Art Show & Private Dinner',
+      title: 'Alternating Currents',
       meta: 'Key West · April 2024 · Sanger Gallery',
-      copy: 'Invite-only art exhibition and private dinner where MCLIV founder John Black served as chef and solo artist, blending culinary courses with his studies in color and technique.',
+      subtitle: 'Sanger Gallery · Key West, FL',
+      copy: 'Invite-only art exhibition and private dinner @ Sanger Gallery in Key West where MCLIV founder John Black served as chef and solo artist, blending culinary courses with his studies in color and technique.',
       press: [
         {
           label: 'TSKW',
@@ -295,19 +300,28 @@ export default function SingleProductPage() {
                   aria-hidden={i !== activationIndex}
                 >
                   <div className="activation-media">
-                    <HydrogenImage
-                      data={{
-                        url: activation.image,
-                        altText: activation.title,
-                        width: 1600,
-                        height: 900,
-                      }}
-                      className="activation-img"
-                      loading={i === activationIndex ? 'eager' : 'lazy'}
-                    />
+                    {(() => {
+                      const mobileSrc = activation.image?.replace(/(\.[^.]+)$/, '-v$1');
+                      return (
+                        <picture>
+                          {mobileSrc && (
+                            <source media="(max-width: 640px)" srcSet={mobileSrc} />
+                          )}
+                          <img
+                            src={activation.image}
+                            alt={activation.title}
+                            className="activation-img"
+                            loading={i === activationIndex ? 'eager' : 'lazy'}
+                          />
+                        </picture>
+                      );
+                    })()}
                     <div className="activation-overlay">
                       <div className="activation-overlay-text">
                         <h3>{activation.title}</h3>
+                        {activation.subtitle && (
+                          <p className="activation-subtitle">{activation.subtitle}</p>
+                        )}
                         <p>{activation.copy}</p>
                         {activation.press && (
                           <div className="activation-press">
@@ -372,7 +386,7 @@ export default function SingleProductPage() {
             </div>
 
             <div className="product-copy">
-              <h1>MCLIV</h1>
+              <h1>{product.title}</h1>
               <div
                 className="description"
                 dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
@@ -407,30 +421,14 @@ export default function SingleProductPage() {
             <h2 className="section-title text-center">CREATIVE</h2>
             <p className="section-lede text-center">
               For all creative service needs including Brand Identity Systems Design, Web Development,
-              Photo &amp; Video Production &amp; more — inquire here:
+              Photo &amp; Video Production &amp; more please inquire via email:
             </p>
           </div>
-          <form className="contact-form">
-            <div className="contact-grid">
-              <label className="contact-field">
-                <span>Name</span>
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
-              <label className="contact-field">
-                <span>Email</span>
-                <input type="email" name="email" placeholder="you@email.com" required />
-              </label>
-              <label className="contact-field">
-                <span>Subject</span>
-                <input type="text" name="subject" placeholder="Project, collaboration, press, etc." />
-              </label>
-              <label className="contact-field contact-field--full">
-                <span>Message</span>
-                <textarea name="details" rows={4} placeholder="Share your project, ideas, or questions." />
-              </label>
-            </div>
-            <button type="submit" className="primary contact-submit">Send inquiry</button>
-          </form>
+          <div className="contact-cta">
+            <a className="primary contact-button" href="mailto:info@mcliv.studio">
+              info@mcliv.studio
+            </a>
+          </div>
         </section>
       </main>
     </>

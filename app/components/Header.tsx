@@ -14,15 +14,17 @@ export function Header({
   const {shop} = header;
   return (
     <header className="header">
-      <NavLink
-        className="brand"
-        prefetch="intent"
-        to="/"
-        style={activeLinkStyle}
-        end
-      >
-        <img src="/icons/logo.svg" alt="MCLIV Studio" />
-      </NavLink>
+      <div className="header-center">
+        <NavLink
+          className="brand"
+          prefetch="intent"
+          to="/"
+          style={activeLinkStyle}
+          end
+        >
+          <img src="/icons/logo.svg" alt="MCLIV Studio" />
+        </NavLink>
+      </div>
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
