@@ -542,16 +542,9 @@ button.reset:hover:not(:has(> *)) {
   min-height: 100vh;
   background: var(--color-light);
   color: var(--color-dark);
-<<<<<<< ours
   display: grid;
   gap: 3.5rem;
   padding: 3rem 1.25rem 2.5rem;
-=======
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 3rem 1.25rem 3rem;
->>>>>>> theirs
 }
 
 .section-shell {
@@ -576,14 +569,11 @@ button.reset:hover:not(:has(> *)) {
 .section-header--center {
   text-align: center;
   justify-items: center;
+  margin-top: 1rem;
 }
 
 .section-header--spaced {
   margin-top: 0;
-}
-
-.about {
-  margin-top: -1rem;
 }
 
 .section-lede {
@@ -971,6 +961,26 @@ button.reset:hover:not(:has(> *)) {
   margin: 0;
   color: #2c2c2c;
   line-height: 1.6;
+}
+
+/* Section spacing */
+.about,
+.activations,
+.product-content,
+.releases,
+.creative {
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 640px) {
+
+  .about,
+  .activations,
+  .product-content,
+  .releases,
+  .creative {
+    margin-top: 4rem;
+  }
 }
 
 .contact-form {

@@ -10,10 +10,7 @@ import Sculpture from '~/components/Sculpture';
 const DEFAULT_HANDLE = 'capsule-collection-001';
 
 export const meta: Route.MetaFunction = ({ data }) => {
-  if (!data?.product) {
-    return [{ title: 'Product unavailable · MCLIV Studio' }];
-  }
-  return [{ title: `${data.product.title} · MCLIV Studio` }];
+  return [{ title: 'MCLIV Studio' }];
 };
 
 export async function loader({ context }: Route.LoaderArgs) {
@@ -68,7 +65,7 @@ export default function SingleProductPage() {
     {
       title: 'Chaises Musicales: Art Salon & Dinner',
       meta: 'Art Basel Paris 2025 · Curated by Vanessa Fuchs · Chef/Artist: John Black',
-      copy: 'Presented during Art Basel Paris 2025 by NYC Culture Club, MCLIV founder John Black helmed the kitchen and exhibited new work in a multisensory salon of food, art, and sound.',
+      copy: 'Presented during Art Basel Paris 2025 by NYC Culture Club, MCLIV founder John Black helmed the kitchen and exhibited new work in a multisensory experience of food, art, and sound.',
       press: [
         {
           label: 'Whitewall',
@@ -276,7 +273,6 @@ export default function SingleProductPage() {
 
         <section className="section-shell about">
           <div className="section-header section-header--center section-header--spaced">
-            <h2 className="section-title text-center">OUR ETHOS</h2>
             <p className="section-lede text-center">
               MCLIV /ˌɛm siː ɛl ˈaɪ viː/ (Roman numeral: 1154) is a NYC based creative studio with a focus on functional art and multidisciplinary
               design. We produce limited-run capsule collections and experiential activations that
@@ -376,7 +372,7 @@ export default function SingleProductPage() {
             </div>
 
             <div className="product-copy">
-              <h1>{product.title}</h1>
+              <h1>MCLIV</h1>
               <div
                 className="description"
                 dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
