@@ -64,9 +64,10 @@ export default function SingleProductPage() {
   const activations = [
     {
       title: 'Chaises Musicales: Art Salon & Dinner',
+      shortTitle: 'Chaises Musicales',
       meta: 'Art Basel Paris 2025 · Curated by Vanessa Fuchs · Chef/Artist: John Black',
-      subtitle: 'DREAM Architects · Paris',
-      copy: 'Presented during Art Basel Paris 2025 by NYC Culture Club, MCLIV founder John Black helmed the kitchen and exhibited new work in a multisensory experience of food, art, and sound.',
+      subtitle: 'DREAM Architects · Paris · 10.25',
+      copy: 'Presented at Art Basel Paris 2025 by NYC Culture Club, MCLIV founder John Black helmed the kitchen and exhibited new work in a multisensory experience of cuisine, art, and sound.',
       press: [
         {
           label: 'Whitewall',
@@ -81,9 +82,10 @@ export default function SingleProductPage() {
     },
     {
       title: "APOC's US Debut · NOTHING Ear(3)",
+      shortTitle: "APOC's US Debut",
       meta: 'New York Fashion Week · Fall 2025',
-      subtitle: 'Earshot · New York City',
-      copy: 'Sculptural display system for the NOTHING Ear(3) launch at APOC’s first US pop-up during fall NYFW 2025.',
+      subtitle: 'Earshot · New York City · 09.25',
+      copy: 'Sculptural display system for the NOTHING Ear(3) launch at APOC’s first US pop-up during fall NYFW 2025 in collaboration with Adorno Design.',
       press: [
         {
           label: 'Office Mag',
@@ -98,9 +100,10 @@ export default function SingleProductPage() {
     },
     {
       title: 'The Art of Giving',
+      shortTitle: 'The Art of Giving',
       meta: 'Singapore · April 2025 · Peranakan Museum x Employees Only',
-      subtitle: 'Peranakan Museum · Singapore',
-      copy: 'A dialogue and private event in collaboration with Employees Only, with hors d’oeuvres by John Black, transforming the Peranakan Museum, Singapore into an intimate tasting and conversation on giving & philanthropy.',
+      subtitle: 'Peranakan Museum · Singapore · 04.25',
+      copy: 'A dialogue and private event in collaboration with Employees Only, with hors d’oeuvres by John Black, transforming the Peranakan Museum into an intimate tasting and conversation on giving & philanthropy.',
       pressTitle: 'Watch',
       press: [
         {
@@ -112,9 +115,10 @@ export default function SingleProductPage() {
     },
     {
       title: 'MCLIV In-Studio Dinner',
+      shortTitle: 'MCLIV In-Studio Dinner',
       meta: 'New York · January 2025 · WTC3 Residency',
-      subtitle: 'MCLIV Studio · New York City',
-      copy: 'We transformed the MCLIV work studio in WTC3 into a private fine-dining experience, pairing the viewing of in-progress works with a bespoke tasting menu.',
+      subtitle: 'MCLIV Studio · New York City · 01.25',
+      copy: 'We transformed our work studio in WTC3 into a private fine-dining experience, pairing the viewing of in-progress works with a bespoke tasting menu.',
       pressTitle: 'Watch',
       press: [
         {
@@ -126,9 +130,10 @@ export default function SingleProductPage() {
     },
     {
       title: 'Alternating Currents',
+      shortTitle: 'Alternating Currents',
       meta: 'Key West · April 2024 · Sanger Gallery',
-      subtitle: 'Sanger Gallery · Key West, FL',
-      copy: 'Invite-only art exhibition and private dinner @ Sanger Gallery in Key West where MCLIV founder John Black served as chef and solo artist, blending culinary courses with his studies in color and technique.',
+      subtitle: 'Sanger Gallery · Key West, FL · 04.24',
+      copy: 'Art exhibition and private dinner @ Sanger Gallery in Key West where MCLIV founder John Black served as chef and solo artist, blending culinary courses with his studies in color and technique.',
       press: [
         {
           label: 'TSKW',
@@ -318,7 +323,10 @@ export default function SingleProductPage() {
                     })()}
                     <div className="activation-overlay">
                       <div className="activation-overlay-text">
-                        <h3>{activation.title}</h3>
+                        <h3>
+                          <span className="title-desktop">{activation.title}</span>
+                          <span className="title-mobile">{activation.shortTitle ?? activation.title}</span>
+                        </h3>
                         {activation.subtitle && (
                           <p className="activation-subtitle">{activation.subtitle}</p>
                         )}
