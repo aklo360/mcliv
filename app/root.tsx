@@ -1,4 +1,5 @@
 import {Analytics, getShopAnalytics, useNonce} from '@shopify/hydrogen';
+import {useEffect} from 'react';
 import {
   Outlet,
   useRouteError,
@@ -9,6 +10,7 @@ import {
   Scripts,
   ScrollRestoration,
   useRouteLoaderData,
+  useLocation,
 } from 'react-router';
 import type {Route} from './+types/root';
 import favicon from '~/assets/favicon.svg';
@@ -178,6 +180,7 @@ export default function App() {
       <PageLayout {...data}>
         <Outlet />
       </PageLayout>
+      <HashScroller />
     </Analytics.Provider>
   );
 }
@@ -205,4 +208,39 @@ export function ErrorBoundary() {
       )}
     </div>
   );
+}
+
+function HashScroller() {
+  const {hash, key} = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const id = decodeURIComponent(hash.slice(1));
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+
+    let attempts = 0;
+    const maxAttempts = 20;
+
+    const scrollToHash = () => {
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          block: 'start',
+        });
+      }
+
+      attempts += 1;
+      if (attempts < maxAttempts) {
+        setTimeout(scrollToHash, 50);
+      }
+    };
+
+    scrollToHash();
+  }, [hash, key]);
+
+  return null;
 }
