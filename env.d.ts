@@ -5,14 +5,10 @@
 
 // Enhance TypeScript's built-in typings.
 import '@total-typescript/ts-reset';
+import type {HydrogenEnv} from '@shopify/hydrogen';
 
 declare global {
-  interface Env {
-    PUBLIC_STORE_DOMAIN: string;
-    PUBLIC_STOREFRONT_API_TOKEN: string;
-    PUBLIC_STOREFRONT_ID?: string;
-    PUBLIC_CHECKOUT_DOMAIN?: string;
+  interface Env extends HydrogenEnv {
     PRIMARY_PRODUCT_HANDLE?: string;
-    SESSION_SECRET: string;
   }
 }

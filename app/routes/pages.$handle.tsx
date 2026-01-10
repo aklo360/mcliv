@@ -3,9 +3,12 @@ import {
 } from 'react-router';
 import type {Route} from './+types/pages.$handle';
 import {redirectIfHandleIsLocalized} from '~/lib/redirect';
+import {buildMeta} from '~/lib/seo';
 
-export const meta: Route.MetaFunction = ({data}) => {
-  return [{title: `Hydrogen | ${data?.page.title ?? ''}`}];
+export const meta: Route.MetaFunction = ({data, location}) => {
+  const pageTitle = data?.page?.title;
+  const title = pageTitle ? `Hydrogen | ${pageTitle}` : 'Hydrogen | Page';
+  return buildMeta({title, pathname: location.pathname});
 };
 
 export async function loader(args: Route.LoaderArgs) {

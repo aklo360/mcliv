@@ -15,13 +15,16 @@ import {ProductPrice} from '~/components/ProductPrice';
 import {ProductImage} from '~/components/ProductImage';
 import {ProductForm} from '~/components/ProductForm';
 import {redirectIfHandleIsLocalized} from '~/lib/redirect';
+import {buildMeta} from '~/lib/seo';
 
-export const meta: Route.MetaFunction = ({data}) => {
+export const meta: Route.MetaFunction = ({data, location}) => {
+  const productTitle = data?.product?.title;
+  const title = productTitle ? `Hydrogen | ${productTitle}` : 'Hydrogen | Product';
   return [
-    {title: `Hydrogen | ${data?.product.title ?? ''}`},
+    ...buildMeta({title, pathname: location.pathname}),
     {
       rel: 'canonical',
-      href: `/products/${data?.product.handle}`,
+      href: `/products/${data?.product?.handle ?? ''}`,
     },
   ];
 };

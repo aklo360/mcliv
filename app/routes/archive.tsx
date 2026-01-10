@@ -2,14 +2,15 @@ import {useLoaderData} from 'react-router';
 import {Image, Money} from '@shopify/hydrogen';
 import type {Route} from './+types/archive';
 import {ContinueToCheckoutButton} from '~/components/ContinueToCheckoutButton';
+import {buildMeta} from '~/lib/seo';
 
 const DEFAULT_HANDLE = 'capsule-collection-001';
 
-export const meta: Route.MetaFunction = ({data}) => {
-  if (!data?.product) {
-    return [{title: 'MCLIV Studio · Legacy Layout'}];
-  }
-  return [{title: `${data.product.title} · Legacy · MCLIV Studio`}];
+export const meta: Route.MetaFunction = ({data, location}) => {
+  const title = data?.product?.title
+    ? `${data.product.title} · Legacy · MCLIV Studio`
+    : 'MCLIV Studio · Legacy Layout';
+  return buildMeta({title, pathname: location.pathname});
 };
 
 export async function loader({context}: Route.LoaderArgs) {

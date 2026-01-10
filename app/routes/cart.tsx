@@ -8,9 +8,10 @@ import type {Route} from './+types/cart';
 import type {CartQueryDataReturn} from '@shopify/hydrogen';
 import {CartForm} from '@shopify/hydrogen';
 import {CartMain} from '~/components/CartMain';
+import {buildMeta} from '~/lib/seo';
 
-export const meta: Route.MetaFunction = () => {
-  return [{title: `Hydrogen | Cart`}];
+export const meta: Route.MetaFunction = ({location}) => {
+  return buildMeta({title: 'Hydrogen | Cart', pathname: location.pathname});
 };
 
 export const headers: HeadersFunction = ({actionHeaders}) => actionHeaders;

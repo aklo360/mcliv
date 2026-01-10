@@ -20,7 +20,7 @@ export default function Sculpture() {
 
     let cancelled = false;
 
-    (async () => {
+    void (async () => {
       const THREE: typeof THREEType = await import('three');
       if (cancelled) return;
       const liveContainer = mountRef.current;

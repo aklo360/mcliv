@@ -7,9 +7,12 @@ import {Image, getPaginationVariables} from '@shopify/hydrogen';
 import type {ArticleItemFragment} from 'storefrontapi.generated';
 import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
 import {redirectIfHandleIsLocalized} from '~/lib/redirect';
+import {buildMeta} from '~/lib/seo';
 
-export const meta: Route.MetaFunction = ({data}) => {
-  return [{title: `Hydrogen | ${data?.blog.title ?? ''} blog`}];
+export const meta: Route.MetaFunction = ({data, location}) => {
+  const blogTitle = data?.blog?.title;
+  const title = blogTitle ? `Hydrogen | ${blogTitle} blog` : 'Hydrogen | Blog';
+  return buildMeta({title, pathname: location.pathname});
 };
 
 export async function loader(args: Route.LoaderArgs) {

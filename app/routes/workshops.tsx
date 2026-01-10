@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import {useLocation} from 'react-router';
 import type {Route} from './+types/workshops';
 import {ProductCarousel} from '~/components/ProductCarousel';
+import {buildMeta} from '~/lib/seo';
 
 const EMAIL = 'info@mcliv.studio';
 const bookingSubject = 'MCLIV Workshop + Studio Tour';
@@ -149,16 +150,11 @@ const workshopGalleryImages = [
   },
 ];
 
-export const meta: Route.MetaFunction = () => {
+export const meta: Route.MetaFunction = ({location}) => {
   const title = 'Workshops · MCLIV Studio';
   const description =
     'Guided multi-floor behind-the-scenes studio tour and hands-on art workshop hosted by founder John Black in NYC.';
-  return [
-    {title},
-    {name: 'description', content: description},
-    {property: 'og:title', content: title},
-    {property: 'og:description', content: description},
-  ];
+  return buildMeta({title, description, pathname: location.pathname});
 };
 
 export default function WorkshopsPage() {
@@ -201,7 +197,7 @@ export default function WorkshopsPage() {
             Guided multi-floor studio tour + hands-on art workshop.
           </h1>
           <p className="workshops-lede">
-            Step inside the WTC3 Art Studios for an intimate behind-the-scenes walk-through of three floors of artist workspaces where you'll see their process, materials, and works in progress. The session culminates in a guided hands-on painting workshop hosted by founder John Black, focused on stream of consciousness technique and creation as an act of mindfulness.
+            Step inside the WTC3 Art Studios for an intimate behind-the-scenes walk-through of three floors of artist workspaces where you&rsquo;ll see their process, materials, and works in progress. The session culminates in a guided hands-on painting workshop hosted by founder John Black, focused on stream of consciousness technique and creation as an act of mindfulness.
           </p>
           <div className="workshops-cta">
             <a className="primary" href={bookingLink}>
@@ -241,8 +237,8 @@ export default function WorkshopsPage() {
           <p className="eyebrow">Experience</p>
           <h2 className="section-title">What you will do</h2>
           <p className="section-lede">
-            The workshop is designed for any level of creative enthusiast even if you've never made art before. It's also designed for non-artists, collectors or virtually anyone who
-            wants to gain a deeper understanding of an artist's authentic process. Each session balances
+            The workshop is designed for any level of creative enthusiast even if you&rsquo;ve never made art before. It&rsquo;s also designed for non-artists, collectors or virtually anyone who
+            wants to gain a deeper understanding of an artist&rsquo;s authentic process. Each session balances
             studio immersion with focused time on actual painting on canvas.
           </p>
         </div>
@@ -250,7 +246,7 @@ export default function WorkshopsPage() {
           <article className="section-card">
             <h3>Studio tour</h3>
             <p>
-              Guided walk-through of the multi-floor workspace, where you'll be introduced to every Artist's work and their personal studio space.
+              Guided walk-through of the multi-floor workspace, where you&rsquo;ll be introduced to every Artist&rsquo;s work and their personal studio space.
             </p>
           </article>
           <article className="section-card">
