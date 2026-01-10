@@ -577,17 +577,19 @@ button.reset:hover:not(:has(> *)) {
 * --------------------------------------------------
 */
 .product-page {
+  --home-footer-height: 96px;
   min-height: 100vh;
   background: var(--color-light);
   color: var(--color-dark);
   display: grid;
   gap: 3.5rem;
-  padding: var(--header-height) 1.25rem 2.5rem;
+  padding: var(--header-height) 1.25rem calc(2.5rem + var(--home-footer-height));
   width: 100%;
   max-width: 100vw;
   margin: 0 auto;
   box-sizing: border-box;
   overflow-x: hidden;
+  position: relative;
 }
 
 .section-shell {
@@ -1061,6 +1063,7 @@ button.reset:hover:not(:has(> *)) {
     overflow-x: hidden;
     padding: 0;
     padding-top: var(--header-height);
+    padding-bottom: calc(2.5rem + var(--home-footer-height));
     margin: 0 auto;
   }
 
@@ -1203,18 +1206,21 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .home-footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
   margin: 0;
-  display: block;
-  height: 64px;
-  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1.25rem 1.25rem;
   background: #fff;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  z-index: 2;
+  text-align: center;
+  min-height: var(--home-footer-height);
 }
 
 .home-footer-line {
@@ -1226,29 +1232,38 @@ button.reset:hover:not(:has(> *)) {
   line-height: 1;
 }
 
-.home-footer-divider {
-  width: 1px;
-  height: 16px;
-  background: rgba(0, 0, 0, 0.2);
-  display: inline-block;
+@media (max-width: 640px) {
+  .product-page {
+    --home-footer-height: 120px;
+  }
+
+  .home-footer-line {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+  }
+
+  .home-footer-socials .social-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .home-footer-socials .social-icon {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .home-footer-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  white-space: nowrap;
+  justify-content: center;
+  gap: 0.5rem 0.8rem;
+  flex-wrap: wrap;
 }
 
 .home-footer-socials {
-  position: absolute;
-  top: calc(50% + 2px);
-  left: 1.5rem;
-  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
 }
 
 .home-footer-socials .social-list {

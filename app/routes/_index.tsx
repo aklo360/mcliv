@@ -622,7 +622,6 @@ export default function SingleProductPage() {
           />
           <div className="home-footer-center">
             <p className="home-footer-line">© 2026 MCLIV STUDIO</p>
-            <span className="home-footer-divider" aria-hidden />
             <p className="home-footer-line">3 World Trade Center, New York NY 10007</p>
           </div>
         </footer>
