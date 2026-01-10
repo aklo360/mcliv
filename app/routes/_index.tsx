@@ -6,8 +6,143 @@ import { Image as HydrogenImage, Money } from '@shopify/hydrogen';
 import { ProductCarousel } from '~/components/ProductCarousel';
 import { ContinueToCheckoutButton } from '~/components/ContinueToCheckoutButton';
 import Sculpture from '~/components/Sculpture';
+import { SocialLinks } from '~/components/SocialLinks';
 
 const DEFAULT_HANDLE = 'capsule-collection-001';
+const WORKSHOP_EMAIL = 'info@mcliv.studio';
+const WORKSHOP_SUBJECT = 'MCLIV Workshop + Studio Tour';
+const WORKSHOP_BODY = [
+  'Name:',
+  'Preferred dates:',
+  'Group size:',
+  'Workshop focus:',
+  'Accessibility needs:',
+].join('\n');
+const WORKSHOP_BOOKING_LINK = `mailto:${WORKSHOP_EMAIL}?subject=${encodeURIComponent(
+  WORKSHOP_SUBJECT,
+)}&body=${encodeURIComponent(WORKSHOP_BODY)}`;
+const WORKSHOP_IMAGE = '/images/workshops/studiotour1.jpg';
+const WORKSHOP_GALLERY_IMAGES = [
+  {
+    id: 'workshops-02',
+    url: '/images/workshops/studiotour2.jpg',
+    altText: 'Studio tour gallery image one',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-03',
+    url: '/images/workshops/studiotour3.jpg',
+    altText: 'Studio tour gallery image two',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-04',
+    url: '/images/workshops/studiotour4.jpg',
+    altText: 'Studio tour gallery image three',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-05',
+    url: '/images/workshops/studiotour5.jpg',
+    altText: 'Studio tour gallery image four',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-06',
+    url: '/images/workshops/studiotour6.jpg',
+    altText: 'Studio tour gallery image five',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-07',
+    url: '/images/workshops/studiotour7.jpg',
+    altText: 'Studio tour gallery image six',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-08',
+    url: '/images/workshops/studiotour8.jpg',
+    altText: 'Studio tour gallery image seven',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-09',
+    url: '/images/workshops/studiotour9.jpg',
+    altText: 'Studio tour gallery image eight',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-10',
+    url: '/images/workshops/studiotour10.jpg',
+    altText: 'Studio tour gallery image nine',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-11',
+    url: '/images/workshops/studiotour11.jpg',
+    altText: 'Studio tour gallery image ten',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-12',
+    url: '/images/workshops/studiotour12.jpg',
+    altText: 'Studio tour gallery image eleven',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-13',
+    url: '/images/workshops/studiotour13.jpg',
+    altText: 'Studio tour gallery image twelve',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-14',
+    url: '/images/workshops/studiotour14.jpg',
+    altText: 'Studio tour gallery image thirteen',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-15',
+    url: '/images/workshops/studiotour15.jpg',
+    altText: 'Studio tour gallery image fourteen',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-16',
+    url: '/images/workshops/studiotour16.jpg',
+    altText: 'Studio tour gallery image fifteen',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-17',
+    url: '/images/workshops/studiotour17.jpg',
+    altText: 'Studio tour gallery image sixteen',
+    width: 2400,
+    height: 1350,
+  },
+  {
+    id: 'workshops-18',
+    url: '/images/workshops/studiotour18.jpg',
+    altText: 'Studio tour gallery image seventeen',
+    width: 2400,
+    height: 1350,
+  },
+];
 
 export const meta: Route.MetaFunction = ({ data }) => {
   return [{ title: 'MCLIV Studio' }];
@@ -292,6 +427,48 @@ export default function SingleProductPage() {
           </div>
         </section>
 
+        <section className="section-shell tours-workshops">
+          <div className="section-header section-header--center">
+            <h2 className="section-title text-center">TOURS &amp; WORKSHOPS</h2>
+          </div>
+          <div className="workshops-hero workshops-hero--inline">
+            <div className="workshops-hero-copy">
+              <p className="eyebrow">Workshops</p>
+              <h2 className="workshops-title">
+                Guided multi-floor studio tour + hands-on art workshop.
+              </h2>
+              <p className="workshops-lede">
+                Step inside the WTC3 Art Studios for an intimate behind-the-scenes walk-through of three floors of artist workspaces where you'll see their process, materials, and works in progress. The session culminates in a guided hands-on painting workshop hosted by founder John Black, focused on stream of consciousness technique and creation as an act of mindfulness.
+              </p>
+              <div className="workshops-cta">
+                <a className="primary" href="/workshops#details">
+                  View details
+                </a>
+              </div>
+              <div className="workshops-hero-meta">
+                <span className="meta">3 WORLD TRADE CENTER</span>
+                <span className="meta">2 HOURS</span>
+                <span className="meta">10 GUESTS</span>
+              </div>
+            </div>
+            <div className="workshops-hero-media">
+              <a className="workshops-hero-image" href="/workshops#details">
+                <img
+                  src={WORKSHOP_IMAGE}
+                  alt="MCLIV studio tour"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          </div>
+          <ProductCarousel
+            images={WORKSHOP_GALLERY_IMAGES}
+            title="MCLIV Studio Tour Gallery"
+            sizes="(min-width: 1200px) 1200px, 92vw"
+            className="workshops-gallery workshops-gallery--home"
+          />
+        </section>
+
         <section className="section-shell activations">
           <div className="section-header section-header--center">
             <h2 className="section-title text-center">ACTIVATIONS</h2>
@@ -438,6 +615,17 @@ export default function SingleProductPage() {
             </a>
           </div>
         </section>
+        <footer className="home-footer">
+          <SocialLinks
+            className="home-footer-socials"
+            items={['instagram', 'tiktok', 'email']}
+          />
+          <div className="home-footer-center">
+            <p className="home-footer-line">© 2026 MCLIV STUDIO</p>
+            <span className="home-footer-divider" aria-hidden />
+            <p className="home-footer-line">3 World Trade Center, New York NY 10007</p>
+          </div>
+        </footer>
       </main>
     </>
   );

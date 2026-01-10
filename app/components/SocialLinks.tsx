@@ -4,74 +4,75 @@ import {FiMail} from 'react-icons/fi';
 
 type Props = {
   className?: string;
+  items?: Array<'email' | 'instagram' | 'youtube' | 'twitter' | 'tiktok'>;
 };
 
-export function SocialLinks({className = ''}: Props) {
+export function SocialLinks({className = '', items}: Props) {
   const c = `${className}`.trim();
   const emailAddress = SOCIAL.email.replace(/^mailto:/, '');
+  const entries = [
+    {
+      id: 'email',
+      href: SOCIAL.email,
+      label: 'Email',
+      title: emailAddress,
+      icon: <FiMail size={18} aria-hidden />,
+      external: false,
+    },
+    {
+      id: 'instagram',
+      href: SOCIAL.instagram,
+      label: 'Instagram',
+      icon: <BrandIcon path={siInstagram.path} />,
+      external: true,
+    },
+    {
+      id: 'youtube',
+      href: SOCIAL.youtube,
+      label: 'YouTube',
+      icon: <BrandIcon path={siYoutube.path} />,
+      external: true,
+    },
+    {
+      id: 'twitter',
+      href: SOCIAL.twitter,
+      label: 'X',
+      icon: <BrandIcon path={siX.path} />,
+      external: true,
+    },
+    {
+      id: 'tiktok',
+      href: SOCIAL.tiktok,
+      label: 'TikTok',
+      icon: <BrandIcon path={siTiktok.path} />,
+      external: true,
+    },
+  ] as const;
+  const selection = items
+    ? items
+        .map((id) => entries.find((entry) => entry.id === id))
+        .filter((entry): entry is (typeof entries)[number] => Boolean(entry))
+    : entries;
   return (
     <div className={c}>
       <nav aria-label="Social and contact">
         <ul className="social-list">
-          <li>
-            <a
-              href={SOCIAL.email}
-              title={emailAddress}
-              aria-label="Email"
-              className="social-link"
-            >
-              <FiMail size={18} aria-hidden />
-              <span className="sr-only">Email</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href={SOCIAL.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="social-link"
-            >
-              <BrandIcon path={siInstagram.path} />
-              <span className="sr-only">Instagram</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href={SOCIAL.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              className="social-link"
-            >
-              <BrandIcon path={siYoutube.path} />
-              <span className="sr-only">YouTube</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href={SOCIAL.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X"
-              className="social-link"
-            >
-              <BrandIcon path={siX.path} />
-              <span className="sr-only">X</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href={SOCIAL.tiktok}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
-              className="social-link"
-            >
-              <BrandIcon path={siTiktok.path} />
-              <span className="sr-only">TikTok</span>
-            </a>
-          </li>
+          {selection.map((entry) => (
+            <li key={entry.id}>
+              <a
+                href={entry.href}
+                title={entry.title}
+                aria-label={entry.label}
+                className="social-link"
+                {...(entry.external
+                  ? {target: '_blank', rel: 'noopener noreferrer'}
+                  : {})}
+              >
+                {entry.icon}
+                <span className="sr-only">{entry.label}</span>
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

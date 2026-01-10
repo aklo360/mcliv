@@ -14,9 +14,13 @@ type CarouselImage = {
 export function ProductCarousel({
   images,
   title,
+  sizes = '(min-width: 960px) 50vw, 90vw',
+  className,
 }: {
   images: CarouselImage[];
   title: string;
+  sizes?: string;
+  className?: string;
 }) {
   const safeImages = useMemo(
     () => images.filter((img) => !!img?.url),
@@ -43,11 +47,11 @@ export function ProductCarousel({
   };
 
   return (
-    <div className="product-carousel">
+    <div className={['product-carousel', className].filter(Boolean).join(' ')}>
       <div className="carousel-frame" style={{aspectRatio}}>
         <Image
           data={current}
-          sizes="(min-width: 960px) 50vw, 90vw"
+          sizes={sizes}
           className="carousel-image"
         />
         {safeImages.length > 1 ? (
