@@ -6,9 +6,12 @@ import type {
   OrderQuery,
 } from 'customer-accountapi.generated';
 import {CUSTOMER_ORDER_QUERY} from '~/graphql/customer-account/CustomerOrderQuery';
+import {buildMeta} from '~/lib/seo';
 
-export const meta: Route.MetaFunction = ({data}) => {
-  return [{title: `Order ${data?.order?.name}`}];
+export const meta: Route.MetaFunction = ({data, location}) => {
+  const orderName = data?.order?.name;
+  const title = orderName ? `Order ${orderName}` : 'Order';
+  return buildMeta({title, pathname: location.pathname});
 };
 
 export async function loader({params, context}: Route.LoaderArgs) {

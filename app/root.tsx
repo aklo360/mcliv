@@ -15,11 +15,16 @@ import {
 import type {Route} from './+types/root';
 import favicon from '~/assets/favicon.svg';
 import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
+import {buildMeta} from '~/lib/seo';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import {PageLayout} from './components/PageLayout';
 
 export type RootLoader = typeof loader;
+
+export const meta: Route.MetaFunction = ({location}) => {
+  return buildMeta({pathname: location.pathname});
+};
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations

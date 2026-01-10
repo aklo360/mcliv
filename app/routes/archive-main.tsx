@@ -1,5 +1,7 @@
 import {Image} from '@shopify/hydrogen';
 import Sculpture from '~/components/Sculpture';
+import type {Route} from './+types/archive-main';
+import {buildMeta} from '~/lib/seo';
 
 const releases = [
   {title: 'Studio Cap', status: 'Available', edition: 'No. 001', image: '/images/releases/hat1.png'},
@@ -19,9 +21,12 @@ const multimedia = [
   {title: 'Motion Edit', category: 'Video', image: '/images/multimedia/campaign1.png'},
 ];
 
-export const meta = () => [
-  {title: 'MCLIV Studio · Legacy Layout'},
-];
+export const meta: Route.MetaFunction = ({location}) => {
+  return buildMeta({
+    title: 'MCLIV Studio · Legacy Layout',
+    pathname: location.pathname,
+  });
+};
 
 export default function ArchiveMain() {
   return (

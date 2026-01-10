@@ -7,6 +7,7 @@ import { ProductCarousel } from '~/components/ProductCarousel';
 import { ContinueToCheckoutButton } from '~/components/ContinueToCheckoutButton';
 import Sculpture from '~/components/Sculpture';
 import { SocialLinks } from '~/components/SocialLinks';
+import { buildMeta } from '~/lib/seo';
 
 const DEFAULT_HANDLE = 'capsule-collection-001';
 const WORKSHOP_EMAIL = 'info@mcliv.studio';
@@ -144,8 +145,11 @@ const WORKSHOP_GALLERY_IMAGES = [
   },
 ];
 
-export const meta: Route.MetaFunction = ({ data }) => {
-  return [{ title: 'MCLIV Studio' }];
+export const meta: Route.MetaFunction = ({ location }) => {
+  const title = 'MCLIV Studio';
+  const description =
+    'MCLIV Studio is a NYC based creative studio creating limited-run capsule collections and experiential activations that elevate signal from the noise.';
+  return buildMeta({ title, description, pathname: location.pathname });
 };
 
 export async function loader({ context }: Route.LoaderArgs) {
@@ -438,7 +442,7 @@ export default function SingleProductPage() {
                 Guided multi-floor studio tour + hands-on art workshop.
               </h2>
               <p className="workshops-lede">
-                Step inside the WTC3 Art Studios for an intimate behind-the-scenes walk-through of three floors of artist workspaces where you'll see their process, materials, and works in progress. The session culminates in a guided hands-on painting workshop hosted by founder John Black, focused on stream of consciousness technique and creation as an act of mindfulness.
+                Step inside the WTC3 Art Studios for an intimate behind-the-scenes walk-through of three floors of artist workspaces where you&rsquo;ll see their process, materials, and works in progress. The session culminates in a guided hands-on painting workshop hosted by founder John Black, focused on stream of consciousness technique and creation as an act of mindfulness.
               </p>
               <div className="workshops-cta">
                 <a className="primary" href="/workshops#details">

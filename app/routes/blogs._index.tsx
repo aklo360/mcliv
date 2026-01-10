@@ -6,11 +6,12 @@ import type {Route} from './+types/blogs._index';
 import {getPaginationVariables} from '@shopify/hydrogen';
 import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
 import type {BlogsQuery} from 'storefrontapi.generated';
+import {buildMeta} from '~/lib/seo';
 
 type BlogNode = BlogsQuery['blogs']['nodes'][0];
 
-export const meta: Route.MetaFunction = () => {
-  return [{title: `Hydrogen | Blogs`}];
+export const meta: Route.MetaFunction = ({location}) => {
+  return buildMeta({title: 'Hydrogen | Blogs', pathname: location.pathname});
 };
 
 export async function loader(args: Route.LoaderArgs) {

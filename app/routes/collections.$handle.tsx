@@ -5,9 +5,14 @@ import {PaginatedResourceSection} from '~/components/PaginatedResourceSection';
 import {redirectIfHandleIsLocalized} from '~/lib/redirect';
 import {ProductItem} from '~/components/ProductItem';
 import type {ProductItemFragment} from 'storefrontapi.generated';
+import {buildMeta} from '~/lib/seo';
 
-export const meta: Route.MetaFunction = ({data}) => {
-  return [{title: `Hydrogen | ${data?.collection.title ?? ''} Collection`}];
+export const meta: Route.MetaFunction = ({data, location}) => {
+  const collectionTitle = data?.collection?.title;
+  const title = collectionTitle
+    ? `Hydrogen | ${collectionTitle} Collection`
+    : 'Hydrogen | Collection';
+  return buildMeta({title, pathname: location.pathname});
 };
 
 export async function loader(args: Route.LoaderArgs) {

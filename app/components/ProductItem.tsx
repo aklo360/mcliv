@@ -3,7 +3,6 @@ import {Image, Money} from '@shopify/hydrogen';
 import type {
   ProductItemFragment,
   CollectionItemFragment,
-  RecommendedProductFragment,
 } from 'storefrontapi.generated';
 import {useVariantUrl} from '~/lib/variants';
 
@@ -13,8 +12,7 @@ export function ProductItem({
 }: {
   product:
     | CollectionItemFragment
-    | ProductItemFragment
-    | RecommendedProductFragment;
+    | ProductItemFragment;
   loading?: 'eager' | 'lazy';
 }) {
   const variantUrl = useVariantUrl(product.handle);

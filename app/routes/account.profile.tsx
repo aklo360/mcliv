@@ -9,14 +9,15 @@ import {
   useOutletContext,
 } from 'react-router';
 import type {Route} from './+types/account.profile';
+import {buildMeta} from '~/lib/seo';
 
 export type ActionResponse = {
   error: string | null;
   customer: CustomerFragment | null;
 };
 
-export const meta: Route.MetaFunction = () => {
-  return [{title: 'Profile'}];
+export const meta: Route.MetaFunction = ({location}) => {
+  return buildMeta({title: 'Profile', pathname: location.pathname});
 };
 
 export async function loader({context}: Route.LoaderArgs) {
