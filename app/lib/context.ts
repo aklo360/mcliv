@@ -19,7 +19,7 @@ declare global {
 }
 
 /**
- * Creates Hydrogen context for React Router 7.9.x
+ * Creates Hydrogen context for React Router 7.12.x
  * Returns HydrogenRouterContextProvider with hybrid access patterns
  * */
 export async function createHydrogenRouterContext(

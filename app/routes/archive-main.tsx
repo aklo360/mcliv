@@ -39,8 +39,8 @@ export default function ArchiveMain() {
           <p className="eyebrow">MCLIV / 1154</p>
           <h1 className="legacy-title">Functional art, frequency-led experiences.</h1>
           <p className="legacy-lede">
-            Limited-run capsules and experiential activations that elevate signal from the noise.
-            Built in NYC; inspired by wind, water, and architectural calm.
+            Creative studio at the intersection of functional art and cuisine.
+            Built in NYC through objects, dinners, and cultural environments.
           </p>
           <div className="legacy-cta-row">
             <a className="primary" href="#releases">

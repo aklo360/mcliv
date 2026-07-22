@@ -30,7 +30,7 @@ Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dov
 PUBLIC_STORE_DOMAIN=studiomcliv.myshopify.com
 PUBLIC_STOREFRONT_API_TOKEN=<storefront access token with read_products/listings>
 PUBLIC_CHECKOUT_DOMAIN=studiomcliv.myshopify.com
-PRIMARY_PRODUCT_HANDLE=capsule-collection-001
+PRIMARY_PRODUCT_HANDLE=studio-hat
 SESSION_SECRET=<random string>
 ```
 

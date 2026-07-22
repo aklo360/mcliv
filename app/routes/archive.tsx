@@ -4,7 +4,7 @@ import type {Route} from './+types/archive';
 import {ContinueToCheckoutButton} from '~/components/ContinueToCheckoutButton';
 import {buildMeta} from '~/lib/seo';
 
-const DEFAULT_HANDLE = 'capsule-collection-001';
+const DEFAULT_HANDLE = 'studio-hat';
 
 export const meta: Route.MetaFunction = ({data, location}) => {
   const title = data?.product?.title

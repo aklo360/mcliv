@@ -2,7 +2,7 @@ export const SITE_URL = 'https://mcliv.studio';
 export const OG_IMAGE = `${SITE_URL}/images/og/cover.jpg`;
 export const DEFAULT_TITLE = 'MCLIV Studio';
 export const DEFAULT_DESCRIPTION =
-  'MCLIV Studio is a NYC based creative studio creating limited-run capsule collections and experiential activations that elevate signal from the noise.';
+  'Creative studio at the intersection of functional art and cuisine.';
 
 type BuildMetaArgs = {
   title?: string;

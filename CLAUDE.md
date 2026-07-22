@@ -3,11 +3,11 @@
 ## About the Business
 
 **MCLIV Studio** (`mcliv.studio`) is a NYC-based multidisciplinary creative studio founded by John Black. The name is the Roman numeral for 1154. Based at 3 World Trade Center, New York NY 10007.
+**Logline:** Creative studio at the intersection of functional art & cuisine.
 
 **What they do:**
-- **Limited-run capsule collections** — physical art/design products sold via Shopify (primary product: `capsule-collection-001`)
-- **Experiential activations** — curated art salons, private fine-dining events, and gallery exhibitions (Art Basel Paris, NYFW, Singapore, Key West)
-- **Studio workshops** — guided WTC3 Art Studios tours + hands-on painting workshops hosted by John Black (stream of consciousness technique, mindfulness focus; 2hr, max 10 guests)
+- **Limited-run capsule collections** — physical art/design products sold via Shopify (primary product: `studio-hat`)
+- **Cuisine-led activations** — art salons, private fine-dining events, product environments, and gallery exhibitions (Art Basel Paris, NYFW, Singapore, Key West)
 - **Creative services** — brand identity, web/digital, photo/video, experiential design for clients
 
 **Tone:** High-design, editorial, art-world. Not a typical e-commerce shop — product is secondary to studio identity and cultural programming.
@@ -38,15 +38,18 @@ npm run codegen    # regenerate GraphQL types + React Router types (run after mo
 File-based routing in `app/routes/` following React Router v7 conventions. Path alias `~/*` → `app/*`.
 
 ### Homepage (`_index.tsx`)
-Single-page-style layout with sequential sections:
-1. **Hero gate** — fullscreen video (`/mcliv-bg.webm`) with animated logo, mute toggle, ENTER button
-2. **Sculpture** — three.js 3D element (`app/components/Sculpture.tsx`)
-3. **About** — studio lede copy
-4. **Tours & Workshops** — inline hero + gallery carousel linking to `/workshops`
-5. **Activations** — slideshow carousel of past events (Art Basel Paris, NYFW, Singapore, Key West, etc.)
-6. **Releases** — primary product (`capsule-collection-001`) with image carousel + checkout button
-7. **Creative** — services overview + email CTA
-8. **Footer** — social links + copyright
+Studio landing page with sequential sections:
+1. **Sculpture** — three.js 3D element (`app/components/Sculpture.tsx`)
+2. **About** — logline: "Creative studio at the intersection of functional art & cuisine."
+3. **Activations** — slideshow carousel linking to individual activation pages
+4. **Releases** — primary product (`studio-hat`) with image carousel + checkout button
+5. **Creative** — services overview + email CTA
+6. **Footer** — social links + copyright
+
+### Activation Pages
+- Shared activation data lives in `app/lib/activations.ts`.
+- `/activations` renders the activation index.
+- `/activations/:slug` renders a project detail page with copy, press links, and image/video gallery.
 
 ### Data Fetching
 Route `loader()` functions fetch from Shopify Storefront API:
@@ -57,7 +60,7 @@ export async function loader({ context }: LoaderFunctionArgs) {
 ```
 Root loader (`root.tsx`) loads nav menus and defers cart/footer. `shouldRevalidate` prevents unnecessary refetches.
 
-Primary product handle is set via `context.env.PRIMARY_PRODUCT_HANDLE` (defaults to `capsule-collection-001`).
+Primary product handle is set via `context.env.PRIMARY_PRODUCT_HANDLE` (defaults to `studio-hat`).
 
 ### GraphQL
 - Fragments centralized in `app/lib/fragments.ts`
@@ -75,7 +78,7 @@ Plain CSS with CSS variables in `app/styles/app.css`. No Tailwind in practice de
 
 ### Notable Components
 - `app/components/Sculpture.tsx` — three.js 3D homepage element
-- `app/components/ProductCarousel.tsx` — image carousel used for product images and workshop gallery
+- `app/components/ProductCarousel.tsx` — image carousel used for product images
 - `app/components/ContinueToCheckoutButton.tsx` — direct-to-checkout Shopify button
 - `app/components/SocialLinks.tsx` — social icons (instagram, tiktok, email)
 

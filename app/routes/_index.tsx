@@ -1,636 +1,215 @@
-import { useEffect, useRef, useState } from 'react';
-import { useLoaderData } from 'react-router';
-import { FiVolume2, FiVolumeX } from 'react-icons/fi';
-import type { Route } from './+types/_index';
-import { Image as HydrogenImage, Money } from '@shopify/hydrogen';
-import { ProductCarousel } from '~/components/ProductCarousel';
-import { ContinueToCheckoutButton } from '~/components/ContinueToCheckoutButton';
-import Sculpture from '~/components/Sculpture';
-import { SocialLinks } from '~/components/SocialLinks';
-import { buildMeta } from '~/lib/seo';
+import {useEffect, useState} from 'react';
+import {Link, useLoaderData} from 'react-router';
+import type {Route} from './+types/_index';
+import {Money} from '@shopify/hydrogen';
+import {ProductCarousel} from '~/components/ProductCarousel';
+import {ContinueToCheckoutButton} from '~/components/ContinueToCheckoutButton';
+import {EVENTS} from '~/lib/activations';
+import {buildMeta} from '~/lib/seo';
 
-const DEFAULT_HANDLE = 'capsule-collection-001';
-const WORKSHOP_EMAIL = 'info@mcliv.studio';
-const WORKSHOP_SUBJECT = 'MCLIV Workshop + Studio Tour';
-const WORKSHOP_BODY = [
-  'Name:',
-  'Preferred dates:',
-  'Group size:',
-  'Workshop focus:',
-  'Accessibility needs:',
-].join('\n');
-const WORKSHOP_BOOKING_LINK = `mailto:${WORKSHOP_EMAIL}?subject=${encodeURIComponent(
-  WORKSHOP_SUBJECT,
-)}&body=${encodeURIComponent(WORKSHOP_BODY)}`;
-const WORKSHOP_IMAGE = '/images/workshops/studiotour1.jpg';
-const WORKSHOP_GALLERY_IMAGES = [
-  {
-    id: 'workshops-02',
-    url: '/images/workshops/studiotour2.jpg',
-    altText: 'Studio tour gallery image one',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-03',
-    url: '/images/workshops/studiotour3.jpg',
-    altText: 'Studio tour gallery image two',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-04',
-    url: '/images/workshops/studiotour4.jpg',
-    altText: 'Studio tour gallery image three',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-05',
-    url: '/images/workshops/studiotour5.jpg',
-    altText: 'Studio tour gallery image four',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-06',
-    url: '/images/workshops/studiotour6.jpg',
-    altText: 'Studio tour gallery image five',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-07',
-    url: '/images/workshops/studiotour7.jpg',
-    altText: 'Studio tour gallery image six',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-08',
-    url: '/images/workshops/studiotour8.jpg',
-    altText: 'Studio tour gallery image seven',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-09',
-    url: '/images/workshops/studiotour9.jpg',
-    altText: 'Studio tour gallery image eight',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-10',
-    url: '/images/workshops/studiotour10.jpg',
-    altText: 'Studio tour gallery image nine',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-11',
-    url: '/images/workshops/studiotour11.jpg',
-    altText: 'Studio tour gallery image ten',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-12',
-    url: '/images/workshops/studiotour12.jpg',
-    altText: 'Studio tour gallery image eleven',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-13',
-    url: '/images/workshops/studiotour13.jpg',
-    altText: 'Studio tour gallery image twelve',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-14',
-    url: '/images/workshops/studiotour14.jpg',
-    altText: 'Studio tour gallery image thirteen',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-15',
-    url: '/images/workshops/studiotour15.jpg',
-    altText: 'Studio tour gallery image fourteen',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-16',
-    url: '/images/workshops/studiotour16.jpg',
-    altText: 'Studio tour gallery image fifteen',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-17',
-    url: '/images/workshops/studiotour17.jpg',
-    altText: 'Studio tour gallery image sixteen',
-    width: 2400,
-    height: 1350,
-  },
-  {
-    id: 'workshops-18',
-    url: '/images/workshops/studiotour18.jpg',
-    altText: 'Studio tour gallery image seventeen',
-    width: 2400,
-    height: 1350,
-  },
-];
+const DEFAULT_HANDLE = 'studio-hat';
+const HERO = EVENTS.slice(0, 5);
 
-export const meta: Route.MetaFunction = ({ location }) => {
-  const title = 'MCLIV Studio';
-  const description =
-    'MCLIV Studio is a NYC based creative studio creating limited-run capsule collections and experiential activations that elevate signal from the noise.';
-  return buildMeta({ title, description, pathname: location.pathname });
+export const meta: Route.MetaFunction = ({location}) => {
+  return buildMeta({
+    title: 'MCLIV Studio',
+    description:
+      'Creative studio at the intersection of functional art and cuisine. New York.',
+    pathname: location.pathname,
+  });
 };
 
-export async function loader({ context }: Route.LoaderArgs) {
+export async function loader({context}: Route.LoaderArgs) {
   const handle = context.env.PRIMARY_PRODUCT_HANDLE || DEFAULT_HANDLE;
-
   try {
     const data = await context.storefront.query(PRODUCT_BY_HANDLE_QUERY, {
-      variables: { handle },
+      variables: {handle},
     });
-
-    return {
-      product: data.product,
-      handle,
-      storeDomain: context.env.PUBLIC_STORE_DOMAIN,
-    };
+    return {product: data.product, handle, storeDomain: context.env.PUBLIC_STORE_DOMAIN};
   } catch (error) {
     console.error(error);
-    return {
-      product: null,
-      handle,
-      storeDomain: context.env.PUBLIC_STORE_DOMAIN,
-    };
+    return {product: null, handle, storeDomain: context.env.PUBLIC_STORE_DOMAIN};
   }
 }
 
-export default function SingleProductPage() {
-  const { product, handle, storeDomain } = useLoaderData<typeof loader>();
-  const [gateDismissed, setGateDismissed] = useState(false);
-  const [reduceMotion, setReduceMotion] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const [isChromeIOS, setIsChromeIOS] = useState(false);
-  const [activationIndex, setActivationIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const contentRef = useRef<HTMLDivElement | null>(null);
+export default function HomePage() {
+  const {product, handle, storeDomain} = useLoaderData<typeof loader>();
+  const [hero, setHero] = useState(0);
+
+  useEffect(() => {
+    if (HERO.length < 2) return;
+    const id = setInterval(() => setHero((h) => (h + 1) % HERO.length), 5500);
+    return () => clearInterval(id);
+  }, []);
+
   const variant = product?.variants?.nodes?.[0];
-  const images = product?.images?.nodes ?? [];
-  const carouselImages = images
+  const productImages = product?.images?.nodes ?? [];
+  const images = productImages
     .filter((img) => !!img?.url)
     .map((img, idx) => ({
-      id: img.id ?? `image-${idx}-${img.url}`,
+      id: img.id ?? `image-${idx}`,
       url: img.url,
       altText: img.altText ?? null,
       width: img.width ?? undefined,
       height: img.height ?? undefined,
     }));
-  const pressItems = [
-    { label: 'Design Week', copy: 'Frequency as form, built for presence.' },
-    { label: 'Surface', copy: 'Architectural calm for the senses.' },
-    { label: 'Hypebeast', copy: '1154 capsule series redefining drops.' },
-  ];
-  const activations = [
-    {
-      title: 'Chaises Musicales: Art Salon & Dinner',
-      shortTitle: 'Chaises Musicales',
-      meta: 'Art Basel Paris 2025 · Curated by Vanessa Fuchs · Chef/Artist: John Black',
-      subtitle: 'DREAM Architects · Paris · 10.25',
-      copy: 'Presented at Art Basel Paris 2025 by NYC Culture Club, MCLIV founder John Black helmed the kitchen and exhibited new work in a multisensory experience of cuisine, art, and sound.',
-      press: [
-        {
-          label: 'Whitewall',
-          url: 'https://whitewall.art/lifestyle/paris-fete-inside-the-most-exclusive-events-of-art-basel-paris-week/',
-        },
-        {
-          label: 'Vogue Italia',
-          url: 'https://www.vogue.it/article/art-basel-paris-2025-installazioni-piu-incredibili',
-        },
-      ],
-      image: '/images/activations/cm1.jpeg',
-    },
-    {
-      title: "APOC's US Debut · NOTHING Ear(3)",
-      shortTitle: "APOC's US Debut",
-      meta: 'New York Fashion Week · Fall 2025',
-      subtitle: 'Earshot · New York City · 09.25',
-      copy: 'Sculptural display system for the NOTHING Ear(3) launch at APOC’s first US pop-up during fall NYFW 2025 in collaboration with Adorno Design.',
-      press: [
-        {
-          label: 'Office Mag',
-          url: 'https://officemagazine.net/apocs-us-debut',
-        },
-        {
-          label: 'Dazed',
-          url: 'https://www.dazeddigital.com/fashion/article/68721/1/apoc-londons-coolest-online-concept-store-has-come-to-new-york-nothing-adorno',
-        },
-      ],
-      image: '/images/activations/apoc1.jpeg',
-    },
-    {
-      title: 'The Art of Giving',
-      shortTitle: 'The Art of Giving',
-      meta: 'Singapore · April 2025 · Peranakan Museum x Employees Only',
-      subtitle: 'Peranakan Museum · Singapore · 04.25',
-      copy: 'A dialogue and private event in collaboration with Employees Only, with hors d’oeuvres by John Black, transforming the Peranakan Museum into an intimate tasting and conversation on giving & philanthropy.',
-      pressTitle: 'Watch',
-      press: [
-        {
-          label: 'Recap',
-          url: 'https://www.instagram.com/p/DH_o3DsyiF2/?img_index=1&igsh=MTg0MG1taDF3aHFpbA==',
-        },
-      ],
-      image: '/images/activations/aog1.jpeg',
-    },
-    {
-      title: 'MCLIV In-Studio Dinner',
-      shortTitle: 'MCLIV In-Studio Dinner',
-      meta: 'New York · January 2025 · WTC3 Residency',
-      subtitle: 'MCLIV Studio · New York City · 01.25',
-      copy: 'We transformed our work studio in WTC3 into a private fine-dining experience, pairing the viewing of in-progress works with a bespoke tasting menu.',
-      pressTitle: 'Watch',
-      press: [
-        {
-          label: 'Recap',
-          url: '/images/activations/instudio.webm',
-        },
-      ],
-      image: '/images/activations/instudio1.jpeg',
-    },
-    {
-      title: 'Alternating Currents',
-      shortTitle: 'Alternating Currents',
-      meta: 'Key West · April 2024 · Sanger Gallery',
-      subtitle: 'Sanger Gallery · Key West, FL · 04.24',
-      copy: 'Art exhibition and private dinner @ Sanger Gallery in Key West where MCLIV founder John Black served as chef and solo artist, blending culinary courses with his studies in color and technique.',
-      press: [
-        {
-          label: 'TSKW',
-          url: 'https://tskw.org/alternating-currents-john-black/',
-        },
-        {
-          label: 'Florida Weekly',
-          url: 'https://www.floridaweekly.com/articles/key-west-key-west-arts-and-entertainment-news/the-color-theory-of-john-blacks-alternating-currents/',
-        },
-      ],
-      image: '/images/activations/ackw1.jpeg',
-    },
-  ];
-  const services = [
-    {
-      title: 'Brand Systems',
-      copy: 'Identity, typographic grids, packaging, and environmental graphics.',
-    },
-    {
-      title: 'Digital & Motion',
-      copy: 'Headless storefronts, launch sites, micro-interactions, and product films.',
-    },
-    {
-      title: 'Content & Media',
-      copy: 'Photo direction, color pipelines, and evergreen editorial toolkits.',
-    },
-    {
-      title: 'Experiential',
-      copy: 'Spatial concepts, partner collabs, live fabrication, and residency programming.',
-    },
-  ];
-  const fallbackUrl = storeDomain
-    ? `https://mcliv.studio/products/${handle}`
-    : `https://mcliv.studio/products/${handle}`;
-
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReduceMotion(mq.matches);
-    const handler = (event: MediaQueryListEvent) => setReduceMotion(event.matches);
-    mq.addEventListener('change', handler);
-    if (videoRef.current) {
-      videoRef.current.volume = 0.25;
-    }
-    if (typeof navigator !== 'undefined' && /CriOS/i.test(navigator.userAgent)) {
-      setIsChromeIOS(true);
-    }
-    return () => mq.removeEventListener('change', handler);
-  }, []);
-
-  const handleEnter = () => {
-    setGateDismissed(true);
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-    if (contentRef.current) {
-      contentRef.current.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-    }
-  };
-
-  const handleToggleMute = () => {
-    const next = !isMuted;
-    setIsMuted(next);
-    if (videoRef.current) {
-      videoRef.current.muted = next;
-      if (!next) {
-        videoRef.current.volume = 0.25;
-        videoRef.current.play().catch(() => setIsMuted(true));
-      }
-    }
-  };
-
-  if (!product) {
-    return (
-      <main className="product-page">
-        <section className="product-content">
-          <div className="product-copy">
-            <p className="eyebrow">Limited Release</p>
-            <h1>Product unavailable</h1>
-            <p className="muted">
-              We couldn&apos;t load this release. Check your storefront token and domain, or open the
-              Shopify product page directly.
-            </p>
-            <a className="primary" href={fallbackUrl}>
-              View on Shopify
-            </a>
-          </div>
-        </section>
-      </main>
-    );
-  }
+  const fallbackUrl = `https://mcliv.studio/products/${handle}`;
+  const active = HERO[hero];
 
   return (
-    <>
-      {!gateDismissed && (
-        <section className={`hero-gate ${reduceMotion ? 'hero-gate--static' : ''}`}>
-          <video
-            ref={videoRef}
-            className="hero-video"
-            autoPlay
-            muted={isMuted}
-            loop
-            playsInline
-            aria-hidden="true"
-          >
-            <source src="/mcliv-bg.webm" type="video/webm" />
-            <track kind="captions" src="data:text/vtt,WEBVTT" label="Muted background" />
-          </video>
-          <div className={`hero-overlay ${isChromeIOS ? 'hero-overlay--chrome' : ''}`}>
-            <div className="hero-center">
-              <video
-                className="hero-logo-video"
-                autoPlay
-                muted
-                playsInline
-                loop
-                aria-label="MCLIV Studio"
+    <main className="home">
+      {/* ---- Full-screen slideshow hero ---- */}
+      <section className="home-hero" aria-label="MCLIV">
+        <div className="hero-stage">
+          {HERO.map((item, i) => {
+            const mobileSrc = item.image?.replace(/(\.[^.]+)$/, '-v$1');
+            return (
+              <figure
+                key={item.slug}
+                className={`hero-slide ${i === hero ? 'is-active' : ''}`}
+                aria-hidden={i !== hero}
               >
-                <source src="/mclivstudio-hevc.mp4" type='video/mp4; codecs="hvc1"' />
-                <source src="/mclivstudio.webm" type="video/webm" />
-                <track kind="captions" src="data:text/vtt,WEBVTT" label="MCLIV logo mark" />
-              </video>
-            </div>
-            <div className="hero-actions">
-              <button className="hero-enter" onClick={handleEnter}>
-                ENTER
-              </button>
-            </div>
-            <button
-              className="hero-audio"
-              type="button"
-              onClick={handleToggleMute}
-              aria-pressed={!isMuted}
-              aria-label={isMuted ? 'Unmute background video' : 'Mute background video'}
-            >
-              {isMuted ? <FiVolume2 size={16} aria-hidden /> : <FiVolumeX size={16} aria-hidden />}
-              <span className="sr-only">{isMuted ? 'Unmute' : 'Mute'}</span>
-            </button>
-          </div>
-        </section>
-      )}
-      <main className="product-page" ref={contentRef}>
-        <section className="section-shell sculpture-section">
-          <div className="sculpture-wrap sculpture-wrap--transparent">
-            <Sculpture />
-          </div>
-        </section>
+                <picture>
+                  {mobileSrc && <source media="(max-width: 768px)" srcSet={mobileSrc} />}
+                  <img src={item.image} alt={item.title} loading={i === 0 ? 'eager' : 'lazy'} />
+                </picture>
+              </figure>
+            );
+          })}
+          <div className="hero-scrim" aria-hidden="true" />
+        </div>
 
-        <section className="section-shell about">
-          <div className="section-header section-header--center section-header--spaced">
-            <p className="section-lede text-center">
-              MCLIV /ˌɛm siː ɛl ˈaɪ viː/ (Roman numeral: 1154) is a NYC based creative studio with a focus on functional art and multidisciplinary
-              design. We produce limited-run capsule collections and experiential activations that
-              subvert the way we think about the world while creating lasting transformative impact
-              beyond mere spectacle.
-            </p>
-          </div>
-        </section>
-
-        <section className="section-shell tours-workshops">
-          <div className="section-header section-header--center">
-            <h2 className="section-title text-center">TOURS &amp; WORKSHOPS</h2>
-          </div>
-          <div className="workshops-hero workshops-hero--inline">
-            <div className="workshops-hero-copy">
-              <p className="eyebrow">Workshops</p>
-              <h2 className="workshops-title">
-                Guided multi-floor studio tour + hands-on art workshop.
-              </h2>
-              <p className="workshops-lede">
-                Step inside the WTC3 Art Studios for an intimate behind-the-scenes walk-through of three floors of artist workspaces where you&rsquo;ll see their process, materials, and works in progress. The session culminates in a guided hands-on painting workshop hosted by founder John Black, focused on stream of consciousness technique and creation as an act of mindfulness.
-              </p>
-              <div className="workshops-cta">
-                <a className="primary" href="/workshops#details">
-                  View details
-                </a>
-              </div>
-              <div className="workshops-hero-meta">
-                <span className="meta">3 WORLD TRADE CENTER</span>
-                <span className="meta">2 HOURS</span>
-                <span className="meta">10 GUESTS</span>
-              </div>
-            </div>
-            <div className="workshops-hero-media">
-              <a className="workshops-hero-image" href="/workshops#details">
-                <img
-                  src={WORKSHOP_IMAGE}
-                  alt="MCLIV studio tour"
-                  loading="lazy"
+        <div className="hero-overlay">
+          <div className="hero-foot">
+            <Link className="hero-caption no-strike" to={`/activations/${active.slug}`}>
+              <span className="mono hero-caption-meta">{active.subtitle}</span>
+              <span className="hero-caption-title">{active.shortTitle ?? active.title}</span>
+            </Link>
+            <div className="hero-meter" role="tablist" aria-label="Hero slides">
+              {HERO.map((item, i) => (
+                <button
+                  key={item.slug}
+                  type="button"
+                  className={`hero-tick ${i === hero ? 'is-active' : ''}`}
+                  aria-label={`Show ${item.shortTitle ?? item.title}`}
+                  aria-pressed={i === hero}
+                  onClick={() => setHero(i)}
                 />
-              </a>
-            </div>
-          </div>
-          <ProductCarousel
-            images={WORKSHOP_GALLERY_IMAGES}
-            title="MCLIV Studio Tour Gallery"
-            sizes="(min-width: 1200px) 1200px, 92vw"
-            className="workshops-gallery workshops-gallery--home"
-          />
-        </section>
-
-        <section className="section-shell activations">
-          <div className="section-header section-header--center">
-            <h2 className="section-title text-center">ACTIVATIONS</h2>
-          </div>
-          <div className="activation-carousel">
-            <div className="activation-frame">
-              {activations.map((activation, i) => (
-                <article
-                  key={activation.title}
-                  className={`activation-slide ${i === activationIndex ? 'active' : ''}`}
-                  aria-hidden={i !== activationIndex}
-                >
-                  <div className="activation-media">
-                    {(() => {
-                      const mobileSrc = activation.image?.replace(/(\.[^.]+)$/, '-v$1');
-                      return (
-                        <picture>
-                          {mobileSrc && (
-                            <source media="(max-width: 640px)" srcSet={mobileSrc} />
-                          )}
-                          <img
-                            src={activation.image}
-                            alt={activation.title}
-                            className="activation-img"
-                            loading={i === activationIndex ? 'eager' : 'lazy'}
-                          />
-                        </picture>
-                      );
-                    })()}
-                    <div className="activation-overlay">
-                      <div className="activation-overlay-text">
-                        <h3>
-                          <span className="title-desktop">{activation.title}</span>
-                          <span className="title-mobile">{activation.shortTitle ?? activation.title}</span>
-                        </h3>
-                        {activation.subtitle && (
-                          <p className="activation-subtitle">{activation.subtitle}</p>
-                        )}
-                        <p>{activation.copy}</p>
-                        {activation.press && (
-                          <div className="activation-press">
-                            <span>{activation.pressTitle ?? 'Press'}</span>
-                            <div className="activation-press-links">
-                              {activation.press.map((item) => (
-                                <a key={item.url} href={item.url} target="_blank" rel="noreferrer">
-                                  {item.label}
-                                </a>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </article>
               ))}
+              <span className="hero-counter mono">
+                {String(hero + 1).padStart(2, '0')} / {String(HERO.length).padStart(2, '0')}
+              </span>
             </div>
-            {activations.length > 1 && (
-              <div className="activation-controls">
-                <button
-                  type="button"
-                  aria-label="Previous activation"
-                  onClick={() =>
-                    setActivationIndex((prev) => (prev - 1 + activations.length) % activations.length)
-                  }
-                >
-                  ‹
-                </button>
-                <div className="activation-dots" role="tablist" aria-label="Activation slides">
-                  {activations.map((activation, i) => (
-                    <button
-                      key={activation.title}
-                      type="button"
-                      className={`dot ${i === activationIndex ? 'active' : ''}`}
-                      aria-label={`Go to activation ${i + 1}`}
-                      aria-pressed={i === activationIndex}
-                      onClick={() => setActivationIndex(i)}
-                    />
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  aria-label="Next activation"
-                  onClick={() => setActivationIndex((prev) => (prev + 1) % activations.length)}
-                >
-                  ›
-                </button>
-              </div>
-            )}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="section-shell releases">
-          <div className="section-header section-header--center">
-            <h2 className="section-title text-center">RELEASES</h2>
+      {/* ---- Studio statement ---- */}
+      <section className="home-statement">
+        <p className="statement-lede">
+          MCLIV is a creative studio at the intersection of functional art &amp; cuisine.
+        </p>
+        <p className="statement-sub mono">
+          Edible objects · functional artworks · ritual spaces · prepared in New York, archived permanently.
+        </p>
+      </section>
+
+      {/* ---- Selected work / archive index ---- */}
+      <section className="home-index" aria-label="Selected work">
+        <div className="index-head">
+          <span className="mono index-label">Selected Work</span>
+          <Link className="mono index-archive" to="/activations">
+            Full archive →
+          </Link>
+        </div>
+        <ol className="work-list">
+          {EVENTS.map((item, i) => (
+            <li key={item.slug}>
+              <Link className="work-row no-strike" to={`/activations/${item.slug}`}>
+                <span className="work-num mono">{String(i + 1).padStart(2, '0')}</span>
+                <span className="work-media">
+                  <img src={item.image} alt={item.title} loading="lazy" />
+                </span>
+                <span className="work-title">{item.title}</span>
+                <span className="work-type mono">{item.category}</span>
+                <span className="work-context mono">{item.subtitle}</span>
+                <span className="work-cta mono" aria-hidden="true">View</span>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* ---- Object / edition ---- */}
+      {product ? (
+        <section className="home-object" aria-label="Object">
+          <div className="object-media">
+            <ProductCarousel images={images} title={product.title} />
           </div>
-          <div className="product-grid">
-            <div className="product-media">
-              <ProductCarousel images={carouselImages} title={product.title} />
-            </div>
-
-            <div className="product-copy">
-              <h1>{product.title}</h1>
-              <div
-                className="description"
-                dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-              />
-
+          <div className="object-info">
+            <span className="mono object-eyebrow">Object 01 · Edition</span>
+            <h2 className="object-title">{product.title}</h2>
+            <div
+              className="object-desc"
+              dangerouslySetInnerHTML={{__html: product.descriptionHtml}}
+            />
+            <div className="object-buy">
               {variant ? (
-                <div className="purchase">
-                  <div className="price">
+                <>
+                  <span className="object-price mono">
                     <Money data={variant.price} />
-                  </div>
+                  </span>
                   {variant.availableForSale ? (
-                    <div className="purchase-row">
-                      <ContinueToCheckoutButton variantId={variant.id} />
-                    </div>
+                    <ContinueToCheckoutButton variantId={variant.id} />
                   ) : (
-                    <button className="primary" disabled>
+                    <button className="button" disabled>
                       Sold out
                     </button>
                   )}
-                </div>
+                </>
               ) : (
-                <a className="primary" href={fallbackUrl}>
+                <a className="button" href={fallbackUrl}>
                   View on Shopify
                 </a>
               )}
             </div>
           </div>
         </section>
+      ) : null}
 
-        <section className="section-shell creative">
-          <div className="section-header section-header--center">
-            <h2 className="section-title text-center">CREATIVE</h2>
-            <p className="section-lede text-center">
-              For all creative service needs including Brand Identity Systems Design, Web Development,
-              Photo &amp; Video Production &amp; more please inquire via email:
-            </p>
-          </div>
-          <div className="contact-cta">
-            <a className="primary contact-button" href="mailto:info@mcliv.studio">
-              info@mcliv.studio
-            </a>
-          </div>
-        </section>
-        <footer className="home-footer">
-          <SocialLinks
-            className="home-footer-socials"
-            items={['instagram', 'tiktok', 'email']}
-          />
-          <div className="home-footer-center">
-            <p className="home-footer-line">© 2026 MCLIV STUDIO</p>
-            <p className="home-footer-line">3 World Trade Center, New York NY 10007</p>
-          </div>
-        </footer>
-      </main>
-    </>
+      {/* ---- Contact ---- */}
+      <section className="home-contact" aria-label="Contact">
+        <p className="contact-eyebrow mono">Studio</p>
+        <h2 className="contact-line">
+          Functional art commissions, cuisine-led activations, and studio collaborations.
+        </h2>
+        <a className="contact-email" href="mailto:info@mcliv.studio">
+          info@mcliv.studio
+        </a>
+      </section>
+
+      <SiteFooter />
+    </main>
+  );
+}
+
+function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="footer-row">
+        <span className="mono">© 2026 MCLIV Studio</span>
+        <span className="mono">3 World Trade Center, New York NY 10007</span>
+      </div>
+      <div className="footer-row footer-links mono">
+        <a href="https://instagram.com/mcliv_studio" target="_blank" rel="noreferrer">
+          Instagram
+        </a>
+        <a href="https://tiktok.com/@mcliv.studio" target="_blank" rel="noreferrer">
+          TikTok
+        </a>
+        <a href="mailto:info@mcliv.studio">Email</a>
+      </div>
+    </footer>
   );
 }
 
@@ -642,32 +221,10 @@ const PRODUCT_BY_HANDLE_QUERY = `#graphql
       title
       descriptionHtml
       handle
-      featuredImage {
-        id
-        url
-        altText
-        width
-        height
-      }
-      images(first: 10) {
-        nodes {
-          id
-          url
-          altText
-          width
-          height
-        }
-      }
+      featuredImage { id url altText width height }
+      images(first: 10) { nodes { id url altText width height } }
       variants(first: 5) {
-        nodes {
-          id
-          availableForSale
-          title
-          price {
-            amount
-            currencyCode
-          }
-        }
+        nodes { id availableForSale title price { amount currencyCode } }
       }
     }
   }

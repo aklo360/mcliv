@@ -1,3 +1,13 @@
+# MCLIV Studio
+
+## Unreleased
+
+- Removed the homepage video gate so visitors land directly on the main homepage content.
+- Removed the Tours & Workshops homepage section and standalone `/workshops` route because the offering is no longer relevant.
+- Changed the default primary Shopify product handle from `capsule-collection-001` to `studio-hat` to match the current live site product.
+- Repositioned the site around the logline "Creative studio at the intersection of functional art & cuisine."
+- Added multipage activation architecture with `/activations` and `/activations/:slug` gallery/detail pages.
+
 # skeleton
 
 ## 2025.7.0

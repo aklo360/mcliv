@@ -1,4 +1,4 @@
-import {Suspense} from 'react';
+import {Suspense, useEffect, useState} from 'react';
 import {Await, NavLink, useAsyncValue} from 'react-router';
 import {useAnalytics, useOptimisticCart} from '@shopify/hydrogen';
 import type {CartApiQueryFragment, HeaderQuery} from 'storefrontapi.generated';
@@ -11,10 +11,27 @@ export function Header({
   cart,
   publicStoreDomain,
 }: HeaderProps) {
-  const {shop} = header;
+  const [solid, setSolid] = useState(false);
+
+  useEffect(() => {
+    const compute = () => {
+      const hero = document.querySelector('.home-hero') as HTMLElement | null;
+      const threshold = hero ? hero.offsetHeight - 64 : 16;
+      setSolid(window.scrollY > threshold);
+    };
+    compute();
+    window.addEventListener('scroll', compute, {passive: true});
+    window.addEventListener('resize', compute);
+    return () => {
+      window.removeEventListener('scroll', compute);
+      window.removeEventListener('resize', compute);
+    };
+  }, []);
+
   return (
-    <header className="header">
-      <div className="header-center">
+    <header className={`header${solid ? ' is-solid' : ''}`}>
+      <div className="header-left">
+        <HeaderMenuMobileToggle />
         <NavLink
           className="brand"
           prefetch="intent"
@@ -25,6 +42,7 @@ export function Header({
           <img src="/icons/logo.svg" alt="MCLIV Studio" />
         </NavLink>
       </div>
+      <PrimaryNav viewport="desktop" />
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
@@ -41,18 +59,10 @@ export function HeaderMenu({
 
   return (
     <nav className={className} role="navigation">
-      {viewport === 'mobile' && (
-        <NavLink
-          end
-          onClick={close}
-          prefetch="intent"
-          style={activeLinkStyle}
-          to="/"
-        >
-          Home
-        </NavLink>
-      )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      <PrimaryNav viewport={viewport} onNavigate={close} />
+      {(menu || FALLBACK_HEADER_MENU).items
+        .filter((item) => !['Home', 'Catalog', 'Contact'].includes(item.title))
+        .map((item) => {
         if (!item.url) return null;
 
         // if the url is internal, we strip the domain
@@ -76,6 +86,35 @@ export function HeaderMenu({
           </NavLink>
         );
       })}
+    </nav>
+  );
+}
+
+function PrimaryNav({
+  viewport,
+  onNavigate,
+}: {
+  viewport: Viewport;
+  onNavigate?: () => void;
+}) {
+  const className = viewport === 'desktop' ? 'header-primary-nav' : 'mobile-primary-nav';
+  return (
+    <nav className={className} aria-label="Primary navigation">
+      <NavLink end onClick={onNavigate} prefetch="intent" style={activeLinkStyle} to="/">
+        Home
+      </NavLink>
+      <NavLink onClick={onNavigate} prefetch="intent" style={activeLinkStyle} to="/about">
+        About
+      </NavLink>
+      <NavLink onClick={onNavigate} prefetch="intent" style={activeLinkStyle} to="/work">
+        Work
+      </NavLink>
+      <NavLink onClick={onNavigate} prefetch="intent" style={activeLinkStyle} to="/activations">
+        Activations
+      </NavLink>
+      <a href="mailto:info@mcliv.studio" onClick={onNavigate}>
+        Contact
+      </a>
     </nav>
   );
 }
@@ -218,8 +257,8 @@ const FALLBACK_HEADER_MENU = {
 
 function activeLinkStyle({isActive, isPending}: {isActive: boolean; isPending: boolean}) {
   return {
-    fontWeight: isActive ? 'bold' : undefined,
-    color: isPending ? 'grey' : 'black',
+    opacity: isPending ? 0.5 : 1,
+    textDecoration: isActive ? 'line-through' : undefined,
   };
 }
 

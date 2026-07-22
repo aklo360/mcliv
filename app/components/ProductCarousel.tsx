@@ -36,16 +36,6 @@ export function ProductCarousel({
       ? `${current.width}/${current.height}`
       : "4/5";
 
-  const next = () => {
-    if (!safeImages.length) return;
-    setIndex((prev) => (prev + 1) % safeImages.length);
-  };
-
-  const prev = () => {
-    if (!safeImages.length) return;
-    setIndex((prev) => (prev - 1 + safeImages.length) % safeImages.length);
-  };
-
   return (
     <div className={['product-carousel', className].filter(Boolean).join(' ')}>
       <div className="carousel-frame" style={{aspectRatio}}>
@@ -55,40 +45,22 @@ export function ProductCarousel({
           className="carousel-image"
         />
         {safeImages.length > 1 ? (
-          <>
-            <button
-              type="button"
-              className="carousel-control left"
-              onClick={prev}
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              className="carousel-control right"
-              onClick={next}
-              aria-label="Next image"
-            >
-              ›
-            </button>
-            <div
-              className="carousel-dots"
-              role="tablist"
-              aria-label="Product images"
-            >
-              {safeImages.map((img, i) => (
-                <button
-                  key={img.id}
-                  type="button"
-                  className={`dot ${i === index ? "active" : ""}`}
-                  onClick={() => setIndex(i)}
-                  aria-label={`Show image ${i + 1} of ${safeImages.length}`}
-                  aria-pressed={i === index}
-                />
-              ))}
-            </div>
-          </>
+          <div
+            className="carousel-dots"
+            role="tablist"
+            aria-label="Product images"
+          >
+            {safeImages.map((img, i) => (
+              <button
+                key={img.id}
+                type="button"
+                className={`dot ${i === index ? "active" : ""}`}
+                onClick={() => setIndex(i)}
+                aria-label={`Show image ${i + 1} of ${safeImages.length}`}
+                aria-pressed={i === index}
+              />
+            ))}
+          </div>
         ) : null}
       </div>
     </div>
