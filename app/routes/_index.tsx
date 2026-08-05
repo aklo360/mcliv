@@ -1,20 +1,34 @@
+import {brandText} from '~/components/BrandMark';
 import {useEffect, useState} from 'react';
 import {Link, useLoaderData} from 'react-router';
 import type {Route} from './+types/_index';
 import {Money} from '@shopify/hydrogen';
 import {ProductCarousel} from '~/components/ProductCarousel';
 import {ContinueToCheckoutButton} from '~/components/ContinueToCheckoutButton';
-import {EVENTS} from '~/lib/activations';
+import {ACTIVATIONS, EVENTS} from '~/lib/activations';
+import {PRODUCT_BY_HANDLE_QUERY} from '~/lib/product-query';
 import {buildMeta} from '~/lib/seo';
 
 const DEFAULT_HANDLE = 'studio-hat';
-const HERO = EVENTS.slice(0, 5);
+/* Hero order is curated independently of the index list: Paris leads. */
+const HERO_ORDER = [
+  'chaises-musicales',
+  'pantalon-mikael-muradian',
+  'apoc-nothing-ear-3',
+  'the-art-of-giving',
+  'mcliv-in-studio-dinner',
+  'alternating-currents',
+];
+const HERO = HERO_ORDER.flatMap((slug) => {
+  const match = ACTIVATIONS.find((event) => event.slug === slug);
+  return match ? [match] : [];
+});
 
 export const meta: Route.MetaFunction = ({location}) => {
   return buildMeta({
     title: 'MCLIV Studio',
     description:
-      'Creative studio at the intersection of functional art and cuisine. New York.',
+      'Creative studio & event production company at the intersection of fine art & hospitality. New York.',
     pathname: location.pathname,
   });
 };
@@ -82,20 +96,30 @@ export default function HomePage() {
         <div className="hero-overlay">
           <div className="hero-foot">
             <Link className="hero-caption no-strike" to={`/activations/${active.slug}`}>
-              <span className="mono hero-caption-meta">{active.subtitle}</span>
-              <span className="hero-caption-title">{active.shortTitle ?? active.title}</span>
+              <span className="mono hero-caption-meta">{brandText(active.subtitle)}</span>
+              <span className="hero-caption-title">{brandText(active.shortTitle ?? active.title)}</span>
             </Link>
-            <div className="hero-meter" role="tablist" aria-label="Hero slides">
-              {HERO.map((item, i) => (
-                <button
-                  key={item.slug}
-                  type="button"
-                  className={`hero-tick ${i === hero ? 'is-active' : ''}`}
-                  aria-label={`Show ${item.shortTitle ?? item.title}`}
-                  aria-pressed={i === hero}
-                  onClick={() => setHero(i)}
-                />
-              ))}
+            <div className="hero-meter" aria-label="Hero slides">
+              <button
+                type="button"
+                className="hero-arrow"
+                aria-label="Previous slide"
+                onClick={() => setHero((hero + HERO.length - 1) % HERO.length)}
+              >
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+                  <path d="M15 5 8 12l7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                className="hero-arrow"
+                aria-label="Next slide"
+                onClick={() => setHero((hero + 1) % HERO.length)}
+              >
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true">
+                  <path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+                </svg>
+              </button>
               <span className="hero-counter mono">
                 {String(hero + 1).padStart(2, '0')} / {String(HERO.length).padStart(2, '0')}
               </span>
@@ -107,11 +131,14 @@ export default function HomePage() {
       {/* ---- Studio statement ---- */}
       <section className="home-statement">
         <p className="statement-lede">
-          MCLIV is a creative studio at the intersection of functional art &amp; cuisine.
+          {brandText('MCLIV is a creative studio & event production company at the intersection of fine art & hospitality.')}
         </p>
         <p className="statement-sub mono">
-          Edible objects · functional artworks · ritual spaces · prepared in New York, archived permanently.
+          Multisensory Experiences · Functional Art · Interior Design · Hospitality Branding
         </p>
+        <Link className="button statement-cta no-strike" to="/about">
+          Learn more
+        </Link>
       </section>
 
       {/* ---- Selected work / archive index ---- */}
@@ -123,20 +150,36 @@ export default function HomePage() {
           </Link>
         </div>
         <ol className="work-list">
-          {EVENTS.map((item, i) => (
-            <li key={item.slug}>
-              <Link className="work-row no-strike" to={`/activations/${item.slug}`}>
-                <span className="work-num mono">{String(i + 1).padStart(2, '0')}</span>
-                <span className="work-media">
-                  <img src={item.image} alt={item.title} loading="lazy" />
-                </span>
-                <span className="work-title">{item.title}</span>
-                <span className="work-type mono">{item.category}</span>
-                <span className="work-context mono">{item.subtitle}</span>
-                <span className="work-cta mono" aria-hidden="true">View</span>
-              </Link>
-            </li>
-          ))}
+          {EVENTS.map((item, i) => {
+            const pressLinks = (item.press ?? [])
+              .filter((p) => p.url.startsWith('http'))
+              .slice(0, 2);
+            return (
+              <li key={item.slug}>
+                <div className="work-row">
+                  <Link
+                    className="work-row-link no-strike"
+                    to={`/activations/${item.slug}`}
+                    aria-label={item.title}
+                  />
+                  <span className="work-num mono">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="work-media">
+                    <img src={item.image} alt={item.title} loading="lazy" />
+                  </span>
+                  <span className="work-title">{brandText(item.title)}</span>
+                  <span className="work-type mono">{item.category}</span>
+                  <span className="work-press mono">
+                    {pressLinks.map((p) => (
+                      <a key={p.url} href={p.url} target="_blank" rel="noreferrer">
+                        {p.label}
+                      </a>
+                    ))}
+                  </span>
+                  <span className="work-context mono">{brandText(item.subtitle)}</span>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </section>
 
@@ -179,53 +222,16 @@ export default function HomePage() {
 
       {/* ---- Contact ---- */}
       <section className="home-contact" aria-label="Contact">
-        <p className="contact-eyebrow mono">Studio</p>
+        <p className="contact-eyebrow mono">Contact</p>
         <h2 className="contact-line">
-          Functional art commissions, cuisine-led activations, and studio collaborations.
+          Functional art commissions, cuisine-led activations, and studio collaborations:
         </h2>
         <a className="contact-email" href="mailto:info@mcliv.studio">
           info@mcliv.studio
         </a>
       </section>
 
-      <SiteFooter />
     </main>
   );
 }
 
-function SiteFooter() {
-  return (
-    <footer className="site-footer">
-      <div className="footer-row">
-        <span className="mono">© 2026 MCLIV Studio</span>
-        <span className="mono">3 World Trade Center, New York NY 10007</span>
-      </div>
-      <div className="footer-row footer-links mono">
-        <a href="https://instagram.com/mcliv_studio" target="_blank" rel="noreferrer">
-          Instagram
-        </a>
-        <a href="https://tiktok.com/@mcliv.studio" target="_blank" rel="noreferrer">
-          TikTok
-        </a>
-        <a href="mailto:info@mcliv.studio">Email</a>
-      </div>
-    </footer>
-  );
-}
-
-const PRODUCT_BY_HANDLE_QUERY = `#graphql
-  query ProductByHandle($handle: String!, $country: CountryCode, $language: LanguageCode)
-    @inContext(country: $country, language: $language) {
-    product(handle: $handle) {
-      id
-      title
-      descriptionHtml
-      handle
-      featuredImage { id url altText width height }
-      images(first: 10) { nodes { id url altText width height } }
-      variants(first: 5) {
-        nodes { id availableForSale title price { amount currencyCode } }
-      }
-    }
-  }
-` as const;

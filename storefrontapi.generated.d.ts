@@ -312,13 +312,6 @@ export type FooterQuery = {
   >;
 };
 
-export type StoreRobotsQueryVariables = StorefrontAPI.Exact<{
-  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
-  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
-}>;
-
-export type StoreRobotsQuery = {shop: Pick<StorefrontAPI.Shop, 'id'>};
-
 export type ProductByHandleQueryVariables = StorefrontAPI.Exact<{
   handle: StorefrontAPI.Scalars['String']['input'];
   country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
@@ -353,6 +346,13 @@ export type ProductByHandleQuery = {
     }
   >;
 };
+
+export type StoreRobotsQueryVariables = StorefrontAPI.Exact<{
+  country?: StorefrontAPI.InputMaybe<StorefrontAPI.CountryCode>;
+  language?: StorefrontAPI.InputMaybe<StorefrontAPI.LanguageCode>;
+}>;
+
+export type StoreRobotsQuery = {shop: Pick<StorefrontAPI.Shop, 'id'>};
 
 export type ProductByHandleArchiveQueryVariables = StorefrontAPI.Exact<{
   handle: StorefrontAPI.Scalars['String']['input'];
@@ -1222,13 +1222,13 @@ interface GeneratedQueryTypes {
     return: FooterQuery;
     variables: FooterQueryVariables;
   };
-  '#graphql\n  query StoreRobots($country: CountryCode, $language: LanguageCode)\n   @inContext(country: $country, language: $language) {\n    shop {\n      id\n    }\n  }\n': {
-    return: StoreRobotsQuery;
-    variables: StoreRobotsQueryVariables;
-  };
   '#graphql\n  query ProductByHandle($handle: String!, $country: CountryCode, $language: LanguageCode)\n    @inContext(country: $country, language: $language) {\n    product(handle: $handle) {\n      id\n      title\n      descriptionHtml\n      handle\n      featuredImage { id url altText width height }\n      images(first: 10) { nodes { id url altText width height } }\n      variants(first: 5) {\n        nodes { id availableForSale title price { amount currencyCode } }\n      }\n    }\n  }\n': {
     return: ProductByHandleQuery;
     variables: ProductByHandleQueryVariables;
+  };
+  '#graphql\n  query StoreRobots($country: CountryCode, $language: LanguageCode)\n   @inContext(country: $country, language: $language) {\n    shop {\n      id\n    }\n  }\n': {
+    return: StoreRobotsQuery;
+    variables: StoreRobotsQueryVariables;
   };
   '#graphql\n  query ProductByHandleArchive($handle: String!, $country: CountryCode, $language: LanguageCode)\n    @inContext(country: $country, language: $language) {\n    product(handle: $handle) {\n      id\n      title\n      descriptionHtml\n      handle\n      images(first: 10) {\n        nodes {\n          id\n          url\n          altText\n          width\n          height\n        }\n      }\n      variants(first: 5) {\n        nodes {\n          id\n          availableForSale\n          title\n          price {\n            amount\n            currencyCode\n          }\n        }\n      }\n    }\n  }\n': {
     return: ProductByHandleArchiveQuery;

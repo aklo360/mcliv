@@ -112,9 +112,9 @@ function PrimaryNav({
       <NavLink onClick={onNavigate} prefetch="intent" style={activeLinkStyle} to="/activations">
         Activations
       </NavLink>
-      <a href="mailto:info@mcliv.studio" onClick={onNavigate}>
-        Contact
-      </a>
+      <NavLink onClick={onNavigate} prefetch="intent" style={activeLinkStyle} to="/shop">
+        Shop
+      </NavLink>
     </nav>
   );
 }
@@ -258,7 +258,6 @@ const FALLBACK_HEADER_MENU = {
 function activeLinkStyle({isActive, isPending}: {isActive: boolean; isPending: boolean}) {
   return {
     opacity: isPending ? 0.5 : 1,
-    textDecoration: isActive ? 'line-through' : undefined,
   };
 }
 

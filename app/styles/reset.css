@@ -79,14 +79,7 @@ body {
 }
 
 body > main {
-  margin: 0 1rem 1rem 1rem;
-}
-
-@media (max-width: 640px) {
-  body > main {
-    margin-left: 0;
-    margin-right: 0;
-  }
+  margin: 0;
 }
 
 section {

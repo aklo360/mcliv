@@ -1,3 +1,4 @@
+import {brandText} from '~/components/BrandMark';
 import {Link} from 'react-router';
 import type {Route} from './+types/activations._index';
 import {EVENTS} from '~/lib/activations';
@@ -18,13 +19,12 @@ export default function ActivationsIndex() {
   return (
     <main className="content-page activations-page">
       <header className="editorial-masthead">
-        <p className="eyebrow">MCLIV — Activations</p>
+        <p className="eyebrow">{brandText('MCLIV · Activations')}</p>
         <div className="masthead-grid">
           <h1 className="masthead-title">Experiential Activations</h1>
           <div className="masthead-aside">
             <p className="masthead-lede">
-              Culinary installations, private dinners, art salons, and product environments
-              designed around material, appetite, and attention.
+              {brandText('Culinary installations, private dinners, art salons, and high fashion pop ups designed by MCLIV.')}
             </p>
             <dl className="masthead-facts">
               <div>
@@ -33,11 +33,11 @@ export default function ActivationsIndex() {
               </div>
               <div>
                 <dt>Years</dt>
-                <dd>2024 — 2025</dd>
+                <dd>2024–2026</dd>
               </div>
               <div>
                 <dt>Format</dt>
-                <dd>Salons · Dinners · Exhibitions</dd>
+                <dd>Dinners · Exhibitions · Cultural Programs · Pop-Ups · Collaborations</dd>
               </div>
             </dl>
           </div>
@@ -64,10 +64,10 @@ export default function ActivationsIndex() {
               <img src={activation.image} alt={activation.title} loading="lazy" />
             </span>
             <span className="activation-row-main">
-              <span className="activation-row-title">{activation.title}</span>
-              <span className="activation-row-copy">{activation.copy}</span>
+              <span className="activation-row-title">{brandText(activation.title)}</span>
+              <span className="activation-row-copy">{brandText(activation.copy)}</span>
             </span>
-            <span className="activation-row-context">{activation.subtitle}</span>
+            <span className="activation-row-context">{brandText(activation.subtitle)}</span>
             <span className="activation-row-cta" aria-hidden="true">
               View
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true">

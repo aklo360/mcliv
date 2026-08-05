@@ -1,3 +1,4 @@
+import {brandText} from '~/components/BrandMark';
 import {Link, useLoaderData} from 'react-router';
 import type {Route} from './+types/activations.$slug';
 import {
@@ -63,7 +64,6 @@ export default function ActivationDetail() {
     .split('·')
     .map((part) => part.trim())
     .filter(Boolean);
-  const related = siblings.filter((item) => item.slug !== activation.slug).slice(0, 3);
 
   return (
     <main className="content-page activation-detail-page">
@@ -85,9 +85,9 @@ export default function ActivationDetail() {
       </nav>
 
       <header className="detail-masthead">
-        <p className="eyebrow">{activation.subtitle}</p>
-        <h1 className="detail-title">{activation.title}</h1>
-        <p className="detail-lede">{activation.copy}</p>
+        <p className="eyebrow">{brandText(activation.subtitle)}</p>
+        <h1 className="detail-title">{brandText(activation.title)}</h1>
+        <p className="detail-lede">{brandText(activation.copy)}</p>
       </header>
 
       <section className="detail-lead" aria-label={`${activation.title} media`}>
@@ -97,7 +97,7 @@ export default function ActivationDetail() {
       <section className="detail-body">
         <div className="detail-text">
           {activation.description.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p key={paragraph}>{brandText(paragraph)}</p>
           ))}
         </div>
         <div className="detail-meta" role="complementary" aria-label="Project details">
@@ -106,7 +106,7 @@ export default function ActivationDetail() {
               <dt>Context</dt>
               <dd>
                 {metaFacts.map((fact) => (
-                  <span key={fact}>{fact}</span>
+                  <span key={fact}>{brandText(fact)}</span>
                 ))}
               </dd>
             </div>
@@ -132,31 +132,6 @@ export default function ActivationDetail() {
         </div>
       </section>
 
-      {related.length ? (
-        <section className="detail-related">
-          <div className="detail-related-head">
-            <h2 className="detail-related-title">More {isWork ? 'work' : 'activations'}</h2>
-            <Link className="text-link" to={backTo}>
-              Full index
-            </Link>
-          </div>
-          <div className="detail-related-grid">
-            {related.map((item) => (
-              <Link
-                className="related-card"
-                key={item.slug}
-                to={`/activations/${item.slug}`}
-              >
-                <span className="related-card-media">
-                  <img src={item.image} alt={item.title} loading="lazy" />
-                </span>
-                <span className="related-card-title">{item.shortTitle ?? item.title}</span>
-                <span className="related-card-context">{item.subtitle}</span>
-              </Link>
-            ))}
-          </div>
-        </section>
-      ) : null}
     </main>
   );
 }

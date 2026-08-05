@@ -38,8 +38,8 @@
 :root {
   /* Core neutrals */
   --mcliv-black: #0a0a0a;
-  --bone: #f2efe6;
-  --paper: #faf8f3;
+  --bone: #f4f4f4;
+  --paper: #ffffff;
   --graphite: #3a3a3a;
   --stainless: #c4c4c0;
   /* Material tones */
@@ -65,10 +65,10 @@
   /* Type */
   /* v0.5: Google Sans Flex headers · Geist Mono body/nav/labels.
      Inter / Geist (sans) @font-faces stay defined as back-pocket swaps. */
-  --font-display: "Google Sans Flex", system-ui, sans-serif;
-  --font-sans: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-body: var(--font-sans);
+  --font-display: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+  --font-sans: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+  --font-mono: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+  --font-body: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
   --font-nav: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* Metrics */
@@ -191,7 +191,7 @@ a.button:hover,
   }
 }
 
-aside {
+.overlay > aside {
   background: var(--color-light);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
   height: 100vh;
@@ -204,7 +204,7 @@ aside {
   transition: transform 200ms ease-in-out;
 }
 
-aside header {
+.overlay > aside header {
   align-items: center;
   border-bottom: 1px solid var(--color-dark);
   display: flex;
@@ -213,11 +213,11 @@ aside header {
   padding: 0 20px;
 }
 
-aside header h3 {
+.overlay > aside header h3 {
   margin: 0;
 }
 
-aside header .close {
+.overlay > aside header .close {
   font-weight: bold;
   opacity: 0.8;
   text-decoration: none;
@@ -225,28 +225,28 @@ aside header .close {
   width: 20px;
 }
 
-aside header .close:hover {
+.overlay > aside header .close:hover {
   opacity: 1;
 }
 
-aside header h2 {
+.overlay > aside header h2 {
   margin-bottom: 0.6rem;
   margin-top: 0;
 }
 
-aside main {
+.overlay > aside main {
   margin: 1rem;
 }
 
-aside p {
+.overlay > aside p {
   margin: 0 0 0.25rem;
 }
 
-aside p:last-child {
+.overlay > aside p:last-child {
   margin: 0;
 }
 
-aside li {
+.overlay > aside li {
   margin-bottom: 0.125rem;
 }
 
@@ -930,7 +930,7 @@ button.reset:hover:not(:has(> *)) {
 .page-title {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(2.6rem, 6vw, 6.5rem);
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
   line-height: 0.96;
   margin: 0;
   max-width: 10ch;
@@ -954,7 +954,6 @@ button.reset:hover:not(:has(> *)) {
   margin: 0 auto;
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  border-bottom: 1px solid var(--color-dark);
   padding-bottom: clamp(1.75rem, 3vw, 2.75rem);
 }
 
@@ -1246,7 +1245,7 @@ button.reset:hover:not(:has(> *)) {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
   line-height: 1.1;
   letter-spacing: 0;
   margin: 0;
@@ -1261,6 +1260,26 @@ button.reset:hover:not(:has(> *)) {
   max-width: 52ch;
 }
 
+.detail-lead-media {
+  width: min(1280px, 92vw);
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f1f1f1;
+  aspect-ratio: 16 / 9;
+}
+
+.detail-lead-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-page .home-contact {
+  width: min(1280px, 92vw);
+  padding-inline: 0;
+}
+
 /* Single main carousel where the lead image used to be */
 .detail-carousel {
   display: grid;
@@ -1270,7 +1289,7 @@ button.reset:hover:not(:has(> *)) {
 .detail-carousel-frame {
   position: relative;
   overflow: hidden;
-  background: #f1f1f1;
+  background: transparent;
   aspect-ratio: 3 / 2;
 }
 
@@ -1298,7 +1317,14 @@ button.reset:hover:not(:has(> *)) {
 .detail-carousel-slide video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
+}
+
+.detail-carousel-slide iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
   display: block;
 }
 
@@ -1307,6 +1333,30 @@ button.reset:hover:not(:has(> *)) {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.detail-carousel-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.detail-carousel-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(10, 10, 10, 0.45);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+
+.detail-carousel-arrow:hover {
+  background: var(--ink);
+  color: var(--color-light);
 }
 
 .detail-carousel-dots {
@@ -1585,10 +1635,45 @@ button.reset:hover:not(:has(> *)) {
 }
 
 /* Keep the masthead eyebrow (location · date context) visible on mobile */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .editorial-masthead .eyebrow,
   .detail-masthead .eyebrow {
     display: block;
+  }
+
+  .about-page {
+    gap: 2.5rem;
+    padding: calc(var(--header-height) + 1.5rem) 1rem 3rem;
+  }
+
+  .about-page .detail-masthead,
+  .about-page .detail-body,
+  .about-page .detail-related,
+  .about-page .home-contact {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-page .detail-lead-media {
+    width: calc(100% + 2rem);
+    margin-inline: -1rem;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-page .detail-body {
+    gap: 2.5rem;
+  }
+
+  .about-page .detail-facts {
+    gap: 1.25rem;
+  }
+
+  .about-page .detail-related-head {
+    align-items: flex-end;
+  }
+
+  .about-page .home-contact {
+    padding-inline: 0;
   }
 }
 
@@ -3079,9 +3164,20 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
 }
 
 @media (max-width: 768px) {
+  .header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
   .header-primary-nav {
     display: none;
   }
+
+  .header-ctas {
+    grid-column: 2;
+    margin-left: 0;
+    justify-self: end;
+  }
+
   .header-menu-mobile-toggle {
     display: inline-flex;
   }
@@ -3178,7 +3274,7 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
   font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: -0.02em;
-  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
   line-height: 1;
 }
 
@@ -3188,18 +3284,22 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
   gap: 0.5rem;
 }
 
-.hero-tick {
-  width: 26px;
-  height: 2px;
-  border: 0;
+.hero-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
   padding: 0;
-  background: rgba(255, 255, 255, 0.35);
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
   cursor: pointer;
-  transition: background 200ms ease;
+  transition: color 150ms ease;
 }
 
-.hero-tick.is-active {
-  background: #fff;
+.hero-arrow:hover {
+  color: #fff;
 }
 
 .hero-counter {
@@ -3223,16 +3323,18 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
   padding: clamp(3.5rem, 9vw, 7rem) var(--gutter);
   display: grid;
   gap: 1.25rem;
+  justify-items: center;
+  text-align: center;
 }
 
 .statement-lede {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.5rem, 3.6vw, 3rem);
+  font-size: clamp(1.05rem, 2vw, 1.7rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
-  max-width: 22ch;
+  max-width: 52ch;
 }
 
 .statement-sub {
@@ -3270,15 +3372,42 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
 }
 
 .work-row {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-areas: 'media' 'num' 'title' 'type' 'context' 'cta';
+  grid-template-areas: 'media' 'num' 'title' 'type' 'press' 'context';
   gap: 0.7rem 1.5rem;
   padding: 1.6rem 0;
   border-bottom: 1px solid var(--hairline);
   align-items: center;
   color: inherit;
   text-decoration: none;
+}
+
+/* Stretched link: whole row navigates, while press links stay clickable above it */
+.work-row-link {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.work-press {
+  grid-area: press;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.66rem;
+}
+
+.work-press a {
+  position: relative;
+  z-index: 1;
+  color: var(--muted);
+  width: fit-content;
+}
+
+.work-press a:hover {
+  color: var(--ink);
 }
 
 .work-num {
@@ -3311,7 +3440,7 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
   font-family: var(--font-display);
   font-weight: 500;
   letter-spacing: -0.02em;
-  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
   line-height: 1.05;
 }
 
@@ -3336,8 +3465,8 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
 
 @media (min-width: 900px) {
   .work-row {
-    grid-template-columns: 2.5rem 8rem minmax(0, 1fr) 10.5rem 11rem 3.5rem;
-    grid-template-areas: 'num media title type context cta';
+    grid-template-columns: 2.5rem 8rem minmax(0, 1fr) 10.5rem 8rem 11rem;
+    grid-template-areas: 'num media title type press context';
     gap: 1.5rem;
     padding: 1.4rem 0;
   }
@@ -3364,6 +3493,14 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
   display: grid;
   gap: 2rem;
   border-top: 1px solid var(--hairline);
+}
+
+/* Shop page: align the object section with the standard content-page column, no dividers */
+.shop-page .home-object {
+  border-top: none;
+  max-width: none;
+  width: min(1280px, 92vw);
+  padding: 0;
 }
 
 @media (min-width: 860px) {
@@ -3395,7 +3532,7 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
 }
 
 .object-title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
   line-height: 1;
 }
 
@@ -3416,6 +3553,11 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
   gap: 1.25rem;
   margin-top: 0.5rem;
   flex-wrap: wrap;
+}
+
+/* Order now sits on its own line below price + quantity */
+.object-buy .order-link {
+  flex-basis: 100%;
 }
 
 .object-price {
@@ -3440,10 +3582,10 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
 .contact-line {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.6rem, 3.4vw, 2.75rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  max-width: 24ch;
+  max-width: 42ch;
 }
 
 .contact-email {
@@ -3481,4 +3623,121 @@ body:has(.home-hero) .header:not(.is-solid) .brand img {
 
 .footer-links a:hover {
   color: var(--ink);
+}
+
+/* Editorial headers run ALL CAPS (nav excluded) */
+.page-title,
+.masthead-title,
+.detail-title,
+.work-title,
+.object-title,
+.contact-line,
+.detail-related-title,
+.hero-caption-title,
+.related-card-title,
+.index-label,
+.detail-links-label {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Brand mark: MCLIV always italic + struck, echoing the wordmark */
+.brand-mark {
+  font-style: italic;
+  text-decoration: line-through;
+  text-decoration-thickness: 0.06em;
+}
+
+/* Wordmark divider between About sections */
+.about-logo-divider {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.about-logo-divider img {
+  width: min(200px, 40vw);
+  height: auto;
+}
+
+/* ---- About page, reimagined ---- */
+.about-hero {
+  width: min(1280px, 92vw);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.about-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-colophon {
+  width: min(1280px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.about-colophon img {
+  width: min(150px, 30vw);
+  height: auto;
+}
+
+.about-founder {
+  width: min(1280px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+@media (min-width: 900px) {
+  .about-founder {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+  .about-founder--flip .about-founder-media {
+    order: 2;
+  }
+}
+
+.about-founder-media {
+  margin: 0;
+  overflow: hidden;
+}
+
+.about-founder-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-founder-text {
+  display: grid;
+  gap: 1.1rem;
+  max-width: 62ch;
+}
+
+.about-founder-text p {
+  margin: 0;
+  color: var(--graphite);
+  line-height: 1.65;
+}
+
+.about-founder-text .masthead-lede {
+  color: var(--ink);
+}
+
+.about-founder-text .masthead-facts {
+  margin-top: 0.75rem;
+}
+
+
+.statement-cta {
+  margin-top: 0.5rem;
 }

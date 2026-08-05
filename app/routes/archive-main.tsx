@@ -53,7 +53,7 @@ export default function ArchiveMain() {
         </div>
       </section>
 
-      <SectionBlock id="releases" title="Releases" subtitle="Objects, furniture, prints and wearables from the studio — material restraint, precise craft.">
+      <SectionBlock id="releases" title="Releases" subtitle="Objects, furniture, prints and wearables from the studio: material restraint, precise craft.">
         <div className="legacy-card-grid">
           {releases.map((item) => (
             <article className="legacy-card" key={item.title}>

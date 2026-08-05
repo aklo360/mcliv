@@ -7,6 +7,7 @@ import type {
 } from 'storefrontapi.generated';
 import {Aside} from '~/components/Aside';
 import {Header, HeaderMenu} from '~/components/Header';
+import {SiteFooter} from '~/components/SiteFooter';
 import {CartMain} from '~/components/CartMain';
 import {
   SEARCH_ENDPOINT,
@@ -44,6 +45,7 @@ export function PageLayout({
         />
       )}
       <main>{children}</main>
+      <SiteFooter />
     </Aside.Provider>
   );
 }

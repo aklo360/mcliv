@@ -1,0 +1,26 @@
+import type {ActivationImage} from '~/lib/activations';
+
+export const AOG_GALLERY: ActivationImage[] = [
+  {id: 'aog-01', url: '/images/activations/aog/aog-01.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1067},
+  {id: 'aog-02', url: '/images/activations/aog/aog-02.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1064},
+  {id: 'aog-03', url: '/images/activations/aog/aog-03.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-04', url: '/images/activations/aog/aog-04.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-05', url: '/images/activations/aog/aog-05.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1064},
+  {id: 'aog-06', url: '/images/activations/aog/aog-06.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1064},
+  {id: 'aog-07', url: '/images/activations/aog/aog-07.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-08', url: '/images/activations/aog/aog-08.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-09', url: '/images/activations/aog/aog-09.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1064},
+  {id: 'aog-10', url: '/images/activations/aog/aog-10.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-11', url: '/images/activations/aog/aog-11.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-12', url: '/images/activations/aog/aog-12.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1066},
+  {id: 'aog-13', url: '/images/activations/aog/aog-13.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1067},
+  {id: 'aog-14', url: '/images/activations/aog/aog-14.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-15', url: '/images/activations/aog/aog-15.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-16', url: '/images/activations/aog/aog-16.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1600, height: 1064},
+  {id: 'aog-17', url: '/images/activations/aog/aog-17.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-18', url: '/images/activations/aog/aog-18.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-19', url: '/images/activations/aog/aog-19.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1064, height: 1600},
+  {id: 'aog-20', url: '/images/activations/aog/aog-20.jpg', altText: 'The Art of Giving — hors d’oeuvres by John Black, Peranakan Museum, Singapore', width: 1200, height: 1600},
+  {id: 'aog-21', url: '/images/activations/aog/aog-21.jpg', altText: 'The Art of Giving — Peranakan Museum atrium, Singapore', width: 1200, height: 1600},
+  {id: 'aog-22', url: '/images/activations/aog/aog-22.jpg', altText: 'The Art of Giving — Peranakan Museum, Singapore, April 2025', width: 1200, height: 1600},
+];
