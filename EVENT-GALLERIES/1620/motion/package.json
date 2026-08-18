@@ -1,0 +1,24 @@
+{
+  "name": "mcliv-1620-motion",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "sync-data": "node scripts/sync-event-data.mjs",
+    "dev": "npm run sync-data && remotion studio src/index.ts",
+    "typecheck": "npm run sync-data && tsc --noEmit",
+    "render": "npm run sync-data && remotion render src/index.ts FlyerMotionV001 exports/1620-motion-flyer-v003.mp4 --codec h264 --pixel-format yuv420p --muted",
+    "still": "npm run sync-data && remotion still src/index.ts FlyerMotionV001 exports/1620-motion-flyer-v003-poster.png --frame 515"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.512",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.512"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "typescript": "7.0.2"
+  }
+}

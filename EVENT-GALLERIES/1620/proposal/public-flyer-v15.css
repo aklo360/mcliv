@@ -1,0 +1,17 @@
+@import url("public-flyer-v14.css");
+
+.afterparty-strip {
+  flex-direction: row;
+  text-align: left;
+}
+
+.afterparty-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+}
+
+.afterparty-location h2 {
+  margin-bottom: 7px;
+}

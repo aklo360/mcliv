@@ -1,0 +1,5 @@
+@import url("public-flyer-v11.css");
+
+.location-detail p {
+  text-wrap: balance;
+}

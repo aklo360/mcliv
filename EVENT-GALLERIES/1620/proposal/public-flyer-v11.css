@@ -1,0 +1,111 @@
+@import url("public-flyer-v10.css");
+
+.flyer {
+  grid-template-rows: 480px 260px 564px 136px;
+}
+
+.flyer-header {
+  font-size: 14px;
+}
+
+.kicker {
+  font-size: 14px;
+}
+
+.eyebrow,
+.event-details dt,
+.section-label,
+.band-label {
+  font-size: 13px;
+}
+
+.event-details {
+  grid-template-columns: 0.85fr 1.8fr 0.85fr;
+}
+
+.event-details p {
+  font-size: 13px;
+  line-height: 1.38;
+}
+
+.artist-roster li span {
+  font-size: 13px;
+}
+
+.afterparty-location p {
+  font-size: 13px;
+}
+
+.artist-roster {
+  height: 511px;
+}
+
+.artist-roster li {
+  font-size: 22px;
+}
+
+.afterparty-location h2 {
+  font-size: 30px;
+}
+
+.ride-offer {
+  font-size: 18px;
+}
+
+.event-details > .format-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 16px 14px;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.format-detail dt {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.statement-canvas {
+  position: relative;
+  align-self: center;
+  width: 88px;
+  height: 110px;
+  aspect-ratio: 4 / 5;
+  border: 2px solid #ffffff;
+  background: #0a0a0a;
+}
+
+.statement-canvas::before,
+.statement-canvas::after {
+  position: absolute;
+  background: #ffffff;
+  content: "";
+}
+
+.statement-canvas::before {
+  top: -8px;
+  bottom: -8px;
+  left: 50%;
+  width: 1px;
+}
+
+.statement-canvas::after {
+  top: 50%;
+  right: -8px;
+  left: -8px;
+  height: 1px;
+}
+
+.statement-canvas span {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  padding: 4px 5px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}

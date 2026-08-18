@@ -1,0 +1,305 @@
+:root {
+  --ink: #0a0a0a;
+  --white: #ffffff;
+  --hairline: rgba(10, 10, 10, 0.28);
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+@page {
+  size: 7.5in 10in;
+  margin: 0;
+}
+
+html,
+body {
+  width: 1080px;
+  height: 1440px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.flyer {
+  display: grid;
+  grid-template-rows: 76px 304px 1fr 300px 50px;
+  width: 1080px;
+  height: 1440px;
+  padding: 42px 54px 34px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.flyer-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  border-bottom: 2px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mcliv-mark {
+  width: auto;
+  height: 24px;
+}
+
+.flyer-header > span {
+  justify-self: center;
+}
+
+.venue-mark {
+  justify-self: end;
+  width: auto;
+  height: 46px;
+  filter: grayscale(1) brightness(0);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 238px;
+  gap: 44px;
+  align-items: center;
+  border-bottom: 8px solid var(--ink);
+}
+
+.hero-copy {
+  min-width: 0;
+  padding-top: 16px;
+}
+
+.kicker,
+.section-label,
+.band-label,
+.flyer-footer {
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kicker {
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  margin: 0 0 14px -8px;
+  font-size: 210px;
+  font-weight: 520;
+  line-height: 0.67;
+  letter-spacing: -0.055em;
+}
+
+.hero-subtitle {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 460;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.format-mark {
+  position: relative;
+  width: 206px;
+  height: 258px;
+  justify-self: end;
+  border: 4px solid var(--ink);
+  background: var(--white);
+}
+
+.format-mark::before,
+.format-mark::after {
+  position: absolute;
+  background: var(--ink);
+  content: "";
+}
+
+.format-mark::before {
+  top: 50%;
+  right: -20px;
+  left: -20px;
+  height: 4px;
+  transform: translateY(-2px);
+}
+
+.format-mark::after {
+  top: -20px;
+  bottom: -20px;
+  left: 50%;
+  width: 4px;
+  transform: translateX(-2px);
+}
+
+.format-mark span {
+  position: absolute;
+  z-index: 1;
+  padding: 3px 6px;
+  background: var(--white);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.format-mark .dimension-width {
+  top: 12px;
+  left: 12px;
+}
+
+.format-mark .dimension-height {
+  right: 12px;
+  bottom: 12px;
+}
+
+.roster-section {
+  min-height: 0;
+  padding: 30px 0 28px;
+}
+
+.section-label {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 12px;
+}
+
+.artist-roster {
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-flow: column;
+  column-gap: 44px;
+  height: calc(100% - 29px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.artist-roster li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  min-width: 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 23px;
+  font-weight: 480;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+}
+
+.artist-roster li span {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.event-band {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.opening-block,
+.afterparty-block {
+  min-width: 0;
+  padding: 22px 24px 20px 0;
+}
+
+.opening-block {
+  border-right: 2px solid var(--ink);
+}
+
+.afterparty-block {
+  display: flex;
+  flex-direction: column;
+  padding-right: 24px;
+  padding-left: 26px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.band-label {
+  margin: 0 0 23px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.event-band h2 {
+  margin: 0 0 12px;
+  font-size: 42px;
+  font-weight: 530;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+}
+
+.location-primary,
+.afterparty-address {
+  margin: 0 0 13px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.location-secondary {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.afterparty-address {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.ride-offer {
+  margin: auto 0 0;
+  padding-top: 18px;
+  border-top: 2px solid var(--white);
+  font-size: 24px;
+  font-weight: 570;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.flyer-footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  padding-top: 16px;
+  font-size: 10px;
+}
+
+.flyer-footer span:nth-child(2) {
+  justify-self: center;
+}
+
+.flyer-footer span:last-child {
+  justify-self: end;
+}

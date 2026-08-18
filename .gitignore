@@ -1,13 +1,21 @@
 node_modules
 .next
-.env.local
+.env*
+!.env.example
+.dev.vars
+*.pem
+*.key
 .DS_Store
 dist
 coverage
 *.log
-.env
 .open-next
 .react-router
 build
 .shopify
 hydrogen-quickstart
+
+# Local agent/operator context must never be published from this public repo.
+AGENTS.md
+.codex/
+.claude/

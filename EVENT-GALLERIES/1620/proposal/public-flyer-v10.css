@@ -1,0 +1,37 @@
+@import url("public-flyer-v9.css");
+
+.format-mark {
+  top: 55px;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: 82px;
+  height: 102.5px;
+  transform: translateX(-50%);
+  border-width: 2px;
+}
+
+.format-mark span {
+  padding: 3px;
+  font-size: 7px;
+}
+
+.format-mark::before {
+  right: -9px;
+  left: -9px;
+}
+
+.format-mark::after {
+  top: -9px;
+  bottom: -9px;
+}
+
+.dimension-width {
+  top: 6px;
+  left: 5px;
+}
+
+.dimension-height {
+  right: 5px;
+  bottom: 6px;
+}
