@@ -26,8 +26,8 @@ Madsteez; Trouble Andrew; Hoxxoh; Jerami Dean Goodwin; Cavier Coleman; Gianni Le
 
 - Opening venue: NYC Culture Club, The Port Authority Midtown Bus Terminal, South Wing, Main Floor, 625 8th Ave & W40th St., New York, NY. Parker and Clayton supplied this public-facing venue wording to John on August 18, 2026; John forwarded their correction and AKLO confirmed it the same day.
 - After-party venue: Shinsen, 44 Bowery, New York, NY 10013. The official spelling and address were verified against Shinsen's website on August 17, 2026.
-- AKLO withdrew the free-Lyft-rides claim as inaccurate on August 18, 2026. It must not appear in current or future public outputs.
-- No after-party start time has been supplied. The flyer states only that it follows the opening.
+- AKLO withdrew the free-Lyft-rides claim as inaccurate on August 18, 2026. On August 19, 2026, AKLO explicitly directed the new 1080 × 1920 public-flyer review variation to retain the exact line `Free Lyft rides to Shinsen for all attendees`. On August 21, 2026, AKLO authorized publication of the current repository work to the public GitHub repository; that direction does not independently verify the offer.
+- The supplied caption specifies the after-party at 10PM; the 9:16 flyer retains that time.
 
 ## Source imagery
 
@@ -58,7 +58,18 @@ Source: <https://www.instagram.com/p/DZxjGg4kbMs/?img_index=1>
 - `public-flyer.html` and `public-flyer-v8.css`: preserved prior white public-flyer source.
 - `assets/nyc-culture-club-logo-official.png`: official NYC Culture Club wordmark sourced from the organization’s website header asset.
 - `exports/1620-mobile-onesheet-v9.pdf`: current two-page, 9:16 mobile one-sheet PDF with the final confirmed artist roster and lowercase `aklo`.
+- `exports/1620-website-deck-9x16-v1.pdf` through `v3.pdf`: preserved rejected proofs from the misdirected portrait-deck interpretation; do not use.
 - `exports/1620-public-flyer-v20.png`: current 1080 × 1440 public social flyer. It carries forward v19 and removes the standalone `New York, NY` line only from the Port Authority block; the Shinsen address remains unchanged.
+- `public-flyer-9x16-v1.html` and `public-flyer-9x16-v1.css`: current one-page, 1080 × 1920 public-flyer variation source with enlarged typography and the exact Lyft line directed by AKLO on August 19, 2026.
+- `exports/1620-public-flyer-9x16-v9.png`: current one-page, 1080 × 1920 public-flyer review output. The complete footer hierarchy is reduced to 14px label, 38px venue, 13px address, and 24px Lyft copy; all groups share one vertical center and the three horizontal transitions remain within a measured 54–57px spacing band.
+- `exports/1620-public-flyer-9x16-v8.png`: preserved prior proof with the larger footer typography; do not use.
+- `exports/1620-public-flyer-9x16-v7.png`: preserved rejected proof with an imbalanced Lyft wrap that orphaned `all attendees`; do not use.
+- `exports/1620-public-flyer-9x16-v6.png`: preserved rejected proof with excessive negative space between the Shinsen address and divider; do not use.
+- `exports/1620-public-flyer-9x16-v5.png`: preserved rejected proof that cleared the divider but wrapped the after-party label; do not use.
+- `exports/1620-public-flyer-9x16-v4.png`: preserved rejected proof with the Shinsen address overlapping the divider; do not use.
+- `exports/1620-public-flyer-9x16-v3.png`: preserved prior portrait-flyer proof with the Lyft statement wrapping to three lines.
+- `exports/1620-public-flyer-9x16-v2.png`: preserved prior portrait-flyer proof with the location split across excess lines.
+- `exports/1620-public-flyer-9x16-v1.png`: preserved first portrait-flyer proof with footer crowding; do not use.
 - `exports/1620-public-flyer-v19.png`: preserved prior render with the standalone Port Authority city line.
 - `exports/1620-public-flyer-v18.png`: preserved prior render with a centered three-line stacked after-party footer.
 - `exports/1620-public-flyer-v17.png`: preserved prior render with the full terminal name and no Lyft claim.
