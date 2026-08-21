@@ -131,7 +131,7 @@ export default function HomePage() {
       {/* ---- Studio statement ---- */}
       <section className="home-statement">
         <p className="statement-lede">
-          {brandText('MCLIV is a creative studio & event production company at the intersection of fine art & hospitality.')}
+          {brandText('MCLIV is a creative studio & event production company at the intersection of fine art & cuisine.')}
         </p>
         <p className="statement-sub mono">
           Multisensory Experiences · Functional Art · Interior Design · Hospitality Branding
@@ -234,4 +234,3 @@ export default function HomePage() {
     </main>
   );
 }
-
