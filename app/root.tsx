@@ -22,6 +22,13 @@ import {PageLayout} from './components/PageLayout';
 
 export type RootLoader = typeof loader;
 
+const STANDALONE_ROUTES = new Set(['/proposals/1620', '/submit']);
+
+function isStandaloneRoute(pathname: string) {
+  const path = pathname.replace(/\/$/, '');
+  return STANDALONE_ROUTES.has(path) || path === '/1620' || path.startsWith('/1620/');
+}
+
 export const meta: Route.MetaFunction = ({location}) => {
   return buildMeta({pathname: location.pathname});
 };
@@ -39,6 +46,8 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
 
   // revalidate when manually revalidating via useRevalidator
   if (currentUrl.toString() === nextUrl.toString()) return true;
+
+  if (isStandaloneRoute(currentUrl.pathname) !== isStandaloneRoute(nextUrl.pathname)) return true;
 
   // Defaulting to no revalidation for root loader data to improve performance.
   // When using this feature, you risk your UI getting out of sync with your server.
@@ -73,6 +82,10 @@ export function links() {
 }
 
 export async function loader(args: Route.LoaderArgs) {
+  if (isStandaloneRoute(new URL(args.request.url).pathname)) {
+    return null;
+  }
+
   // Start fetching non-critical data without blocking time to first byte
   const deferredData = loadDeferredData(args);
 
@@ -171,6 +184,11 @@ export function Layout({children}: {children?: React.ReactNode}) {
 
 export default function App() {
   const data = useRouteLoaderData<RootLoader>('root');
+  const {pathname} = useLocation();
+
+  if (isStandaloneRoute(pathname)) {
+    return <Outlet />;
+  }
 
   if (!data) {
     return <Outlet />;

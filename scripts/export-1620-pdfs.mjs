@@ -5,7 +5,7 @@ import {fileURLToPath, pathToFileURL} from "node:url";
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const proposalRoot = resolve(
   projectRoot,
-  "EVENT-GALLERIES/1620/proposal",
+  "assets/1620/proposal",
 );
 
 const playwrightCandidates = [

@@ -1,0 +1,116 @@
+@import url("public-flyer-v16.css");
+
+:root {
+  --sans: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --height: 1080px;
+  --padding-y: 64px;
+}
+
+html, body { height: var(--height); }
+
+.flyer {
+  height: var(--height);
+  padding: var(--padding-y) var(--margin);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 82px minmax(0, 1fr) 136px;
+  column-gap: var(--gutter);
+}
+
+.flyer-header {
+  position: static;
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.flyer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  text-align: center;
+}
+
+.cover-caption {
+  position: static;
+  display: block;
+}
+
+.cover-caption h1 {
+  margin: 0;
+  font-size: 192px;
+  line-height: 0.85;
+}
+
+.exhibition-category { margin: 24px 0 0; }
+
+.opening-time .eyebrow { margin: 0; }
+
+[data-ink-center] { position: relative; }
+
+.date-time {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 32px;
+}
+
+.opening-time h2,
+.time {
+  margin: 0;
+  font-size: 92px;
+  font-weight: 460;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.time {
+  position: relative;
+  letter-spacing: -0.025em;
+}
+
+.opening-time .admission { margin-top: 24px; }
+
+.venue-heading h3 {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 480;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.event-address {
+  margin: 18px 0 0;
+  color: var(--soft-white);
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.event-address span { display: block; }
+
+.afterparty-strip {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  padding-right: 0;
+  padding-left: 0;
+  border-top: 1px solid var(--hairline);
+}
+
+@media (min-height: 1500px) {
+  :root {
+    --height: 1920px;
+    --padding-y: 200px;
+  }
+
+  .cover-caption h1 { font-size: 228px; }
+  .opening-time h2,
+  .time { font-size: 112px; }
+  .venue-heading h3 { font-size: 44px; }
+  .event-address { font-size: 24px; }
+}

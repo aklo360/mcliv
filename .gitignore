@@ -3,6 +3,7 @@ node_modules
 .env*
 !.env.example
 .dev.vars
+.wrangler/
 *.pem
 *.key
 .DS_Store
@@ -15,7 +16,73 @@ build
 .shopify
 hydrogen-quickstart
 
-# Local agent/operator context must never be published from this public repo.
-AGENTS.md
+# Private local provider/operator state; public-safe project AGENTS.md is versioned.
 .codex/
 .claude/
+
+# Isolated local development checkouts.
+.worktrees/
+
+# LLPhant media rule: media and generated output live on ARCHIVE02, not in Git.
+# Archive path: /Volumes/ARCHIVE02/projects/<project>/
+output/
+outputs/
+artifacts/
+
+# Video, audio, design sources, archives
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.mkv
+*.avi
+*.wav
+*.mp3
+*.m4a
+*.aif
+*.aiff
+*.flac
+*.psd
+*.psb
+*.ai
+*.aep
+*.prproj
+*.blend
+*.fbx
+*.exr
+*.sketch
+*.fig
+*.zip
+*.pdf
+*.arw
+*.dng
+*.cr2
+*.cr3
+*.nef
+*.raf
+*.raw
+*.pptx
+*.key
+*.indd
+*.dmg
+
+# Images: ignored everywhere except small files the app serves directly.
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.heic
+*.tif
+*.tiff
+!public/**/*.png
+!public/**/*.jpg
+!public/**/*.jpeg
+!public/**/*.gif
+!public/**/*.webp
+!app/**/*.png
+!app/**/*.jpg
+!app/**/*.webp
+
+# 1620 gallery images are served from R2 bucket mcliv-media (source copy: assets/1620/r2-gallery).
+public/images/1620/

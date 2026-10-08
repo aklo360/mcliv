@@ -3,7 +3,7 @@ import {dirname, resolve} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const proposalRoot = resolve(projectRoot, 'EVENT-GALLERIES/1620/proposal');
+const proposalRoot = resolve(projectRoot, 'assets/1620/proposal');
 const input = resolve(proposalRoot, 'public-flyer-9x16-v1.html');
 const output = resolve(proposalRoot, 'exports/1620-public-flyer-9x16-v9.png');
 

@@ -1,0 +1,31 @@
+{
+  "bios": {
+    "aklo": {
+      "text": "Born in Washington Heights, New York City, AKLO is a multidisciplinary artist and software developer. He was mentored in abstract expressionism by Flatbush native Pierre Bernard Francillion, a contemporary of Jean-Michel Basquiat. His work has been exhibited at the New Museum, Superchief Gallery, and Wallplay.\n\nHis music videos for Atlantic Records artists have earned more than 100 million views on YouTube. His work has been published in Vogue, PAPER, Dazed, i-D, Hypebeast, WorldStarHipHop, Complex, and more.",
+      "sources": [],
+      "provenance": "Artist-supplied birthplace, professional roles, mentorship and mentor background, exhibition credits, YouTube reach, and publication credits."
+    },
+    "trouble-andrew": {
+      "text": "Trouble Andrew, also known as Trevor Andrew and GucciGhost, is a multidisciplinary artist from Nova Scotia, Canada. His practice spans painting, drawing, sculpture, music, digital art, and fashion.\n\nThrough his GucciGhost imagery, Andrew transforms found objects and clothing while questioning ideas of authenticity, luxury, and value. His reinterpretation of Gucci's visual language led to a collaboration with the fashion house for its Fall/Winter 2016 collection.",
+      "sources": ["https://en.jp.bape.com/pages/gallery-trevorandrew", "https://krink.com/blogs/all/guccighost"]
+    },
+    "hoxxoh": {
+      "text": "Hoxxoh (Douglas Hoekzema) is a Miami-based contemporary artist whose paintings and murals explore time and sacred geometry. His practice uses color, repeated marks, and mechanical processes to create intricate abstract forms.\n\nWorking with pendulums and hand-built tools for applying paint, he develops techniques that bring gravity and motion into the painting process. The resulting patterns explore the relationship between deliberate structure and chance.",
+      "sources": ["https://www.elhoxxoh.com/", "https://fortworksart.com/hoxxoh-profile", "https://www.seattle.gov/documents/departments/neighborhoods/historicpreservation/landmarks/landmarkspreservationboard/meetingdocuments/lpb071522_metropress_pres.pdf"]
+    },
+    "smurfo": {
+      "text": "Smurfo, also known as Smurfo Udirty, is a Brooklyn-born painter, illustrator, and DJ. Born Christopher Weeden, he combines the language of graffiti and street art with contemporary painting and detailed pen-and-ink drawing.\n\nHis work uses humor and irreverence to examine familiar cultural figures and institutions. Alongside his visual practice, he is active in New York's music scene, connecting art and nightlife through his work as a DJ.",
+      "sources": ["https://www.artsy.net/artist/smurfo-udirty", "https://theemeraldmagazine.com/nyl-7-smurfo-u-dirty/"]
+    },
+    "gazoo-tothemoon": {
+      "text": "Gazoo ToTheMoon is a New York-based artist with roots in Montserrat, known for his street art and signature \"To The Moon\" tag. His practice spans painting, installation, sculpture, and three-dimensional wooden works.\n\nDrawing on his experience as a set designer and builder, Gazoo combines a broad knowledge of materials with a hands-on approach to making. His exhibitions have included presentations at Wallplay and Superchief Gallery, extending his work from the street into gallery and immersive environments.",
+      "sources": ["https://www.gazootothemoon.com/about"]
+    }
+  },
+  "formatting": {
+    "madsteez": [{"from": "MADSTEEZ : Mark Paul Deren\n\nB. (06/23/1980)\n\nBorn blind", "to": "Mark Paul Deren (MADSTEEZ) was born on June 23, 1980. Born blind"}],
+    "esteban": [{"from": "Esteban Caasi\nNew York native artist.", "to": "Esteban Caasi is a New York native artist."}],
+    "gazoo-tothemoon": [{"from": "\n\nBorn 1891", "to": "", "reason": "Apparent birth-year typo in the September 15 submission; omit pending artist confirmation."}],
+    "smurfo": [{"from": "multifacted", "to": "multifaceted"}]
+  }
+}

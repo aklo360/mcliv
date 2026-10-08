@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1620 · Opening Flyer · MCLIV</title>
+    <link rel="stylesheet" href="public-flyer-final-v1.css" />
+    <script src="content.js" defer></script>
+  </head>
+  <body>
+    <main class="flyer" aria-label="1620 exhibition opening and after-party">
+      <header class="flyer-header">
+        <img class="mcliv-mark" src="../../../public/icons/logo.svg" alt="MCLIV" />
+        <p class="eyebrow">Group Exhibition</p>
+        <img class="venue-mark" src="assets/nyc-culture-club-logo-official.png" alt="NYC Culture Club" />
+      </header>
+
+      <section class="opening" aria-label="Opening details">
+        <h1 data-event="title"></h1>
+        <div class="opening-time">
+          <h2 data-event="dateShort"></h2>
+          <p class="time" data-event="time"></p>
+        </div>
+        <div class="opening-location">
+          <p class="eyebrow admission">Free + open to the public</p>
+          <h3 data-event="venueDetail"></h3>
+          <p class="address">
+            <span data-event="venueFlyerName"></span>
+            <span data-event="venueFloor"></span>
+            <span data-event="venueAddress"></span>
+          </p>
+        </div>
+      </section>
+
+      <footer class="afterparty" aria-label="After-party details">
+        <p class="eyebrow">After-party · <span data-event="afterPartyTime"></span></p>
+        <h2 data-event="afterPartyVenue"></h2>
+        <p class="address" data-event="afterPartyAddress"></p>
+      </footer>
+    </main>
+  </body>
+</html>

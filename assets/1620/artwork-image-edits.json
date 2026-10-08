@@ -1,0 +1,1696 @@
+{
+  "version": 3,
+  "method": "Deterministic color-managed photography only. Version 3 sources are the September 16, 2026 Sony ILCE-7RM5 ARW frames from Parker (the sharpest frame per work). Coordinates follow the upright 1368\u00d72052 reference image. Corners are the measured front face of each work: the outer silhouette from wall-tracking scans, then inset per side by the stretcher or frame side face measured as the flat low-variance band on the rectified export (hung canvases lean forward, so the bottom face is widest). Frames are included to their front face. Neutral wall samples above each work estimate white balance; they are not calibrated color targets. Exposure and contrast are uniform across the set.",
+  "images": [
+    {
+      "slug": "madsteez",
+      "source": "assets/1620/madsteez-PC_01985.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          201,
+          366
+        ],
+        [
+          1205,
+          367
+        ],
+        [
+          1194,
+          1614
+        ],
+        [
+          210,
+          1611
+        ]
+      ],
+      "aspect": 0.798,
+      "neutralSample": [
+        240,
+        60,
+        924,
+        236
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "trouble-andrew",
+      "source": "assets/1620/trouble-andrew-PC_01991.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          235,
+          350
+        ],
+        [
+          1214,
+          355
+        ],
+        [
+          1190,
+          1569
+        ],
+        [
+          232,
+          1562
+        ]
+      ],
+      "aspect": 0.798,
+      "neutralSample": [
+        272,
+        60,
+        901,
+        219
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "hoxxoh",
+      "source": "assets/1620/hoxxoh-PC_02005hoxxoh.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          198,
+          422
+        ],
+        [
+          1178,
+          437
+        ],
+        [
+          1178,
+          1660
+        ],
+        [
+          194,
+          1660
+        ]
+      ],
+      "aspect": 0.798,
+      "neutralSample": [
+        230,
+        60,
+        908,
+        291
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "jerami-dean-goodwin",
+      "source": "assets/1620/jerami-dean-goodwin-PC_01983.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          203,
+          367
+        ],
+        [
+          1153,
+          376
+        ],
+        [
+          1144,
+          1556
+        ],
+        [
+          198,
+          1556
+        ]
+      ],
+      "aspect": 0.801,
+      "neutralSample": [
+        237,
+        60,
+        876,
+        236
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "cavier-coleman",
+      "source": "assets/1620/cavier-coleman-PC_01988.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          206,
+          329
+        ],
+        [
+          1192,
+          324
+        ],
+        [
+          1191,
+          1550
+        ],
+        [
+          216,
+          1552
+        ]
+      ],
+      "aspect": 0.8,
+      "neutralSample": [
+        245,
+        60,
+        907,
+        193
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25,
+      "note": "White frame: top and right outer edges mirrored from the measured left and bottom rail width; the lit rails match the wall tone."
+    },
+    {
+      "slug": "steph-costello",
+      "source": "assets/1620/steph-costello-PC_02003.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          279,
+          424
+        ],
+        [
+          1186,
+          435
+        ],
+        [
+          1184,
+          1586
+        ],
+        [
+          268,
+          1580
+        ]
+      ],
+      "aspect": 0.791,
+      "neutralSample": [
+        306,
+        60,
+        840,
+        294
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "john-black",
+      "source": "assets/1620/john-black-PC_02000.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          244,
+          417
+        ],
+        [
+          1157,
+          425
+        ],
+        [
+          1149,
+          1576
+        ],
+        [
+          229,
+          1576
+        ]
+      ],
+      "aspect": 0.794,
+      "neutralSample": [
+        266,
+        60,
+        850,
+        286
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "smurfo",
+      "source": "assets/1620/smurfo-PC_01997smurfo.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          258,
+          360
+        ],
+        [
+          1125,
+          363
+        ],
+        [
+          1103,
+          1442
+        ],
+        [
+          253,
+          1446
+        ]
+      ],
+      "aspect": 0.792,
+      "neutralSample": [
+        287,
+        60,
+        798,
+        230
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "jason-rohlf",
+      "source": "assets/1620/jason-rohlf-PC_01998.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          213,
+          369
+        ],
+        [
+          1197,
+          393
+        ],
+        [
+          1174,
+          1609
+        ],
+        [
+          201,
+          1592
+        ]
+      ],
+      "aspect": 0.803,
+      "neutralSample": [
+        240,
+        60,
+        917,
+        238
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "king-saladeen",
+      "source": "assets/1620/king-saladeen-PC_01975king.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          226,
+          391
+        ],
+        [
+          1099,
+          391
+        ],
+        [
+          1089,
+          1474
+        ],
+        [
+          228,
+          1473
+        ]
+      ],
+      "aspect": 0.801,
+      "neutralSample": [
+        265,
+        60,
+        793,
+        261
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25,
+      "version": 4
+    },
+    {
+      "slug": "aklo",
+      "version": 4,
+      "source": "assets/1620/aklo-PC_01993.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          240,
+          371
+        ],
+        [
+          1149,
+          378
+        ],
+        [
+          1131,
+          1511
+        ],
+        [
+          228,
+          1494
+        ]
+      ],
+      "aspect": 0.803,
+      "neutralSample": [
+        268,
+        60,
+        840,
+        241
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "lola-jiblazee",
+      "source": "assets/1620/lola-jiblazee-PC_01980.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          220,
+          328
+        ],
+        [
+          1195,
+          336
+        ],
+        [
+          1184,
+          1512
+        ],
+        [
+          225,
+          1517
+        ]
+      ],
+      "aspect": 0.817,
+      "neutralSample": [
+        257,
+        60,
+        898,
+        197
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "gazoo-tothemoon",
+      "source": "assets/1620/gazoo-tothemoon-PC_01994.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          205,
+          354
+        ],
+        [
+          1151,
+          361
+        ],
+        [
+          1148,
+          1542
+        ],
+        [
+          210,
+          1546
+        ]
+      ],
+      "aspect": 0.794,
+      "neutralSample": [
+        245,
+        60,
+        866,
+        224
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "notyourmuse",
+      "source": "assets/1620/notyourmuse-PC_01977.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          237,
+          350
+        ],
+        [
+          1150,
+          357
+        ],
+        [
+          1137,
+          1502
+        ],
+        [
+          235,
+          1507
+        ]
+      ],
+      "aspect": 0.789,
+      "neutralSample": [
+        275,
+        60,
+        835,
+        219
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "keya-tama",
+      "source": "assets/1620/keya-tama-PC_01979.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          301,
+          343
+        ],
+        [
+          1192,
+          350
+        ],
+        [
+          1172,
+          1463
+        ],
+        [
+          293,
+          1458
+        ]
+      ],
+      "aspect": 0.794,
+      "neutralSample": [
+        330,
+        60,
+        821,
+        212
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "kevin-cincotta",
+      "source": "assets/1620/kevin-cincotta-PC_01968.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          232,
+          360
+        ],
+        [
+          1086,
+          359
+        ],
+        [
+          1076,
+          1417
+        ],
+        [
+          246,
+          1415
+        ]
+      ],
+      "aspect": 0.796,
+      "neutralSample": [
+        272,
+        60,
+        773,
+        229
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "esteban",
+      "source": "assets/1620/esteban-PC_01973.ARW",
+      "referenceSize": [
+        1368,
+        2052
+      ],
+      "corners": [
+        [
+          297,
+          359
+        ],
+        [
+          1055,
+          375
+        ],
+        [
+          1025,
+          1307
+        ],
+        [
+          291,
+          1291
+        ]
+      ],
+      "aspect": 0.8,
+      "neutralSample": [
+        330,
+        60,
+        685,
+        229
+      ],
+      "exposureEV": 0.45,
+      "contrast": 1.25
+    },
+    {
+      "slug": "gianni-lee",
+      "version": 2,
+      "source": "assets/1620/gianni-lee-IMG_8150.heic",
+      "referenceSize": [
+        1368,
+        1842
+      ],
+      "corners": [
+        [
+          173.5,
+          386.4
+        ],
+        [
+          1220.7,
+          388.9
+        ],
+        [
+          1217.8,
+          1671.2
+        ],
+        [
+          169.7,
+          1668.7
+        ]
+      ],
+      "aspect": 0.817,
+      "neutralSample": [
+        300,
+        60,
+        800,
+        270
+      ],
+      "exposureEV": 0,
+      "contrast": 1.25,
+      "extend": {
+        "left": 35,
+        "right": 35,
+        "top": 0,
+        "bottom": 50
+      },
+      "matte": {
+        "textureRadius": 2,
+        "textureThreshold": 3,
+        "darkLightness": 0.4,
+        "slitRadius": 3,
+        "closeRadius": 12,
+        "speckRadius": 3.5,
+        "above": 30,
+        "sideReach": 30,
+        "sideRise": 200
+      },
+      "note": "Artist-supplied iPhone photograph, September 16, 2026. Cowrie shells glued along the bottom edge and lower corners are kept with their silhouette by a texture matte; the truncated bead curtain below the shells is cropped away. Exported as transparent PNG master plus a WebP web copy."
+    }
+  ],
+  "superseded": {
+    "version2": {
+      "version": 2,
+      "note": "Unshipped test pass: geometric side-face model only",
+      "images": [
+        {
+          "slug": "madsteez",
+          "source": "assets/1620/madsteez-PC_01985.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              198,
+              364
+            ],
+            [
+              1207,
+              365
+            ],
+            [
+              1196,
+              1626
+            ],
+            [
+              207,
+              1624
+            ]
+          ],
+          "aspect": 0.793,
+          "neutralSample": [
+            237,
+            60,
+            929,
+            234
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "trouble-andrew",
+          "source": "assets/1620/trouble-andrew-PC_01991.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              233,
+              348
+            ],
+            [
+              1218,
+              353
+            ],
+            [
+              1194,
+              1572
+            ],
+            [
+              230,
+              1565
+            ]
+          ],
+          "aspect": 0.799,
+          "neutralSample": [
+            270,
+            60,
+            907,
+            217
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "hoxxoh",
+          "source": "assets/1620/hoxxoh-PC_02005hoxxoh.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              179,
+              419
+            ],
+            [
+              1180,
+              435
+            ],
+            [
+              1180,
+              1695
+            ],
+            [
+              175,
+              1695
+            ]
+          ],
+          "aspect": 0.791,
+          "neutralSample": [
+            214,
+            60,
+            926,
+            289
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "jerami-dean-goodwin",
+          "source": "assets/1620/jerami-dean-goodwin-PC_01983.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              198,
+              364
+            ],
+            [
+              1155,
+              374
+            ],
+            [
+              1146,
+              1568
+            ],
+            [
+              192,
+              1569
+            ]
+          ],
+          "aspect": 0.797,
+          "neutralSample": [
+            232,
+            60,
+            883,
+            234
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "cavier-coleman",
+          "source": "assets/1620/cavier-coleman-PC_01988.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              197,
+              379
+            ],
+            [
+              1148,
+              374
+            ],
+            [
+              1146,
+              1576
+            ],
+            [
+              207,
+              1577
+            ]
+          ],
+          "aspect": 0.787,
+          "neutralSample": [
+            237,
+            60,
+            870,
+            243
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "steph-costello",
+          "source": "assets/1620/steph-costello-PC_02003.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              243,
+              422
+            ],
+            [
+              1189,
+              433
+            ],
+            [
+              1187,
+              1627
+            ],
+            [
+              232,
+              1621
+            ]
+          ],
+          "aspect": 0.794,
+          "neutralSample": [
+            272,
+            60,
+            877,
+            292
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "john-black",
+          "source": "assets/1620/john-black-PC_02000.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              220,
+              414
+            ],
+            [
+              1159,
+              423
+            ],
+            [
+              1151,
+              1620
+            ],
+            [
+              204,
+              1620
+            ]
+          ],
+          "aspect": 0.785,
+          "neutralSample": [
+            244,
+            60,
+            874,
+            284
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "smurfo",
+          "source": "assets/1620/smurfo-PC_01997smurfo.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              248,
+              357
+            ],
+            [
+              1129,
+              360
+            ],
+            [
+              1106,
+              1462
+            ],
+            [
+              244,
+              1466
+            ]
+          ],
+          "aspect": 0.788,
+          "neutralSample": [
+            283,
+            60,
+            805,
+            227
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "jason-rohlf",
+          "source": "assets/1620/jason-rohlf-PC_01998.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              207,
+              366
+            ],
+            [
+              1199,
+              391
+            ],
+            [
+              1176,
+              1629
+            ],
+            [
+              195,
+              1612
+            ]
+          ],
+          "aspect": 0.795,
+          "neutralSample": [
+            235,
+            60,
+            924,
+            236
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "king-saladeen",
+          "source": "assets/1620/king-saladeen-PC_01975king.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              206,
+              389
+            ],
+            [
+              1101,
+              390
+            ],
+            [
+              1090,
+              1530
+            ],
+            [
+              209,
+              1529
+            ]
+          ],
+          "aspect": 0.779,
+          "neutralSample": [
+            245,
+            60,
+            815,
+            259
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "aklo",
+          "version": 3,
+          "source": "assets/1620/aklo-PC_01993.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              237,
+              369
+            ],
+            [
+              1151,
+              376
+            ],
+            [
+              1133,
+              1528
+            ],
+            [
+              225,
+              1511
+            ]
+          ],
+          "aspect": 0.794,
+          "neutralSample": [
+            265,
+            60,
+            845,
+            239
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "lola-jiblazee",
+          "source": "assets/1620/lola-jiblazee-PC_01980.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              211,
+              326
+            ],
+            [
+              1197,
+              334
+            ],
+            [
+              1186,
+              1528
+            ],
+            [
+              216,
+              1533
+            ]
+          ],
+          "aspect": 0.814,
+          "neutralSample": [
+            251,
+            60,
+            906,
+            195
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "gazoo-tothemoon",
+          "source": "assets/1620/gazoo-tothemoon-PC_01994.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              199,
+              351
+            ],
+            [
+              1154,
+              359
+            ],
+            [
+              1151,
+              1548
+            ],
+            [
+              204,
+              1552
+            ]
+          ],
+          "aspect": 0.796,
+          "neutralSample": [
+            239,
+            60,
+            875,
+            221
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "notyourmuse",
+          "source": "assets/1620/notyourmuse-PC_01977.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              216,
+              348
+            ],
+            [
+              1152,
+              355
+            ],
+            [
+              1139,
+              1524
+            ],
+            [
+              214,
+              1528
+            ]
+          ],
+          "aspect": 0.792,
+          "neutralSample": [
+            254,
+            60,
+            858,
+            217
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "keya-tama",
+          "source": "assets/1620/keya-tama-PC_01979.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              277,
+              340
+            ],
+            [
+              1195,
+              348
+            ],
+            [
+              1175,
+              1497
+            ],
+            [
+              269,
+              1491
+            ]
+          ],
+          "aspect": 0.793,
+          "neutralSample": [
+            308,
+            60,
+            846,
+            210
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "kevin-cincotta",
+          "source": "assets/1620/kevin-cincotta-PC_01968.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              228,
+              358
+            ],
+            [
+              1088,
+              357
+            ],
+            [
+              1078,
+              1431
+            ],
+            [
+              242,
+              1429
+            ]
+          ],
+          "aspect": 0.79,
+          "neutralSample": [
+            268,
+            60,
+            779,
+            227
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        },
+        {
+          "slug": "esteban",
+          "source": "assets/1620/esteban-PC_01973.ARW",
+          "referenceSize": [
+            1368,
+            2052
+          ],
+          "corners": [
+            [
+              293,
+              357
+            ],
+            [
+              1057,
+              373
+            ],
+            [
+              1026,
+              1324
+            ],
+            [
+              286,
+              1308
+            ]
+          ],
+          "aspect": 0.791,
+          "neutralSample": [
+            326,
+            60,
+            691,
+            227
+          ],
+          "exposureEV": 0.45,
+          "contrast": 1.25
+        }
+      ]
+    },
+    "version1": {
+      "version": 1,
+      "method": "Deterministic color-managed photography only. Coordinates follow the upright reference image. Four-corner rectification preserves the complete outer frame. Neutral wall/frame samples estimate white balance; they are not calibrated color targets.",
+      "images": [
+        {
+          "slug": "smurfo",
+          "source": "public/images/1620/smurfo-d36c2b2c.jpg",
+          "referenceSize": [
+            1368,
+            1824
+          ],
+          "corners": [
+            [
+              117,
+              211
+            ],
+            [
+              1244,
+              202
+            ],
+            [
+              1213,
+              1611
+            ],
+            [
+              106,
+              1602
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": [
+            350,
+            60,
+            650,
+            90
+          ],
+          "exposureEV": 0,
+          "contrast": 1.5
+        },
+        {
+          "slug": "jerami-dean-goodwin",
+          "source": "public/images/1620/jerami-dean-goodwin-068bfdd6.jpg",
+          "referenceSize": [
+            1368,
+            1824
+          ],
+          "corners": [
+            [
+              208,
+              389
+            ],
+            [
+              1160,
+              392
+            ],
+            [
+              1146,
+              1569
+            ],
+            [
+              218,
+              1563
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": [
+            1220,
+            520,
+            70,
+            280
+          ],
+          "exposureEV": 0.1,
+          "contrast": 1.5
+        },
+        {
+          "slug": "cavier-coleman",
+          "source": "public/images/1620/cavier-coleman-152bcf38.png",
+          "referenceSize": [
+            1155,
+            1362
+          ],
+          "corners": [
+            [
+              103,
+              59
+            ],
+            [
+              1050,
+              60
+            ],
+            [
+              1048,
+              1267
+            ],
+            [
+              103,
+              1266
+            ]
+          ],
+          "aspect": 0.815,
+          "neutralSample": [
+            400,
+            65,
+            300,
+            20
+          ],
+          "exposureEV": 0,
+          "contrast": 0
+        },
+        {
+          "slug": "steph-costello",
+          "source": "public/images/1620/steph-costello-829d897f.jpg",
+          "referenceSize": [
+            579,
+            727
+          ],
+          "corners": [
+            [
+              0,
+              0
+            ],
+            [
+              578,
+              0
+            ],
+            [
+              578,
+              726
+            ],
+            [
+              0,
+              726
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": null,
+          "exposureEV": 0,
+          "contrast": 0
+        },
+        {
+          "slug": "john-black",
+          "source": "public/images/1620/john-black-ad0f9548.jpg",
+          "referenceSize": [
+            1512,
+            1512
+          ],
+          "corners": [
+            [
+              234,
+              82
+            ],
+            [
+              1294,
+              79
+            ],
+            [
+              1298,
+              1433
+            ],
+            [
+              214,
+              1423
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": null,
+          "exposureEV": 0.1,
+          "contrast": 1
+        },
+        {
+          "slug": "jason-rohlf",
+          "source": "public/images/1620/jason-rohlf-f781799e.jpg",
+          "referenceSize": [
+            1407,
+            1760
+          ],
+          "corners": [
+            [
+              178,
+              177
+            ],
+            [
+              1236,
+              179
+            ],
+            [
+              1230,
+              1494
+            ],
+            [
+              178,
+              1498
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": null,
+          "exposureEV": 0,
+          "contrast": 0
+        },
+        {
+          "slug": "notyourmuse",
+          "source": "public/images/1620/notyourmuse-761de563.jpg",
+          "referenceSize": [
+            1368,
+            1824
+          ],
+          "corners": [
+            [
+              0,
+              0
+            ],
+            [
+              1367,
+              0
+            ],
+            [
+              1367,
+              1823
+            ],
+            [
+              0,
+              1823
+            ]
+          ],
+          "aspect": 0.7500945179584121,
+          "neutralSample": null,
+          "exposureEV": 0,
+          "contrast": 0,
+          "note": "Already fills the photograph; complete outer corners and a neutral reference are unavailable. Preserve supplied composition and color."
+        },
+        {
+          "slug": "keya-tama",
+          "source": "public/images/1620/keya-tama-2cce9e66.jpg",
+          "referenceSize": [
+            1439,
+            1714
+          ],
+          "corners": [
+            [
+              101,
+              102
+            ],
+            [
+              1342,
+              101
+            ],
+            [
+              1340,
+              1615
+            ],
+            [
+              99,
+              1612
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": null,
+          "exposureEV": 0.05,
+          "contrast": 1
+        },
+        {
+          "slug": "kevin-cincotta",
+          "source": "public/images/1620/kevin-cincotta-9998b92d.jpg",
+          "referenceSize": [
+            1407,
+            1769
+          ],
+          "corners": [
+            [
+              67,
+              77
+            ],
+            [
+              1328,
+              75
+            ],
+            [
+              1327,
+              1701
+            ],
+            [
+              68,
+              1693
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": null,
+          "exposureEV": 0,
+          "contrast": 0
+        },
+        {
+          "slug": "lola-jiblazee",
+          "source": "assets/1620/lola-jiblazee-IMG_7485.DNG",
+          "referenceSize": [
+            1368,
+            1824
+          ],
+          "corners": [
+            [
+              85,
+              220
+            ],
+            [
+              1299,
+              220
+            ],
+            [
+              1272,
+              1677
+            ],
+            [
+              106,
+              1670
+            ]
+          ],
+          "aspect": 0.819,
+          "neutralSample": [
+            300,
+            70,
+            700,
+            80
+          ],
+          "exposureEV": 0.05,
+          "contrast": 1.5
+        },
+        {
+          "slug": "aklo",
+          "version": 2,
+          "source": "assets/1620/aklo-IMG_7476.DNG",
+          "referenceSize": [
+            1368,
+            1824
+          ],
+          "corners": [
+            [
+              55,
+              142
+            ],
+            [
+              1308,
+              153
+            ],
+            [
+              1286,
+              1684
+            ],
+            [
+              72,
+              1690
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": [
+            300,
+            30,
+            700,
+            65
+          ],
+          "exposureEV": 0.03,
+          "contrast": 4,
+          "midtoneGamma": 0.8
+        },
+        {
+          "slug": "trouble-andrew",
+          "source": "assets/1620/trouble-andrew-IMG_7479.DNG",
+          "referenceSize": [
+            1368,
+            1824
+          ],
+          "corners": [
+            [
+              47,
+              154
+            ],
+            [
+              1315,
+              141
+            ],
+            [
+              1319,
+              1725
+            ],
+            [
+              62,
+              1722
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": [
+            300,
+            30,
+            700,
+            60
+          ],
+          "exposureEV": 0.05,
+          "contrast": 1.8
+        },
+        {
+          "slug": "madsteez",
+          "source": "assets/1620/madsteez-IMG_7481.DNG",
+          "referenceSize": [
+            1368,
+            1824
+          ],
+          "corners": [
+            [
+              70,
+              201
+            ],
+            [
+              1292,
+              209
+            ],
+            [
+              1269,
+              1702
+            ],
+            [
+              95,
+              1709
+            ]
+          ],
+          "aspect": 0.8,
+          "neutralSample": [
+            350,
+            35,
+            650,
+            90
+          ],
+          "exposureEV": 0.12,
+          "contrast": 1.5
+        }
+      ]
+    }
+  }
+}

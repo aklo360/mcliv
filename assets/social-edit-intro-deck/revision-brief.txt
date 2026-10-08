@@ -1,0 +1,42 @@
+THE SOCIAL EDIT + MCLIV INTRODUCTION DECK
+Revision brief synthesized from Liz Teo's MCLIV WhatsApp messages on 2026-08-25
+
+COMMUNICATION JOB
+Present The Social Edit, MCLIV Studio, and John Black as one premium editorial introduction for prospective collaborators, partners, venues, and guests.
+
+SOURCE AUTHORITY
+- Source structure and client-approved cover: The_Social_Edit_Combined_Deck_WITH_TRANSITIONS.pptx
+- Final text and images: the four revised PDFs in this folder
+- The cover slide must remain unchanged.
+- Final visual system: the canonical MCLIV system in ../../BRAND.md, with the shipped 1620 deck as the document benchmark
+
+PROBLEM
+The revised content is supplied as A4 and letter-size PDFs, but the deliverable must be a polished 16:9 PowerPoint. The approved deck has the correct black/ivory editorial identity and section transitions, but much of the portfolio is sparse because one artwork occupies each slide. A direct PDF-to-slide placement would not satisfy the brief.
+
+NON-NEGOTIABLE REQUIREMENTS
+- Preserve every supplied word exactly. Do not rewrite, shorten, expand, paraphrase, or omit text.
+- Preserve every supplied image exactly. Do not replace, generate, or substitute images.
+- Preserve the approved typography, color palette, editorial tone, and transition slides.
+- Reformat content for balanced 16:9 presentation layouts.
+- Split content across slides when necessary; do not shrink it into unreadable layouts.
+- Retain portfolio transition slides.
+- Curate the portfolio with two or three works per slide where appropriate.
+- Reserve full-slide treatment for works with stronger visual impact.
+- Remove filler slides, including "End of Portfolio."
+- Add a clickable https://mcliv.studio link wherever MCLIV Studio is referenced.
+- End naturally; do not finish on an internal production or filler slide.
+
+PROPOSED SOLUTION
+1. Keep the approved cover and section-transition system.
+2. Redesign the interior slides through MCLIV's 12-column museum-checklist system: black, white, and bone stocks; logo/header triads; section indexes; hairlines; captions; and folios.
+3. Use Helvetica Neue or Inter as the structural voice, with restrained GFS Didot accents where the art/editorial register benefits.
+4. Let the supplied imagery carry all color. Use no decorative accent palette, rounded cards, gradients, interface chrome, or generated imagery.
+5. Reflow the revised Social Edit content into balanced 16:9 editorial compositions.
+6. Preserve the MCLIV Studio transition and make its website link clickable.
+7. Consolidate the 20-work portfolio into a deliberate mix of two-up, three-up, and selected hero slides without changing artwork images or captions.
+8. Remove the portfolio filler ending.
+9. Reflow the revised biography, CV, exhibitions, collections, and press content into the same MCLIV document system.
+10. Preserve the existing closing idea so the presentation resolves on an audience-facing statement.
+
+DELIVERY CONSTRAINT
+Liz requested the completed deck within 12 hours. Mike accepted a turnaround of less than 12 hours.

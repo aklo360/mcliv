@@ -19,6 +19,19 @@ export default async function handleRequest(
       checkoutDomain: context.env.PUBLIC_CHECKOUT_DOMAIN,
       storeDomain: context.env.PUBLIC_STORE_DOMAIN,
     },
+    scriptSrc: [
+      "'self'",
+      'https://cdn.shopify.com',
+      'https://shopify.com',
+      'https://challenges.cloudflare.com',
+    ],
+    connectSrc: ["'self'", 'https://challenges.cloudflare.com'],
+    frameSrc: [
+      "'self'",
+      'https://www.youtube-nocookie.com',
+      'https://www.youtube.com',
+      'https://challenges.cloudflare.com',
+    ],
   });
 
   const body = await renderToReadableStream(

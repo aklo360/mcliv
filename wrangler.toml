@@ -5,3 +5,16 @@ compatibility_flags = ["nodejs_compat"]
 
 [assets]
 directory = "./dist/client"
+
+[[d1_databases]]
+binding = "ARTIST_SUBMISSIONS_DB"
+database_name = "mcliv-artist-submissions"
+database_id = "4dd87ad5-fa5f-468b-952f-eb9c7d1c2191"
+
+[[r2_buckets]]
+binding = "ARTIST_SUBMISSION_IMAGES"
+bucket_name = "mcliv-artist-submission-images"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "mcliv-media"

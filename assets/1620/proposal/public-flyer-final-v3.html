@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1620 · Opening Flyer · MCLIV</title>
+    <link rel="stylesheet" href="public-flyer-final-v3.css" />
+    <script src="content.js" defer></script>
+  </head>
+  <body>
+    <main class="flyer" aria-label="1620 exhibition opening and after-party">
+      <header class="flyer-header">
+        <img class="mcliv-mark" src="../../../public/icons/logo.svg" alt="MCLIV" />
+        <img class="venue-mark" src="assets/nyc-culture-club-logo-official.png" alt="NYC Culture Club" />
+      </header>
+
+      <div class="flyer-content" data-center-ink>
+      <section class="cover-caption" aria-label="Exhibition">
+        <div>
+          <h1 data-event="title" data-ink-center></h1>
+          <p class="eyebrow exhibition-category" data-ink-center>Group Exhibition</p>
+        </div>
+      </section>
+
+      <section class="opening-time" aria-label="Opening date and time">
+        <div class="date-time" data-ink-center>
+          <h2 data-event="dateShort"></h2>
+          <p class="time" data-event="timeShort"></p>
+        </div>
+        <p class="eyebrow admission" data-ink-center>Free + open to the public</p>
+      </section>
+
+      <section class="opening-location" aria-label="Venue and address">
+        <div class="venue-heading">
+          <h3 data-event="venueDetail" data-ink-center></h3>
+        </div>
+        <p class="event-address">
+          <span data-event="venueFlyerName" data-ink-center></span>
+          <span data-event="venueFloor" data-ink-center></span>
+          <span data-event="venueAddress" data-ink-center></span>
+        </p>
+      </section>
+      </div>
+
+      <section class="afterparty-strip" aria-label="After-party details">
+        <div class="afterparty-lockup">
+          <p class="band-label">After-party · <span data-event="afterPartyTime"></span></p>
+          <div class="afterparty-location">
+            <h2 data-event="afterPartyVenue"></h2>
+            <p data-event="afterPartyAddress"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

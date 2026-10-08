@@ -1,0 +1,126 @@
+/* Approved campaign components and tokens are inherited without duplication. */
+@import url("public-flyer-v16.css");
+
+:root {
+  /* Exact font stacks from BRAND.md. */
+  --sans: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --height: 1080px;
+  --padding-y: 64px;
+}
+
+html, body { height: var(--height); }
+
+.flyer {
+  height: var(--height);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: 82px minmax(0, 1fr) 136px;
+  column-gap: var(--gutter);
+  padding: var(--padding-y) var(--margin);
+}
+
+.flyer-header {
+  position: static;
+  grid-column: 1 / -1;
+}
+
+.opening {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  border-bottom: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.opening-content {
+  flex: none;
+  width: 100%;
+}
+
+.cover-caption {
+  position: static;
+  display: block;
+}
+
+.cover-caption > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover-caption h1 {
+  position: relative;
+  width: max-content;
+  margin: 0;
+  font-size: 180px;
+}
+
+.exhibition-label {
+  position: relative;
+  width: max-content;
+  margin: 18px 0 0;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.02em;
+}
+
+/* Opening type styles come from the supplied reference's source:
+   motion/src/scenes/Opening.tsx. Spacing adapts to the requested frame;
+   the type remains unscaled, including the shared campaign labels. */
+.opening-time { margin-top: 32px; }
+
+.opening-time h2 {
+  margin: 0;
+  font-size: 112px;
+  font-weight: 460;
+  line-height: 0.88;
+  letter-spacing: -0.07em;
+}
+
+.time {
+  margin: 16px 0 0;
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.opening-location { margin-top: 32px; }
+.admission { margin: 0; }
+
+.opening-location h3 {
+  margin: 24px 0 0;
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.052em;
+}
+
+.event-address {
+  margin: 16px 0 0;
+  color: var(--soft-white);
+  font-family: var(--mono);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.event-address span { display: block; }
+
+.afterparty-strip {
+  grid-column: 1 / -1;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@media (min-height: 1500px) {
+  :root {
+    --height: 1920px;
+    --padding-y: 200px;
+  }
+}

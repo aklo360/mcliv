@@ -83,6 +83,7 @@ export function HeaderMenu({
 function HeaderCtas({isLoggedIn, cart}: Pick<HeaderProps, 'isLoggedIn' | 'cart'>) {
   return (
     <nav className="header-ctas" role="navigation">
+      <NavLink to="/1620" aria-label="1620 group exhibition">1620</NavLink>
       <NavLink
         prefetch="intent"
         to="https://shopify.com/78018445562/account"

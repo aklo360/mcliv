@@ -10,5 +10,10 @@ import type {HydrogenEnv} from '@shopify/hydrogen';
 declare global {
   interface Env extends HydrogenEnv {
     PRIMARY_PRODUCT_HANDLE?: string;
+    ARTIST_SUBMISSIONS_DB?: D1Database;
+    ARTIST_SUBMISSION_IMAGES?: R2Bucket;
+    MEDIA?: R2Bucket;
+    TURNSTILE_SITE_KEY?: string;
+    TURNSTILE_SECRET_KEY?: string;
   }
 }
