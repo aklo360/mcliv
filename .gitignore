@@ -23,15 +23,24 @@ hydrogen-quickstart
 # Isolated local development checkouts.
 .worktrees/
 
-# LLPhant media rule: media and generated output live on ARCHIVE02, not in Git.
+# Project media and generated output stay outside Git.
 # Archive path: /Volumes/ARCHIVE02/projects/<project>/
 output/
 outputs/
 artifacts/
 
+# Local compiler caches and generated document-inspection reports.
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+*.inspect.ndjson
+
 # Video, audio, design sources, archives
 *.mp4
 *.mov
+*.braw
+*.drp
+*.drt
 *.m4v
 *.webm
 *.mkv

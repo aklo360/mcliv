@@ -1,0 +1,148 @@
+@Presentations
+
+Create the final editable V4 PowerPoint now. Do not stop at a plan, design brief, or preview. Do not ask clarifying questions. Use your judgment within the exact constraints below. Work until the new PPTX exists and every slide passes visual QA.
+
+READ FIRST
+- AGENTS.md
+- ARCHITECTURE.md
+- BRAND.md
+- assets/social-edit-intro-deck/revision-brief-v4.txt
+
+SOURCE DECK — CONTENT BASELINE ONLY
+- assets/social-edit-intro-deck/The_Social_Edit_MCLIV_V3.pptx
+
+APPROVED CONTENT SOURCES
+- assets/social-edit-intro-deck/The_Social_Edit_Combined_Deck_WITH_TRANSITIONS.pptx
+- assets/social-edit-intro-deck/The_Social_Edit_FINAL_CORRECT.pdf
+- assets/social-edit-intro-deck/John_Black_Artist_CV (1).pdf
+- assets/social-edit-intro-deck/John_Black_Press (1).pdf
+- assets/social-edit-intro-deck/John_Black_Portfolio_ (2).pdf
+
+MCLIV VISUAL BENCHMARK
+- assets/1620/proposal/exports/1620-website-deck-v14.pdf
+
+OUTPUT
+- Create a new 16:9 PowerPoint file.
+- Do not modify or overwrite V2 or V3.
+- Save only the new file as:
+  assets/social-edit-intro-deck/The_Social_Edit_MCLIV_V4.pptx
+- Keep text editable where possible.
+- Use the standard @Presentations artifact-tool workflow. Do not use python-pptx.
+
+COMMUNICATION JOB
+The deck first introduces The Social Edit as a distinct hospitality and cultural-experience entity. It then makes a clean visual transition to MCLIV Studio, John Black’s selected work, and his credentials. The audience must never mistake The Social Edit for MCLIV or read the deck as one blended brand.
+
+LOCKED 35-SLIDE STRUCTURE
+- Slides 1–7: The Social Edit.
+- Slide 8: clear MCLIV Studio transition.
+- Slides 9–28: John Black selected works, exactly one artwork per slide.
+- Slides 29–34: artist credentials.
+- Slide 35: MCLIV close.
+
+THE SOCIAL EDIT — SLIDES 1–7
+- The Social Edit is one entity. MCLIV is a separate entity.
+- Show no MCLIV logo, MCLIV footer, MCLIV folio, MCLIV archive furniture, “MCLIV Studio” label, or MCLIV breadcrumb anywhere on slides 1–7.
+- Create a simple editable text wordmark: THE SOCIAL EDIT.
+- Set it in GFS Didot Regular. Use Didot Regular only if GFS Didot is unavailable.
+- Use all caps with moderate tracking. No icon, monogram, strikethrough, or co-brand lockup.
+- Use GFS Didot for the wordmark, primary titles, and curator names.
+- Use Helvetica Neue Regular/Medium for body text and factual labels.
+- Use warm ivory #F4F0E7, ink #0A0A0A, soft graphite #4A4946, and quiet rule #CFC8BC.
+- Make this section editorial, cultured, warm, human, and hospitality-led.
+- Use large supplied documentary photography, generous margins, refined hairlines, and magazine-like composition.
+- Keep all approved text and supplied photography exact. Do not rewrite or replace anything.
+
+SLIDE 1 — APPROVED COVER
+- Preserve the approved source image, exact wording, and hierarchy.
+- The wording is:
+  THE SOCIAL EDIT
+  HOSPITALITY · CREATIVITY · COMMUNITY
+  A curated experiences platform bringing together people, ideas and spaces.
+- Remove all MCLIV branding.
+- Set THE SOCIAL EDIT as the simple serif wordmark.
+- Keep the cover minimal and elegant.
+
+SLIDES 2–7
+- Slide 2: About. One strong serif statement, one restrained sans-serif reading column, supplied photography.
+- Slide 3: Gatherings. Editorial image-led spread using the approved categories and description.
+- Slide 4: Curators. Use the supplied group image, approved names, serif title and names, small sans-serif roles. Avoid a corporate team grid.
+- Slides 5–7: Liz, John, and Deon. Use one consistent editorial profile layout for all three. Keep biographies and portraits exact. Serif name, small sans-serif role. A factual mention of MCLIV in approved biography copy is allowed, but no MCLIV brand furniture is allowed.
+
+SLIDE 8 — HARD MCLIV TRANSITION
+- This is the first MCLIV-branded slide.
+- Do not use a combined “The Social Edit / MCLIV Studio” header.
+- Use MCLIV’s strikethrough wordmark, cool paper or black, 12-column grid, technical metadata, crisp rules, and exact approved capabilities copy.
+- Make the visual reset unmistakable. The Social Edit section is finished before this slide begins.
+
+MCLIV SYSTEM — SLIDES 8–35
+- Follow BRAND.md and the verified 1620 deck.
+- Use cool paper #F4F4F4, ink #0A0A0A, graphite #3A3A3A, neutral hairlines, Helvetica Neue, and JetBrains Mono only for metadata.
+- Use the 12-column grid, 64 px side margins, and 28 px gutters.
+- Use the MCLIV logo on section openings and selected information pages only. Do not put it on every slide.
+- No cards, pills, shadows, gradients, fake textures, ornamental shapes, UI styling, or decorative color. Let the supplied artwork carry the color.
+
+ART SECTION — SLIDES 9–28 — NON-NEGOTIABLE CONSISTENCY
+- Keep all 20 artworks in exact source order.
+- Give every artwork its own slide.
+- Use exactly ONE locked artwork layout for all 20 slides. Do not create any other art layouts.
+- Do not use hero layouts, full-bleed art slides, two-up slides, alternating image positions, dark variants, or unique compositions.
+- Lock the same background, header, image field, information rail, margins, type sizes, rules, captions, and folio positions across all 20 slides.
+- Layout: one large fixed image field on the left and one narrow fixed information rail on the right.
+- Fit each artwork within the same image field using contain behavior. Preserve the full artwork, aspect ratio, and orientation. Do not crop, stretch, distort, or retouch the art.
+- The right rail must always contain, in the same positions:
+  1. Artwork number, 01 / 20 through 20 / 20.
+  2. Exact artwork title.
+  3. Exact year, dimensions, and medium.
+  4. One hairline.
+  5. Exact source description.
+- Use a restrained text header such as “MCLIV STUDIO / JOHN BLACK / SELECTED WORKS.” Do not repeat the MCLIV logo on every artwork slide.
+- Copy every artwork title, year, size, medium, and description exactly from John_Black_Portfolio_ (2).pdf.
+- Remove “End of Portfolio.”
+
+ARTIST CREDENTIALS — SLIDES 29–34
+- Use one clear MCLIV credentials opener, then consistent archive-style information layouts.
+- Keep biography, practice, education, mediums, residencies, collections, exhibitions, and press exact to the supplied CV and press PDFs.
+- Keep every approved press link active and attached to the correct label.
+- Remove “END OF PRESS.” It is source-document furniture, not deck content.
+- Ensure press links never overlap descriptions or leave the right margin.
+
+SLIDE 35 — MCLIV CLOSE
+- Make this an MCLIV-only close.
+- Remove THE SOCIAL EDIT from all header or navigation furniture.
+- Use one supplied full-bleed studio image with clean contrast.
+- Keep the MCLIV logo and an active https://mcliv.studio link.
+- Keep “EXPERIENCES WORTH GATHERING FOR” only as the approved closing line.
+
+V3 DEFECTS THAT MUST NOT SURVIVE
+- V3 slide 12: clipped header, truncated range, clipped right copy, missing footer and folio.
+- V3 slide 16: clipped header and right copy, missing footer and folio.
+- V3 slide 22: header touches or leaves the top edge.
+- V3 slide 26: header failure and article links overlap descriptions.
+- V3 slide 28: incorrectly combines The Social Edit and MCLIV on the close.
+- Rebuilding the art section into one locked layout must eliminate the slide 12 and 16 failures, not reproduce them elsewhere.
+
+CONTENT AND LINKS
+- Do not rewrite, summarize, invent, or “improve” approved copy.
+- Do not replace, generate, recolor, retouch, or crop supplied artwork and photography.
+- Every visible mcliv.studio reference and any linked MCLIV mark must target https://mcliv.studio.
+- Do not link The Social Edit wordmark because no approved URL was supplied.
+- Preserve or add a [Sources] block in the speaker notes for every slide.
+
+MANDATORY QA BEFORE DELIVERY
+- Render all 35 slides.
+- Inspect every slide individually at full size, not only as a contact sheet.
+- Fix every clipping, overlap, wrapping, crop, distortion, missing header, missing footer, inconsistent folio, low-contrast label, and off-grid element.
+- Confirm slides 1–7 have zero MCLIV brand furniture.
+- Confirm slide 8 is an unmistakable MCLIV transition.
+- Confirm slides 9–28 use one identical artwork layout and contain all 20 works in exact order.
+- Confirm slides 9–28 do not repeat the MCLIV logo on every page.
+- Confirm slide 35 contains no The Social Edit brand furniture.
+- Confirm “End of Portfolio” and “END OF PRESS” are absent.
+- Confirm every hyperlink works.
+- Confirm the file opens as an editable 16:9 PowerPoint.
+- If any QA check fails, revise, re-render, and inspect again before returning the file.
+
+FINAL RESPONSE
+- Return the finished V4 PPTX, not a plan.
+- State that V2 and V3 were preserved.
+- Give a short summary of the two-brand separation, the single locked artwork layout, and the completed QA.
