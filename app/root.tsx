@@ -26,7 +26,7 @@ const STANDALONE_ROUTES = new Set(['/proposals/1620', '/submit']);
 
 function isStandaloneRoute(pathname: string) {
   const path = pathname.replace(/\/$/, '');
-  return STANDALONE_ROUTES.has(path) || path === '/1620' || path.startsWith('/1620/');
+  return /^\/(artists|admin)\/settlements(?:[/.]|$)/.test(path) || STANDALONE_ROUTES.has(path) || path === '/1620' || path.startsWith('/1620/');
 }
 
 export const meta: Route.MetaFunction = ({location}) => {

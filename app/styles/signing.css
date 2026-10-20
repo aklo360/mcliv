@@ -1,0 +1,357 @@
+@font-face {
+  font-family: SettlementText;
+  src: url('/fonts/Inter-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+.settlement--signing {
+  --line: #d5d4d0;
+  background: #eeedea;
+  font:
+    15px/1.6 SettlementDisplay,
+    Arial,
+    sans-serif;
+  min-height: 100dvh;
+}
+.settlement--signing .settlement-header {
+  height: 64px;
+  background: #fff;
+  padding: 0 32px;
+  font-size: 11px;
+}
+.settlement--signing .settlement-header img {
+  width: 86px;
+  height: 25px;
+}
+.settlement--signing .settlement-main {
+  max-width: 100%;
+  padding: 0 24px 132px;
+}
+.settlement--signing .settlement-footer {
+  display: none;
+}
+.settlement--signing h1 {
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+.settlement--signing h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.settlement--signing h1:focus {
+  outline: none;
+}
+.settlement--signing .settlement-button {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 550;
+}
+.settlement--signing .settlement-button:disabled {
+  cursor: default;
+}
+.settlement--signing .settlement-small {
+  font-size: 13px;
+}
+.settlement--signing .settlement-notice {
+  max-width: 816px;
+  margin: 24px auto;
+  padding: 16px 20px;
+}
+.signing-preview {
+  padding: 10px 16px;
+  margin: 0 -24px;
+  background: #e3e0d8;
+  text-align: center;
+  font-size: 12px;
+  color: #4b4841;
+}
+.signing-kicker {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #65635e;
+}
+.signing-toolbar {
+  max-width: 816px;
+  margin: 32px auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.signing-toolbar h1 {
+  font-size: 22px;
+  margin: 4px 0 0;
+}
+.signing-toolbar .settlement-text-button {
+  font-size: 13px;
+}
+.signing-progress {
+  max-width: 816px;
+  margin: 0 auto 24px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+.signing-progress li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #74726d;
+}
+.signing-progress li > span {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #aaa8a1;
+  border-radius: 50%;
+  font-size: 11px;
+}
+.signing-progress [aria-current] {
+  color: #0a0a0a;
+  font-weight: 600;
+}
+.signing-progress [aria-current] > span {
+  color: #fff;
+  background: #0a0a0a;
+  border-color: #0a0a0a;
+}
+.signing-progress [data-complete='true'] > span {
+  border-color: #0a0a0a;
+  color: #0a0a0a;
+}
+.signing-paper {
+  max-width: 816px;
+  margin: auto;
+  padding: 56px 64px;
+  background: #fff;
+  border: 1px solid #d5d4d0;
+  box-shadow: 0 3px 12px #00000009;
+}
+.signing-paper-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid #161616;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.signing-paper-header > span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.signing-document {
+  font:
+    13px/1.8 SettlementText,
+    Arial,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.signing-document p {
+  white-space: pre-wrap;
+  margin: 0 0 24px;
+}
+.signing-document p:first-child {
+  font-weight: 650;
+}
+.signing-paper-footer {
+  border-top: 1px solid #d5d4d0;
+  margin-top: 40px;
+  padding-top: 16px;
+  font-size: 11px;
+  color: #64625d;
+}
+.signing-card {
+  max-width: 560px;
+  margin: 64px auto 0;
+  padding: 48px;
+  background: #fff;
+  border: 1px solid #d5d4d0;
+  box-shadow: 0 3px 12px #00000009;
+}
+.signing-intro {
+  margin-top: clamp(48px, 12vh, 120px);
+}
+.signing-intro h1 {
+  max-width: 340px;
+  font-size: 44px;
+}
+.signing-intro > p:not(.signing-kicker) {
+  margin-bottom: 32px;
+  color: #575550;
+}
+.signing-step-card {
+  margin-top: 32px;
+}
+.settlement--signing label {
+  font-size: 14px;
+}
+.settlement--signing .signing-name {
+  font-size: 22px;
+  border: 0;
+  border-bottom: 1px solid #777;
+  padding: 14px 0;
+}
+.signing-destination {
+  margin-top: 24px !important;
+}
+.signing-details {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  font-size: 13px;
+}
+.signing-details p {
+  margin-top: 12px;
+}
+.signing-details .settlement-statement {
+  margin: 0 0 20px;
+}
+.signing-support {
+  max-width: 560px;
+  margin: 28px auto 0;
+}
+.settlement--signing .settlement-help {
+  border: 0;
+  margin-top: 20px;
+  padding-top: 0;
+  font-size: 13px;
+}
+.settlement--signing .settlement-help summary {
+  color: #5e5c57;
+}
+.signing-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid var(--line);
+  padding: 16px 24px calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 10;
+}
+.signing-dock-inner {
+  max-width: 816px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.signing-step-count {
+  font-size: 12px;
+  color: #65635e;
+  white-space: nowrap;
+}
+.signing-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.signing-actions .settlement-button {
+  width: auto;
+  min-width: 180px;
+}
+.signing-actions .settlement-text-button {
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .settlement--signing .settlement-header {
+    height: 60px;
+    padding: 0 20px;
+  }
+  .settlement--signing .settlement-main {
+    padding: 0 16px 160px;
+  }
+  .signing-preview {
+    margin: 0 -16px;
+    padding: 10px 20px;
+    font-size: 11px;
+  }
+  .signing-toolbar {
+    margin-top: 24px;
+  }
+  .signing-toolbar h1 {
+    font-size: 20px;
+  }
+  .signing-progress {
+    gap: 24px;
+  }
+  .signing-paper {
+    padding: 28px 24px;
+  }
+  .signing-paper-header {
+    gap: 16px;
+    font-size: 9px;
+    margin-bottom: 24px;
+  }
+  .signing-document {
+    font-size: 12px;
+    line-height: 1.85;
+  }
+  .signing-card {
+    padding: 32px 24px;
+    margin-top: 32px;
+  }
+  .signing-intro h1 {
+    font-size: 38px;
+  }
+  .settlement--signing h2 {
+    font-size: 26px;
+  }
+  .signing-dock {
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+  .signing-dock-inner {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .signing-step-count {
+    width: 100%;
+    font-size: 11px;
+  }
+  .signing-actions {
+    width: 100%;
+    gap: 24px;
+  }
+  .signing-actions .settlement-button {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+  }
+}
+@media print {
+  .signing-toolbar,
+  .signing-progress,
+  .signing-dock,
+  .signing-support,
+  .signing-preview,
+  .settlement--signing .settlement-notice {
+    display: none !important;
+  }
+  .settlement--signing,
+  .settlement--signing .settlement-main {
+    background: #fff;
+    padding: 0;
+  }
+  .signing-paper {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    max-width: none;
+  }
+  .signing-document {
+    font-size: 10pt;
+  }
+  .signing-document p {
+    break-inside: avoid;
+  }
+}

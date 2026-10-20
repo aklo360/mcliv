@@ -1,0 +1,404 @@
+@font-face {
+  font-family: SettlementDisplay;
+  src: url('/fonts/GoogleSansFlex-Variable.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-display: swap;
+}
+@font-face {
+  font-family: SettlementMono;
+  src: url('/fonts/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+.settlement {
+  --ink: #0a0a0a;
+  --paper: #faf8f3;
+  --bone: #f2efe6;
+  --line: #c4c4c0;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+  font:
+    14px/1.65 SettlementMono,
+    monospace;
+}
+.settlement * {
+  box-sizing: border-box;
+}
+.settlement a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+.settlement button,
+.settlement input,
+.settlement select,
+.settlement textarea {
+  font: inherit;
+}
+.settlement button,
+.settlement a {
+  touch-action: manipulation;
+}
+.settlement :focus-visible {
+  outline: 2px solid #0a0a0a;
+  outline-offset: 4px;
+}
+.settlement-header {
+  height: 92px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+  gap: 24px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.settlement-header img {
+  display: block;
+  object-fit: contain;
+}
+.settlement-header a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.settlement-main {
+  max-width: 1260px;
+  margin: auto;
+  padding: 64px 40px 100px;
+}
+.settlement-footer {
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 4vw;
+  font-size: 11px;
+}
+.settlement h1,
+.settlement h2,
+.settlement h3 {
+  font-family: SettlementDisplay, Arial, sans-serif;
+  font-weight: 550;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  margin: 0 0 20px;
+}
+.settlement h1 {
+  font-size: clamp(36px, 5vw, 64px);
+}
+.settlement h2 {
+  font-size: 30px;
+}
+.settlement h3 {
+  font-size: 22px;
+}
+.settlement p {
+  margin: 0 0 20px;
+}
+.settlement-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.settlement-heading {
+  margin-bottom: 52px;
+  max-width: 750px;
+}
+.settlement-intro {
+  max-width: 600px;
+  padding: 45px 0 90px;
+}
+.settlement-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
+  gap: 70px;
+}
+.settlement-summary {
+  border-top: 2px solid var(--ink);
+  padding-top: 24px;
+}
+.settlement-description {
+  white-space: pre-line;
+}
+.settlement-small {
+  font-size: 12px;
+  color: #474747;
+}
+.settlement-statement {
+  margin: 30px 0;
+}
+.settlement-statement > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.settlement-statement dd {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.settlement-total {
+  font-size: 20px;
+  font-weight: 600;
+}
+.settlement-steps {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0 0 34px;
+  border-bottom: 1px solid var(--line);
+}
+.settlement-steps li {
+  flex: 1;
+}
+.settlement-steps button {
+  background: none;
+  border: 0;
+  text-align: left;
+  padding: 0 0 16px;
+  min-height: 60px;
+  color: #646464;
+  cursor: pointer;
+  font-size: 12px;
+}
+.settlement-steps span {
+  display: block;
+  font-size: 10px;
+}
+.settlement-steps [aria-current] {
+  border-bottom: 2px solid var(--ink);
+}
+.settlement-steps [aria-current] button {
+  color: var(--ink);
+}
+.settlement-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 13px 22px;
+  background: var(--ink);
+  color: #fff !important;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  margin: 4px 0 16px;
+  font-size: 13px;
+}
+.settlement-button.secondary {
+  background: transparent;
+  color: var(--ink) !important;
+}
+.settlement-button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.settlement-text-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  min-height: 44px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.settlement label {
+  display: block;
+  margin: 0 0 20px;
+  font-size: 12px;
+}
+.settlement input:not([type='checkbox']),
+.settlement textarea,
+.settlement select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid #777;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 0;
+  margin-top: 8px;
+}
+.settlement textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+.settlement .settlement-check {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 8px 0;
+}
+.settlement-check input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: #0a0a0a;
+}
+.settlement-document {
+  border: 1px solid var(--line);
+  padding: 24px;
+  margin: 24px 0;
+  max-height: 480px;
+  overflow: auto;
+  background: white;
+}
+.settlement-document pre {
+  font:
+    12px/1.8 SettlementMono,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.settlement-callout,
+.settlement-notice {
+  padding: 22px;
+  background: var(--bone);
+  border-left: 2px solid var(--ink);
+  margin-bottom: 28px;
+}
+.settlement-callout p:last-child {
+  margin-bottom: 0;
+}
+.settlement-help {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 40px;
+}
+.settlement-help summary {
+  cursor: pointer;
+  min-height: 44px;
+}
+.settlement-help p {
+  font-size: 12px;
+}
+.settlement-history {
+  margin-top: 40px;
+}
+.settlement-history > div {
+  border-top: 1px solid var(--line);
+  padding: 15px 0;
+}
+.settlement-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 25px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  align-items: center;
+}
+.settlement-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+}
+.settlement-form-section {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  margin-top: 35px;
+}
+.settlement-admin-actions {
+  max-width: 760px;
+  margin: 45px 0;
+}
+.settlement code {
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+.settlement details > summary {
+  min-height: 48px;
+  cursor: pointer;
+  padding: 12px 0;
+}
+.settlement-admin-document {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 500px;
+  overflow: auto;
+  font:
+    12px/1.8 SettlementMono,
+    monospace;
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+@media (max-width: 760px) {
+  .settlement-header {
+    height: 76px;
+    padding: 0 20px;
+    gap: 12px;
+  }
+  .settlement-header > span {
+    display: none;
+  }
+  .settlement-main {
+    padding: 38px 20px 65px;
+  }
+  .settlement-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .settlement-heading {
+    margin-bottom: 30px;
+  }
+  .settlement-summary h2 {
+    font-size: 26px;
+  }
+  .settlement-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .settlement-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .settlement-steps {
+    gap: 12px;
+  }
+  .settlement-document {
+    padding: 16px;
+  }
+  .settlement-intro {
+    padding-top: 30px;
+  }
+  .settlement-statement > div {
+    gap: 12px;
+  }
+  .settlement-total {
+    font-size: 18px;
+  }
+}
+@media print {
+  .settlement-header,
+  .settlement-footer,
+  .settlement-steps,
+  .settlement-help,
+  .settlement-button,
+  .settlement-text-button {
+    display: none !important;
+  }
+  .settlement-main {
+    padding: 0;
+  }
+  .settlement-grid {
+    display: block;
+  }
+  .settlement-document,
+  .settlement-admin-document {
+    max-height: none;
+    overflow: visible;
+    border: 0;
+    padding: 0;
+  }
+  .settlement {
+    background: white;
+  }
+  .settlement-summary {
+    break-after: page;
+  }
+}

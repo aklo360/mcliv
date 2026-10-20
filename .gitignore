@@ -95,3 +95,9 @@ __pycache__/
 
 # 1620 gallery images are served from R2 bucket mcliv-media (source copy: assets/1620/r2-gallery).
 public/images/1620/
+
+# Keep the settlement branch's optimized installation images.
+!public/images/1620/
+public/images/1620/*
+!public/images/1620/exhibition/
+!public/images/1620/exhibition/*.webp
