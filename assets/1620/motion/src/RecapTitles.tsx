@@ -15,10 +15,11 @@ export const RecapWhiteOpening = ({standalone = false, closing = false}: {
   const frame = useCurrentFrame();
   const {width, height, durationInFrames} = useVideoConfig();
   const portrait = height > width;
-  const scale = width / (portrait ? 1080 : 1920);
+  const fourByThree = width * 3 === height * 4;
+  const scale = width / (portrait ? 1080 : fourByThree ? 1440 : 1920);
   const canvasHeight = height / scale;
-  const margin = portrait ? 64 : 114;
-  const headerTop = portrait ? 180 : 130;
+  const margin = portrait ? 64 : fourByThree ? 86 : 114;
+  const headerTop = portrait ? 180 : fourByThree ? 98 : 130;
   const opacity = closing ? 1 : 1 - easeInOut(frame, standalone ? 77 : 28, standalone ? 89 : 76);
   const contentOpacity = closing ? 1 - easeInOut(frame, durationInFrames - 24, durationInFrames - 1) : 1;
   const reveal = (delay: number, distance = 18, duration = 20) =>
@@ -45,19 +46,20 @@ export const RecapWhiteOpening = ({standalone = false, closing = false}: {
             filter: "grayscale(1) brightness(0)"}} />
         </header>
         <div style={{position: "absolute", left: margin, right: margin,
-          ...(portrait ? {top: "50%", height: 680, transform: "translateY(-50%)"} : {bottom: 206}),
+          ...(portrait ? {top: "50%", height: 680, transform: "translateY(-50%)"}
+            : fourByThree ? {top: "50%", transform: "translateY(-50%)"} : {bottom: 206}),
           display: portrait ? "block" : "grid",
-          gridTemplateColumns: "repeat(12, minmax(0, 1fr))", columnGap: 28,
+          gridTemplateColumns: "repeat(12, minmax(0, 1fr))", columnGap: fourByThree ? 24 : 28,
           alignItems: "end", paddingBottom: 48,
           borderBottom: `1px solid rgba(10,10,10,${0.24 * (standalone ? easeOut(frame, 8, 30) : 1)})`}}>
           <div style={{gridColumn: "1 / 8", ...(portrait ? {position: "absolute", inset: 0, textAlign: "center"} : {})}}>
-            <div style={{marginBottom: 28, fontFamily: TYPE.mono, fontSize: 24,
+            <div style={{marginBottom: 28, fontFamily: TYPE.mono, fontSize: fourByThree ? 26 : 24,
               fontWeight: 500, lineHeight: 1, letterSpacing: "0.08em",
               ...(portrait ? {position: "absolute", top: 132, width: "100%"} : {}),
               ...reveal(3)}}>SEPTEMBER 16 · NYC</div>
             <div style={portrait ? {position: "absolute", top: 340, width: "100%", transform: "translateY(-50%)"} : {}}>
             <h1 style={{margin: portrait ? 0 : "0 0 0 -8px", paddingBottom: 16,
-              fontSize: portrait ? 300 : 260, fontWeight: 520,
+              fontSize: portrait ? 300 : fourByThree ? 340 : 260, fontWeight: 520,
               lineHeight: 0.88, letterSpacing: "-0.075em",
               ...reveal(8, 48, 24)}}>1620</h1>
             </div>
@@ -66,7 +68,7 @@ export const RecapWhiteOpening = ({standalone = false, closing = false}: {
           <div style={{gridColumn: "8 / 13", paddingBottom: portrait ? 0 : 71,
             textAlign: portrait ? "center" : "right",
             ...(portrait ? {position: "absolute", top: 520, width: "100%"} : {})}}>
-            <div style={{fontSize: 40, fontWeight: 500, lineHeight: 1.08,
+            <div style={{fontSize: fourByThree ? 44 : 40, fontWeight: 500, lineHeight: 1.08,
               letterSpacing: "-0.035em", ...reveal(17, 24, 22)}}>A group exhibition<br />of 18 artists</div>
           </div>
         </div>

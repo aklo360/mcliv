@@ -1703,5 +1703,77 @@
       "Track lock API success does not reliably change populated tracks"
     ],
     "evidence_root": "output/1620-recap/final-conform-v19"
+  },
+  "four_by_three": {
+    "timeline": "1620 RECAP 4x3 FINAL v3",
+    "timeline_id": "559de28f-8f0b-4179-a786-4caa05daf27f",
+    "source_timeline": "1620 RECAP 16x9 FINAL v19",
+    "source_timeline_id": "f848c998-1d23-423f-b7eb-93a2d28b7d08",
+    "width": 2880,
+    "height": 2160,
+    "fps": 24,
+    "duration_frames": 2082,
+    "duration_seconds": 86.75,
+    "same_cut": true,
+    "native_timing_and_retime_keyframes_preserved": true,
+    "additional_creative_color_correction": false,
+    "master": "1620-recap-4x3-prores-v3.mov",
+    "h264": {
+      "file": "1620-recap-4x3-2160p-60mbps-v3.mp4",
+      "target_video_mbps": 60,
+      "measured_video_mbps": 59.861979,
+      "color_tags_match_approved_16x9": true
+    },
+    "timeline_export": "1620-FINAL-4x3-v3.drt",
+    "project_backup": "MCLIV-1620-FINAL-4x3-v3.drp",
+    "opening_card": "title-opening-4x3-v3.mov",
+    "closing_card": "title-closing-4x3-v3.mov",
+    "wall_video_overlay": {
+      "file": "wall-three-paintings-4x3-v1-r2.mov",
+      "record_start": 1038,
+      "duration_frames": 39,
+      "method": "Original graded video with plain wall pixel extension; all three paintings complete; source video preserved underneath"
+    },
+    "framing": "47 picture events fill the 4:3 canvas; seven individual crowd/interaction refinements; C038 zoom 1.425 fixes four exposed-edge frames from the review export",
+    "artwork_count": 18,
+    "full_bleed_verified": true,
+    "verification": "reframe-4x3-v3/final-verification.json",
+    "evidence_root": "output/1620-recap/reframe-4x3-v3",
+    "review_exports_retained": [
+      "1620-recap-4x3-prores-v1.mov",
+      "1620-recap-4x3-2160p-60mbps-v1.mp4",
+      "1620-recap-4x3-prores-v2.mov",
+      "1620-recap-4x3-2160p-60mbps-v2.mp4"
+    ],
+    "previous_delivery": {
+      "timeline": "1620 RECAP 4x3 FINAL v2",
+      "timeline_id": "b54d72e1-4dc5-49bb-8b1c-5541278e4aa9",
+      "master": "1620-recap-4x3-prores-v2-r2.mov",
+      "h264": {
+        "file": "1620-recap-4x3-2160p-60mbps-v2-r2.mp4",
+        "target_video_mbps": 60,
+        "measured_video_mbps": 59.861979,
+        "color_tags_match_approved_16x9": true
+      },
+      "timeline_export": "1620-FINAL-4x3-v2-r2.drt",
+      "project_backup": "MCLIV-1620-FINAL-4x3-v2-r2.drp",
+      "verification": "reframe-4x3-v2/final-verification.json",
+      "previous_delivery": {
+        "timeline": "1620 RECAP 4x3 FINAL v1",
+        "timeline_id": "3da34ad3-e7a3-49da-98be-f8f72a61e328",
+        "master": "1620-recap-4x3-prores-v1-r2.mov",
+        "h264": {
+          "file": "1620-recap-4x3-2160p-60mbps-v1-r2.mp4",
+          "target_video_mbps": 60,
+          "measured_video_mbps": 59.678834
+        },
+        "timeline_export": "1620-FINAL-4x3-v1.drt",
+        "project_backup": "MCLIV-1620-FINAL-4x3-v1.drp",
+        "verification": "reframe-4x3-v1/final-output-verification.json"
+      }
+    },
+    "title_layout": "Dedicated stacked 4:3 composition: two-logo header, centered date, large centered 1620, single exhibition subtitle beneath; original reveal and fade timing",
+    "export_tag_correction": "Restore the approved horizontal H264 1-2-1 video-range metadata; no pixel gamma conversion or grade changes",
+    "group_exhibition_occurrences_per_card": 1
   }
 }

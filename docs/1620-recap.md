@@ -1,5 +1,176 @@
 # 1620 recap
 
+## 4:3 card reflow — v3
+
+**1620 RECAP 4x3 FINAL v3** replaces both cards with a dedicated stacked
+composition in `assets/1620/motion/src/RecapCards4x3.tsx`. MCLIV and NYC Culture
+Club occupy the header corners; the date, large **1620**, and one subtitle
+are centered vertically in sequence. The header's duplicate “GROUP EXHIBITION”
+is removed. “A group exhibition of 18 artists” appears once per card.
+V2 enlarged the old side-by-side composition and did not satisfy the requested
+reformat. Its exports are superseded, with source and outputs retained.
+
+The opening remains 89 frames; the inverted end card remains 96 frames. Reveal
+offsets and fade durations are unchanged. The final timeline is 2880 × 2160,
+24 fps, 2,082 frames / 86.75 seconds. The picture edit, framing, retiming,
+music and creative grades are preserved. All 86 native item boundaries and
+retime payloads match v2; seven decoded footage samples are pixel-identical
+after equal 720 × 540 review resampling. The MP4 retains the approved 16:9
+color tags and measures 59.86 Mbps video. Verification and rendered card
+review frames are in `output/1620-recap/reframe-4x3-v3/`.
+
+- ProRes: **1620-recap-4x3-prores-v3.mov**
+- H.264: **1620-recap-4x3-2160p-60mbps-v3.mp4**
+- Native backups: **1620-FINAL-4x3-v3.drt** and
+  **MCLIV-1620-FINAL-4x3-v3.drp**
+
+## 4:3 title and export-tag correction — v2
+
+**1620 RECAP 4x3 FINAL v2** preserves the v1 picture framing, cut, music and
+grades. The opening and end cards now use a 1440 × 1080 design grid scaled to
+2880 × 2160, with larger title and supporting type, adjusted gutters and the
+original asymmetric flyer layout. Both retain the same reveal/fade timing.
+V1 only adapted the canvas and block placement; its type remained too small.
+
+The v1-r2 H.264 had a real metadata difference: its transfer tag was explicitly
+rewritten to BT.709 (1), while the approved horizontal H.264 uses unspecified
+transfer (2), with Rec.709 primaries/matrix and video range. The ProRes masters
+have matching tags. V2 preserves the approved H.264 tags and uses libx264, as
+the approved horizontal export does. This is an export correction; no gamma
+conversion or new creative color correction is applied to the footage.
+The earlier 17-artwork comparison and 18 additional moving-shot comparisons
+show negligible mean color shifts. Details: `reframe-4x3-v2/` in the output
+folder, including `color-tag-correction.json` and `crowd-color-comparison.json`.
+
+Final files are **1620-recap-4x3-prores-v2-r2.mov** and
+**1620-recap-4x3-2160p-60mbps-v2-r2.mp4**. Both are 2880 × 2160, 24 fps and
+2,082 frames. H.264 measures 59.86 Mbps video and passes full decode; its
+color tags match the approved 16:9 H.264. All 86 native item boundaries and
+85 video retime payloads match v1. The cards were reviewed through their
+reveals and fades. Of 1,897 footage frames compared with v1-r2, 1,767 decode
+identically. Twelve samples among the other 130 BRAW frames show at most
+0.032/255 mean absolute difference and less than 0.0001/255 mean channel shift;
+do not describe every re-rendered frame as byte-identical. Audio differs by
+at most one 24-bit code value. `final-verification.json` records the checks.
+
+Native backups: **1620-FINAL-4x3-v2-r2.drt** and
+**MCLIV-1620-FINAL-4x3-v2-r2.drp**. Unsuffixed v2 files and the
+**1620 RECAP 4x3 TITLE TEST v2** timeline are rejected title-range trials,
+not deliveries. MCP take replacement must specify inclusive source endpoints
+and verify timeline start/end/duration: omitted endpoints default to 0..0.
+
+## 4:3 companion — 2160 pixels high
+
+**1620 RECAP 4x3 FINAL v1** is a native duplicate of the approved 16:9 v19,
+at **2880 × 2160, 24 fps, 2,082 frames / 1:26:18**. Original video items retain
+their edit boundaries and retime keyframe payloads. Framing changes belong
+to the new timeline; the 16:9 and 9:16 finals remain the approved originals.
+
+Forty-seven visible picture events have full-height framing, with individual
+pan/headroom adjustments for crowd interactions. The three-painting back-wall
+view uses the original graded video with plain wall pixels extended above
+and below, keeping all three paintings complete. Its source remains underneath.
+All 18 artwork close-ups remain, including Gianni's real tilt. No new creative
+color correction was applied. The entrance remains an editable native compound.
+New 4:3 cards retain the flyer layout, original animation and fade durations.
+
+The two delivery files use the **v1-r2** suffix; unsuffixed v1 movies are
+superseded framing reviews. Evidence is in `output/1620-recap/reframe-4x3-v1/`.
+
+- `1620-recap-4x3-prores-v1-r2.mov`: ProRes 422 HQ, stereo PCM 24-bit/48 kHz.
+- `1620-recap-4x3-2160p-60mbps-v1-r2.mp4`: H.264 High, 60 Mbps target,
+  measured 59.68 Mbps video, stereo AAC 320 kbps target.
+- Native backups: `1620-FINAL-4x3-v1.drt` and `MCLIV-1620-FINAL-4x3-v1.drp`.
+- All 49 visible events reviewed at start, midpoint and last frame. Every
+  final ProRes frame decoded; no border flags remain. Near-black frames are
+  confined to the existing closing fade and sparse black end card. The H.264
+  passes full decode and both files have the exact frame count and duration.
+- All 17 static artworks compared with the same-height center crop of the
+  approved UHD render, using equal 720 × 540 review resampling. Maximum mean
+  absolute RGB difference is 0.44/255; maximum mean channel shift is 0.26/255.
+  No art correction changed between that comparison and the final crowd-edge
+  revision. Audio differs from the approved master by at most one 24-bit code
+  value. Geometry and native serialization changes prevent treating whole
+  native grade blobs as byte-identical; rendered appearance was checked directly.
+
+## Instagram aspect-ratio research — checked 19 October 2026
+
+**Use the existing 9:16 final for Reels as the practical default. Keep 4:3
+for its room and artwork composition.** The sources reviewed do not establish
+a fixed organic ranking bonus for 9:16, 4:5, 3:4, square, or landscape video.
+Screen fit can improve the viewing experience; a claim that Instagram grants
+a specific reach multiplier solely because of aspect ratio is unsupported.
+
+### What the ranking evidence supports
+
+Adam Mosseri's January 2025 explanation identifies watch time, likes and sends
+as the leading signals. He recommends average watch time, likes per reach and
+sends per reach; likes matter somewhat more for connected audiences, sends for
+people who do not follow the account. No public numeric weights were supplied.
+This is a useful priority order for measurement, not a complete description of
+every ranking model. [Original explanation](https://www.instagram.com/mosseri/reel/DFFyRp-pINJ/),
+[dated contemporary coverage](https://www.socialmediatoday.com/news/instagram-shares-algorithm-insights-2025/738034/).
+
+Meta's May 2024 recommendation update describes eligible original content
+being shown to an initial audience and expanding distribution as it performs.
+The published criteria include originality, recommendation eligibility and
+absence of visible watermarks; they do not specify an aspect-ratio multiplier.
+This supports making recognizable faces, engaging interactions and readable
+artwork easy to see, then checking whether viewers keep watching and share.
+The latter is our creative inference, not a published weighting formula.
+[Meta's recommendation update](https://about.fb.com/ltam/news/2024/05/ayudando-a-los-creadores-a-encontrar-nuevas-audiencias/).
+
+### Aspect ratios and this film
+
+| Format | Practical use | Evidence about organic boost |
+| --- | --- | --- |
+| 9:16 | Fills the vertical Reels canvas; use the already reframed final | Strong screen-fit rationale; no isolated public ranking multiplier found |
+| 4:5 | Portrait feed composition when that framing suits the content | No demonstrated automatic bonus; it does not fill a 9:16 canvas |
+| 3:4 | Portrait photo composition; distinguish it from landscape 4:3 | Photo support or grid changes do not establish video ranking preference |
+| 1:1 | Square composition when the scene benefits | No demonstrated automatic bonus |
+| 4:3 | Gallery relationships, complete paintings and groups of people | No verified fixed penalty merely for being native 4:3 |
+| 16:9 | Wide rooms and the approved horizontal master | Uses less of a portrait screen, which is a presentation tradeoff |
+
+These are composition recommendations, not an algorithmic league table.
+At the same 2160-pixel height, a straight 9:16 crop of the new 2880-pixel-wide
+master would keep only 1215 pixels, or 42.2% of its width. Use the existing
+individually reframed vertical timeline, not a new automatic center crop.
+
+### Why quoted vertical-video lift figures need care
+
+Meta's October 2023 Reels advertising analysis reported improved paid results
+for vertical video **with audio**. Its March 2026 publication again describes
+a correlation between a larger share of 9:16-with-audio creatives and lower
+cost per acquisition. These concern ad sets, combine ratio with sound and
+other creative differences, and do not isolate organic distribution. They
+cannot substantiate a claim that a 9:16 organic Reel receives a guaranteed
+percentage boost. [2023 advertising evidence](https://about.fb.com/br/news/2023/10/atualizacoes-do-reels-ads-novos-recursos-de-desempenho-criacao-automatizada-e-solucoes-de-adequacao/),
+[2026 advertising evidence and methodology](https://about.fb.com/ltam/news/2026/03/del-comercio-a-la-cultura-como-la-ia-impulsa-la-conexion-personalizada-y-el-crecimiento-a-lo-largo-del-funnel/).
+
+Older 2023 Instagram guidance also discouraged low-resolution, watermarked or
+bordered Reels. It should not be stretched into proof that native landscape
+video is penalized identically to baked-in black bars. The official page was
+not directly retrievable during this research, so this point relies on dated
+coverage and is not presented as a newly verified 2026 rule.
+[Contemporary report](https://www.socialmediatoday.com/news/instagram-explainer-feed-reels-and-stories-algorithm/651705/).
+
+### How to learn what works for MCLIV
+
+Use average watch time, the available retention information, sends per reach,
+likes per reach and non-follower reach to judge the vertical release. A later
+4:3 trial can give directional evidence if the same edit, audio and duration
+are retained and exposure windows are comparable. Trial Reels initially go
+to non-followers and provide early engagement feedback, but two organic
+uploads are not a randomized experiment: audience, timing and prior exposure
+can change the result. One winner does not prove an aspect-ratio preference
+across all future films. [Meta's Trial Reels documentation](https://about.fb.com/news/2024/12/trial-reels-try-content-non-followers-first-see-what-perfoms-best/).
+
+No MCLIV account analytics were accessed, and nothing was published. Several
+Instagram/Threads/help pages were login- or fetch-blocked; accessible Meta
+publications and dated corroboration support the conclusions above. No
+official fixed organic aspect-ratio boost or clean public causal test was
+found in the reviewed sources.
+
 ## Final user cut conformed — v19
 
 The latest user-edited **1620 RECAP 16x9 FINAL v18** is the authority:
